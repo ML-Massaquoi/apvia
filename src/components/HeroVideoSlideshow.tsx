@@ -1,45 +1,52 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 
 const videos = [
   { src: "/videos/energy.mp4", label: "Energy & Power" },
-  { src: "/videos/ore.mp4", label: "Rich Mineral Ore" },
   { src: "/videos/homepage-x.mp4", label: "Investment Opportunities" },
+  { src: "/videos/flagship-1.mp4", label: "Flagship Projects" },
 ];
 
 export default function HeroVideoSlideshow() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % videos.length);
-    }, 6000);
-
-    return () => clearInterval(interval);
+  const playVideo = useCallback((index: number) => {
+    const video = videoRefs.current[index];
+    if (video) {
+      video.currentTime = 0;
+      video.play().catch(() => {});
+    }
   }, []);
 
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.load();
-      videoRef.current.play().catch(() => {});
-    }
-  }, [currentIndex]);
+    playVideo(0);
+  }, [playVideo]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => {
+        const next = (prev + 1) % videos.length;
+        playVideo(next);
+        return next;
+      });
+    }, 7000);
+    return () => clearInterval(interval);
+  }, [playVideo]);
 
   return (
-    <div className="absolute inset-0">
+    <div className="absolute inset-0 bg-[#052e16]">
       {videos.map((video, index) => (
         <video
           key={video.src}
-          ref={index === currentIndex ? videoRef : undefined}
-          autoPlay
+          ref={(el) => { videoRefs.current[index] = el; }}
           muted
           playsInline
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+          preload="auto"
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1500ms] ${
             index === currentIndex ? "opacity-100" : "opacity-0"
           }`}
-          poster="/Apvia_logo.jpeg"
         >
           <source src={video.src} type="video/mp4" />
         </video>

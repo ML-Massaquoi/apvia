@@ -227,8 +227,8 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-6">
             {[
               { src: "/videos/energy.mp4", title: "Energy & Power", desc: "Sustainable energy solutions driving Sierra Leone's growth" },
-              { src: "/videos/ore.mp4", title: "Rich Mineral Ore", desc: "Abundant mineral resources including diamonds, gold, and rutile" },
               { src: "/videos/homepage-x.mp4", title: "Investment Opportunities", desc: "Growing economy with favorable investment policies" },
+              { src: "/videos/flagship-1.mp4", title: "Flagship Projects", desc: "World-class developments across West Africa" },
             ].map((video) => (
               <div key={video.src} className="rounded-xl overflow-hidden shadow-lg group">
                 <div className="relative aspect-video bg-[#052e16]">
@@ -263,7 +263,7 @@ export default function HomePage() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { src: "/videos/ore.mp4", title: "Rich Mineral Ore", desc: "Abundant deposits of diamonds, gold, rutile, and bauxite" },
+              { src: "/videos/video-1.mp4", title: "Rich Mineral Ore", desc: "Abundant deposits of diamonds, gold, rutile, and bauxite" },
               { src: "/videos/energy.mp4", title: "Energy & Power", desc: "Sustainable energy solutions driving national growth" },
               { src: "/videos/flagship-4.mp4", title: "Sustainable Mining", desc: "Responsible mineral extraction and community development" },
               { src: "/videos/flagship-3.mp4", title: "Infrastructure Development", desc: "Building world-class infrastructure across Sierra Leone" },
