@@ -67,7 +67,7 @@ export default function AboutPage() {
             {[
               { src: "/videos/flagship-3.mp4", title: "Mineral Wealth & Resources" },
               { src: "/videos/flagship-4.mp4", title: "Pristine Natural Landscape" },
-              { src: "/videos/flagship-x.mp4", title: "Emerging Market Potential" },
+              { src: "/videos/homepage-x.mp4", title: "Emerging Market Potential" },
             ].map((video) => (
               <div key={video.src} className="rounded-xl overflow-hidden shadow-lg group">
                 <div className="relative aspect-video bg-[#052e16]">
