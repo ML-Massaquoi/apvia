@@ -1,11 +1,26 @@
 export const teamData = [
   {
+    id: "chairman",
+    name: "Farouk Al-Wahab",
+    role: "Lead Consultant & Chairman",
+    image: "/team/farouk-al-wahab.jpg",
+    email: "farouk@apvia-sl.com",
+    bio: "A globally certified and experienced diplomatic and investments consultant with over 30 years of experience. A product of the Afro-Asia Institute and Karl Franzens University Graz, Austria, Farouk has worked with leading international organizations including the United Nations, diplomatic missions, and NGOs across multiple continents. He has assisted several governments in coordinating presidential and top-level state visits and has played a major role in developing Honorary Consulate offices and General Consulate portfolios worldwide. Farouk is a policy advisor to the African Union Diaspora Forum (AU-DAF) and has extensive experience in international security affairs, state protocols, and diplomacy risk management. He has trained and converted political appointees into career diplomats for several countries and has been instrumental in building international coalition forces that contributed to the birth of South Sudan.",
+    responsibilities: [
+      "Strategic leadership and diplomatic solutions for nations across continents",
+      "Policy advisory for the African Union Diaspora Forum (AU-DAF)",
+      "Training non-career diplomats and capacity building for Africa's future diplomats",
+      "Building international coalition forces and bilateral trade relations",
+    ],
+    department: "Executive Management",
+  },
+  {
     id: "md-ceo",
     name: "Amir Al Malik Bangura",
     role: "Managing Director",
     image: "/team/amir-bangura.jpg",
-    email: "amir@apvia-sl.com",
-    bio: "Amir brings visionary leadership to APVIA Ltd, guiding the company's strategic direction across its diverse portfolio. With extensive experience in project management and corporate governance, he drives the company's mission of creating lasting value across Sierra Leone's key sectors.",
+    email: "amiralmalik@apvia-sl.com",
+    bio: "Amir brings visionary leadership to APVIA Ltd, guiding the company's strategic direction across its diverse portfolio. With extensive experience in project management, operations, and corporate governance, he drives the company's mission of creating lasting value across Sierra Leone's key sectors.",
     responsibilities: [
       "Overall responsibility for company strategy, performance, and stakeholder relations",
       "Extensive experience in senior management, business development, and African markets",
@@ -19,7 +34,7 @@ export const teamData = [
     name: "Ibrahim Rogers",
     role: "Projects & Operations Manager",
     image: "/team/ibrahim-rogers.jpg",
-    email: "ibrahim@apvia-sl.com",
+    email: "ibrahimrogers@apvia-sl.com",
     bio: "Ibrahim oversees the day-to-day operations and project delivery of APVIA Ltd, ensuring seamless coordination across all divisions. His expertise in operational efficiency and project management keeps the company's multi-sector activities running at peak performance.",
     responsibilities: [
       "Oversees day-to-day operations across all business divisions",
@@ -34,7 +49,7 @@ export const teamData = [
     name: "Vincent Davies",
     role: "HR & Administrative Manager",
     image: "/team/vincent-davies.jpg",
-    email: "vincent@apvia-sl.com",
+    email: "vincentdavies@apvia-sl.com",
     bio: "Vincent manages APVIA Ltd's human resources and administrative functions, ensuring a productive and supportive work environment. He leads talent acquisition, employee development, and organizational efficiency across the company.",
     responsibilities: [
       "Oversees human resources strategy and operations",
@@ -49,7 +64,7 @@ export const teamData = [
     name: "Patrick Layormie Taylor-Ayikor",
     role: "Logistics & Supply Chain Manager",
     image: "/team/patrick-layormie.jpg",
-    email: "patrick@apvia-sl.com",
+    email: "patricktaylor@apvia-sl.com",
     bio: "Patrick leads APVIA Ltd's logistics and supply chain operations, ensuring efficient procurement, distribution, and resource management across all business divisions. His expertise keeps our multi-sector operations running smoothly.",
     responsibilities: [
       "Manages end-to-end supply chain operations",
@@ -61,11 +76,11 @@ export const teamData = [
   },
   {
     id: "bd-director",
-    name: "Shar James",
+    name: "Sahr James",
     role: "Contract & Business Development Manager",
     image: "/team/shar-james.jpg",
-    email: "shar@apvia-sl.com",
-    bio: "Shar leads APVIA Ltd's business development and contract management efforts, driving growth through strategic partnerships and new market opportunities across Sierra Leone and the West Africa region.",
+    email: "sahrjames@apvia-sl.com",
+    bio: "Sahr leads APVIA Ltd's business development and contract management efforts, driving growth through strategic partnerships and new market opportunities across Sierra Leone and the West Africa region.",
     responsibilities: [
       "Leads business development, market expansion, and strategic planning",
       "Manages key client relationships and partnership development",

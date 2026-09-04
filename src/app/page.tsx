@@ -1,33 +1,144 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { companyData } from "@/data/company";
 import { servicesData } from "@/data/services";
+import HeroVideoSlideshow from "@/components/HeroVideoSlideshow";
+
+export const metadata: Metadata = {
+  title: "Invest in Sierra Leone | APVIA Ltd - Leading Investment Company",
+  description:
+    "Invest in Sierra Leone with APVIA Ltd. Discover profitable investment opportunities in mining, agriculture, construction, and trade. 30+ years experience in West Africa. Start investing today.",
+  keywords: [
+    "invest in Sierra Leone",
+    "Sierra Leone investment opportunities",
+    "Sierra Leone mining investment",
+    "Sierra Leone agriculture investment",
+    "West Africa investment opportunities",
+    "Sierra Leone business investment",
+  ],
+  openGraph: {
+    title: "Invest in Sierra Leone | APVIA Ltd",
+    description:
+      "Discover profitable investment opportunities in Sierra Leone's mining, agriculture, construction, and trade sectors.",
+    url: "https://www.apvia-sl.com",
+  },
+};
 
 export default function HomePage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "APVIA Ltd",
+    alternateName: "African Projects Ventures Investments and Advancement Limited",
+    url: "https://www.apvia-sl.com",
+    logo: "https://www.apvia-sl.com/Apvia_logo.jpeg",
+    description:
+      "A diversified multi-sectoral holding company headquartered in Freetown, Sierra Leone, driving sustainable economic development across West Africa.",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "91 Fort Street",
+      addressLocality: "Freetown",
+      addressCountry: "Sierra Leone",
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+232-76-92-32-39",
+      contactType: "customer service",
+      email: "info@apvia-sl.com",
+    },
+    sameAs: [
+      "https://www.linkedin.com/company/apvia-ltd",
+      "https://www.facebook.com/apvialtd",
+      "https://www.instagram.com/apvialtd",
+    ],
+    areaServed: {
+      "@type": "Country",
+      name: "Sierra Leone",
+    },
+    knowsAbout: [
+      "Investment in Sierra Leone",
+      "Sierra Leone mining",
+      "Sierra Leone agriculture",
+      "Sierra Leone construction",
+      "West Africa trade",
+    ],
+  };
+
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "APVIA Ltd",
+    url: "https://www.apvia-sl.com",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: "https://www.apvia-sl.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string",
+    },
+  };
+
+  const localBusinessJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "APVIA Ltd",
+    image: "https://www.apvia-sl.com/Apvia_logo.jpeg",
+    url: "https://www.apvia-sl.com",
+    telephone: "+232-76-92-32-39",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "91 Fort Street",
+      addressLocality: "Freetown",
+      addressCountry: "Sierra Leone",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 8.4841,
+      longitude: -13.2317,
+    },
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "08:00",
+      closes: "17:00",
+    },
+    priceRange: "$$",
+  };
+
   return (
     <>
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+      />
+
       {/* Hero */}
       <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
-          <video autoPlay loop muted playsInline className="w-full h-full object-cover" poster="/Apvia_logo.jpeg">
-            <source src="/hero-video.mp4" type="video/mp4" />
-          </video>
-          <div className="video-overlay" />
-        </div>
+        <HeroVideoSlideshow />
 
-        <div className="relative z-10 w-full max-w-4xl mx-auto px-8 text-center">
+        <div className="relative z-10 w-full max-w-5xl mx-auto px-8 text-center">
           <div className="animate-fadeInUp">
             <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 border border-white/20 mb-8 backdrop-blur-sm">
               <span className="w-2 h-2 rounded-full bg-[#fbbf24] animate-pulse" />
               <span className="text-white/90 text-sm font-medium">West Africa&apos;s Premier Multi-Sectoral Enterprise</span>
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-6">
-              Building Africa&apos;s Future
-              <span className="block text-gradient-gold mt-3">Through Partnership</span>
+              Invest in Sierra Leone
+              <span className="block text-gradient-gold mt-3">Build Africa&apos;s Future</span>
             </h1>
-            <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed">{companyData.description}</p>
+            <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto mb-10 leading-relaxed">
+              APVIA Ltd - Your trusted partner for investment in Sierra Leone. We offer comprehensive investment opportunities across mining, agriculture, construction, and trade sectors in West Africa.
+            </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/about" className="btn-primary-white text-base">Discover Our Vision</Link>
-              <Link href="/services" className="btn-outline-white text-base">Our Services</Link>
+              <Link href="/contact" className="btn-primary-white text-base">Start Investing Today</Link>
+              <Link href="/services" className="btn-outline-white text-base">Explore Opportunities</Link>
             </div>
           </div>
         </div>
@@ -39,42 +150,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Flagship Videos */}
-      <section className="py-20 bg-[#f8f9fa]">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="text-center mb-12">
-            <div className="gold-line mx-auto mb-5" />
-            <h2 className="text-3xl font-bold text-[#1a1a1a] mb-3">Why Invest in Sierra Leone</h2>
-            <p className="text-gray-500 max-w-xl mx-auto">Discover the natural resources and landscapes that make Sierra Leone a prime investment destination</p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { src: "/videos/video-1.mp4", title: "Rich Natural Resources" },
-              { src: "/videos/video-2.mp4", title: "Breathtaking Landscapes" },
-              { src: "/videos/video-3.mp4", title: "Investment Opportunities" },
-            ].map((video) => (
-              <div key={video.src} className="rounded-xl overflow-hidden shadow-lg group">
-                <div className="relative aspect-video">
-                  <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  >
-                    <source src={video.src} type="video/mp4" />
-                  </video>
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#052e16]/80 via-transparent to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <p className="text-white font-semibold text-sm">{video.title}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Stats */}
       <section className="py-12 bg-[#052e16]">
         <div className="max-w-7xl mx-auto px-8">
@@ -82,7 +157,7 @@ export default function HomePage() {
             {[
               { number: "11+", label: "Business Divisions" },
               { number: "5+", label: "West African Markets" },
-              { number: "100%", label: "Ethical Standards" },
+              { number: "30+", label: "Years Experience" },
               { number: "24/7", label: "Operational Support" },
             ].map((stat) => (
               <div key={stat.label}>
@@ -141,6 +216,136 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Why Invest in Sierra Leone */}
+      <section className="py-24 bg-[#f8f9fa]">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="text-center mb-14">
+            <div className="gold-line mx-auto mb-5" />
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#1a1a1a] mb-3">Why Invest in Sierra Leone</h2>
+            <p className="text-gray-500 max-w-2xl mx-auto">Discover the natural resources and strategic advantages that make Sierra Leone a prime investment destination in West Africa</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { src: "/videos/energy.mp4", title: "Energy & Power", desc: "Sustainable energy solutions driving Sierra Leone's growth" },
+              { src: "/videos/ore.mp4", title: "Rich Mineral Ore", desc: "Abundant mineral resources including diamonds, gold, and rutile" },
+              { src: "/videos/homepage-x.mp4", title: "Investment Opportunities", desc: "Growing economy with favorable investment policies" },
+            ].map((video) => (
+              <div key={video.src} className="rounded-xl overflow-hidden shadow-lg group">
+                <div className="relative aspect-video bg-[#052e16]">
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  >
+                    <source src={video.src} type="video/mp4" />
+                  </video>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#052e16]/90 via-[#052e16]/30 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-5">
+                    <p className="text-white font-bold text-base mb-1">{video.title}</p>
+                    <p className="text-white/70 text-sm">{video.desc}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Vast Untapped Mineral Deposit */}
+      <section className="py-24 bg-[#052e16]">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="text-center mb-14">
+            <div className="gold-line mx-auto mb-5" />
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">Vast Untapped Mineral Deposit</h2>
+            <p className="text-white/60 max-w-2xl mx-auto">Sierra Leone is endowed with extraordinary natural wealth — from rich mineral ores to sustainable energy potential, creating unparalleled investment opportunities</p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { src: "/videos/ore.mp4", title: "Rich Mineral Ore", desc: "Abundant deposits of diamonds, gold, rutile, and bauxite" },
+              { src: "/videos/energy.mp4", title: "Energy & Power", desc: "Sustainable energy solutions driving national growth" },
+              { src: "/videos/flagship-4.mp4", title: "Sustainable Mining", desc: "Responsible mineral extraction and community development" },
+              { src: "/videos/flagship-3.mp4", title: "Infrastructure Development", desc: "Building world-class infrastructure across Sierra Leone" },
+            ].map((video) => (
+              <div key={video.src} className="rounded-xl overflow-hidden shadow-lg group">
+                <div className="relative aspect-video bg-black">
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  >
+                    <source src={video.src} type="video/mp4" />
+                  </video>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-5">
+                    <p className="text-white font-bold text-base mb-1">{video.title}</p>
+                    <p className="text-white/70 text-sm">{video.desc}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Investment Highlights */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="text-center mb-14">
+            <div className="gold-line mx-auto mb-5" />
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#1a1a1a] mb-3">Investment Opportunities in Sierra Leone</h2>
+            <p className="text-gray-500 max-w-2xl mx-auto">Explore diverse investment sectors with high growth potential in Sierra Leone and West Africa</p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Mining & Minerals",
+                desc: "Invest in Sierra Leone's rich mineral resources including diamonds, gold, rutile, and bauxite. High-return opportunities in responsible mining.",
+                icon: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4",
+              },
+              {
+                title: "Agriculture & Farming",
+                desc: "Sustainable agriculture investments in cocoa, coffee, palm oil, and rice farming. Supporting food security and economic growth.",
+                icon: "M12 22V8m0 0c-2 0-6 2-6 6m6-6c2 0 6 2 6 6m-12 0c0 4 2 6 6 6m0 0c4 0 6-2 6-6",
+              },
+              {
+                title: "Construction & Infrastructure",
+                desc: "Infrastructure development projects including roads, buildings, and utilities. Driving Sierra Leone's modernization.",
+                icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4",
+              },
+              {
+                title: "Import & Export Trade",
+                desc: "Facilitate international trade connecting Sierra Leone with global markets. Strategic trade partnerships and logistics.",
+                icon: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
+              },
+              {
+                title: "Real Estate & Property",
+                desc: "Commercial and residential real estate development in Freetown and growing urban centers. High-demand market.",
+                icon: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6",
+              },
+              {
+                title: "Energy & Utilities",
+                desc: "Renewable energy and utility infrastructure investments. Supporting Sierra Leone's energy transformation.",
+                icon: "M13 10V3L4 14h7v7l9-11h-7z",
+              },
+            ].map((item) => (
+              <div key={item.title} className="card-white p-8 hover:shadow-xl transition-shadow">
+                <div className="w-12 h-12 rounded-xl bg-[#052e16] flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-[#fbbf24]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={item.icon} />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-bold text-[#1a1a1a] mb-2">{item.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Core Values */}
       <section className="py-24 bg-[#f8f9fa]">
         <div className="max-w-7xl mx-auto px-8">
@@ -191,7 +396,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Team Preview */}
+      {/* Leadership Preview */}
       <section className="py-24 bg-[#f8f9fa]">
         <div className="max-w-7xl mx-auto px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -229,11 +434,11 @@ export default function HomePage() {
       <section className="py-24 bg-[#052e16]">
         <div className="max-w-4xl mx-auto px-8 text-center">
           <div className="gold-line-long mx-auto mb-6" />
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-5">Ready to Build the Future Together?</h2>
-          <p className="text-white/60 text-lg mb-8">Whether you&apos;re looking for a reliable partner for infrastructure projects, trade facilitation, or strategic consultancy, APVIA Ltd is here to deliver excellence.</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-5">Ready to Invest in Sierra Leone?</h2>
+          <p className="text-white/60 text-lg mb-8">Whether you&apos;re looking for mining, agriculture, construction, or trade opportunities, APVIA Ltd is your trusted partner for investment in Sierra Leone and West Africa.</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/contact" className="btn-primary-white text-base">Contact Us Today</Link>
-            <Link href="/services" className="btn-outline-white text-base">Explore Services</Link>
+            <Link href="/contact" className="btn-primary-white text-base">Start Investing Today</Link>
+            <Link href="/services" className="btn-outline-white text-base">Explore Opportunities</Link>
           </div>
         </div>
       </section>
