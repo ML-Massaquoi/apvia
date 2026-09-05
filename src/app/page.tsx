@@ -47,7 +47,7 @@ export default function HomePage() {
     },
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+232-76-92-32-39",
+      telephone: "+232-73-88-66-22",
       contactType: "customer service",
       email: "info@apvia-sl.com",
     },
@@ -87,7 +87,7 @@ export default function HomePage() {
     name: "APVIA Ltd",
     image: "https://www.apvia-sl.com/Apvia_logo.jpeg",
     url: "https://www.apvia-sl.com",
-    telephone: "+232-76-92-32-39",
+    telephone: "+232-73-88-66-22",
     address: {
       "@type": "PostalAddress",
       streetAddress: "91 Fort Street",

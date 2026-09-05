@@ -208,7 +208,7 @@ export const policiesData = [
       channels: [
         "In writing: HR Compliance Director, APVIA Ltd, 91 Fort Street, Freetown",
         "Email: info@apvia-sl.com",
-        "Telephone: +232 76 92 32 39 (Mon-Fri, 8am-5pm)",
+        "Telephone: +232 73 88 66 22 (Mon-Fri, 8am-5pm)",
         "Community drop-boxes at all project sites and regional offices",
         "In person at community liaison meetings",
       ],
