@@ -72,6 +72,7 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [policiesOpen, setPoliciesOpen] = useState(false);
+  const [mobilePoliciesOpen, setMobilePoliciesOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -90,16 +91,25 @@ export default function Navigation() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [isOpen]);
+
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100" : "bg-white/80 backdrop-blur-sm"}`}>
-      <div className="max-w-7xl mx-auto px-8">
-        <div className="flex items-center justify-between h-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-14 sm:h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 shrink-0">
-            <Image src="/Apvia_logo.jpeg" alt="APVIA Ltd Logo" width={36} height={36} className="rounded-md" />
+          <Link href="/" className="flex items-center gap-2 shrink-0" onClick={() => setIsOpen(false)}>
+            <Image src="/Apvia_logo.jpeg" alt="APVIA Ltd Logo" width={32} height={32} className="rounded-md sm:w-9 sm:h-9" />
             <div className="flex flex-col leading-none">
-              <span className="text-base font-bold tracking-tight text-[#052e16]">APVIA</span>
-              <span className="text-[9px] text-[#d97706] tracking-[0.15em] font-semibold uppercase">Ltd</span>
+              <span className="text-sm sm:text-base font-bold tracking-tight text-[#052e16]">APVIA</span>
+              <span className="text-[8px] sm:text-[9px] text-[#d97706] tracking-[0.15em] font-semibold uppercase">Ltd</span>
             </div>
           </Link>
 
@@ -137,8 +147,8 @@ export default function Navigation() {
             </div>
           </div>
 
-          {/* Right Side: Social + Email Text + CTA + Mobile Toggle */}
-          <div className="flex items-center gap-3">
+          {/* Right Side */}
+          <div className="flex items-center gap-2 sm:gap-3">
             {/* Social Icons (desktop) */}
             <div className="hidden md:flex items-center gap-2.5 text-gray-400">
               {socialLinks.map((social) => (
@@ -148,7 +158,6 @@ export default function Navigation() {
               ))}
             </div>
 
-            {/* Email text after icons */}
             <a href="mailto:info@apvia-sl.com" className="hidden md:inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-[#14532d] transition-colors">
               info@apvia-sl.com
             </a>
@@ -160,12 +169,17 @@ export default function Navigation() {
               Get in Touch
             </Link>
 
+            {/* Mobile CTA */}
+            <Link href="/contact" onClick={() => setIsOpen(false)} className="md:hidden btn-primary text-xs py-1.5 px-3">
+              Get in Touch
+            </Link>
+
             {/* Mobile Menu Button */}
-            <button onClick={() => setIsOpen(!isOpen)} className="md:hidden relative w-9 h-9 flex items-center justify-center rounded-md hover:bg-gray-100 transition-colors" aria-label="Toggle menu">
-              <div className="flex flex-col gap-1.5 w-5">
-                <span className={`block h-0.5 bg-gray-700 transition-all duration-300 origin-center ${isOpen ? "rotate-45 translate-y-[4px]" : ""}`} />
+            <button onClick={() => setIsOpen(!isOpen)} className="md:hidden relative w-8 h-8 flex items-center justify-center rounded-md hover:bg-gray-100 transition-colors" aria-label="Toggle menu">
+              <div className="flex flex-col gap-1 w-4.5">
+                <span className={`block h-0.5 bg-gray-700 transition-all duration-300 origin-center ${isOpen ? "rotate-45 translate-y-[3px]" : ""}`} />
                 <span className={`block h-0.5 bg-gray-700 transition-all duration-300 ${isOpen ? "opacity-0" : ""}`} />
-                <span className={`block h-0.5 bg-gray-700 transition-all duration-300 origin-center ${isOpen ? "-rotate-45 -translate-y-[4px]" : ""}`} />
+                <span className={`block h-0.5 bg-gray-700 transition-all duration-300 origin-center ${isOpen ? "-rotate-45 -translate-y-[3px]" : ""}`} />
               </div>
             </button>
           </div>
@@ -173,28 +187,43 @@ export default function Navigation() {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`md:hidden transition-all duration-300 overflow-hidden ${isOpen ? "max-h-[700px] opacity-100" : "max-h-0 opacity-0"}`}>
-        <div className="bg-white border-t border-gray-100 px-6 py-4 shadow-lg">
-          <div className="flex flex-col gap-1">
+      <div className={`md:hidden transition-all duration-300 overflow-hidden ${isOpen ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0"}`}>
+        <div className="bg-white border-t border-gray-100 px-4 py-3 shadow-lg max-h-[80vh] overflow-y-auto">
+          <div className="flex flex-col gap-0.5">
             {navLinks.map((link) => (
-              <Link key={link.href} href={link.href} onClick={() => setIsOpen(false)} className="px-4 py-2.5 text-sm font-medium text-gray-700 hover:text-[#14532d] hover:bg-green-50 rounded-md transition-colors">
+              <Link key={link.href} href={link.href} onClick={() => setIsOpen(false)} className="px-3 py-2.5 text-sm font-medium text-gray-700 hover:text-[#14532d] hover:bg-green-50 rounded-md transition-colors">
                 {link.label}
               </Link>
             ))}
-            <div className="border-t border-gray-100 mt-2 pt-2">
-              <Link href="/policies" onClick={() => setIsOpen(false)} className="px-4 py-2.5 text-sm font-semibold text-[#052e16] hover:bg-green-50 rounded-md transition-colors block">Policies</Link>
-              {policyLinks.map((link) => (
-                <Link key={link.href} href={link.href} onClick={() => setIsOpen(false)} className="px-4 py-2 text-sm text-gray-500 hover:text-[#14532d] hover:bg-green-50 rounded-md transition-colors block pl-8">
-                  {link.label}
-                </Link>
-              ))}
+
+            {/* Policies Accordion */}
+            <div className="border-t border-gray-100 mt-1 pt-1">
+              <button
+                onClick={() => setMobilePoliciesOpen(!mobilePoliciesOpen)}
+                className="w-full flex items-center justify-between px-3 py-2.5 text-sm font-semibold text-[#052e16] hover:bg-green-50 rounded-md transition-colors"
+              >
+                <span>Policies</span>
+                <svg className={`w-4 h-4 transition-transform duration-200 ${mobilePoliciesOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {mobilePoliciesOpen && (
+                <div className="pl-3 pb-1">
+                  <Link href="/policies" onClick={() => setIsOpen(false)} className="block px-3 py-2 text-sm font-medium text-[#052e16] hover:bg-green-50 rounded-md transition-colors">
+                    View All Policies
+                  </Link>
+                  {policyLinks.map((link) => (
+                    <Link key={link.href} href={link.href} onClick={() => setIsOpen(false)} className="block px-3 py-2 text-xs text-gray-500 hover:text-[#14532d] hover:bg-green-50 rounded-md transition-colors">
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
-            <Link href="/contact" onClick={() => setIsOpen(false)} className="btn-primary text-center mt-3 text-sm">Get in Touch</Link>
 
             {/* Mobile Social */}
-            <div className="border-t border-gray-100 mt-3 pt-3">
-              <p className="px-4 text-xs text-gray-400 font-medium mb-2">Connect With Us</p>
-              <div className="flex items-center gap-4 px-4">
+            <div className="border-t border-gray-100 mt-1 pt-2 pb-1">
+              <div className="flex items-center gap-4 px-3">
                 <a href="mailto:info@apvia-sl.com" className="text-gray-400 hover:text-[#14532d] transition-colors text-xs">info@apvia-sl.com</a>
                 {socialLinks.filter(s => s.icon !== "email").map((social) => (
                   <a key={social.icon} href={social.href} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#14532d] transition-colors" aria-label={social.label}>
