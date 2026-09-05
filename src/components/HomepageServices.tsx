@@ -64,6 +64,7 @@ export default function HomepageServices() {
         title={selected?.title || ""}
         overview={selected?.overview || ""}
         highlights={selected?.highlights || []}
+        chart={selected?.chart}
         cta="Discuss This Service"
       />
     </>
