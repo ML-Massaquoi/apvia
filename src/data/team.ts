@@ -76,7 +76,7 @@ export const teamData = [
   },
   {
     id: "logistics",
-    name: "Patrick Layormie Taylor-Ayikor",
+    name: "Patrick Layormie Taylor-Ayikon",
     role: "Logistics & Supply Chain Manager",
     image: "/team/patrick-layormie.jpg",
     email: "patricktaylor@apvia-sl.com",
