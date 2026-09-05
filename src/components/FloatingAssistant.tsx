@@ -1,45 +1,15 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function FloatingAssistant() {
   const [isOpen, setIsOpen] = useState(false);
-  const [showBubble, setShowBubble] = useState(false);
-  const [hasInteracted, setHasInteracted] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (!hasInteracted) {
-        setShowBubble(true);
-      }
-    }, 3000);
-    return () => clearTimeout(timer);
-  }, [hasInteracted]);
-
-  useEffect(() => {
-    if (showBubble && !hasInteracted) {
-      const hideTimer = setTimeout(() => {
-        setShowBubble(false);
-      }, 8000);
-      return () => clearTimeout(hideTimer);
-    }
-  }, [showBubble, hasInteracted]);
-
-  const handleOpen = () => {
-    setIsOpen(true);
-    setShowBubble(false);
-    setHasInteracted(true);
-  };
-
-  const handleClose = () => {
-    setIsOpen(false);
-    setHasInteracted(true);
-  };
+  const [showBubble, setShowBubble] = useState(true);
 
   return (
-    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50">
+    <div className="hidden sm:block fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50">
       {/* Chat Panel */}
       {isOpen && (
         <div className="mb-3 sm:mb-4 w-[280px] sm:w-[320px] bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden animate-in slide-in-from-bottom-5 duration-300">
@@ -58,7 +28,7 @@ export default function FloatingAssistant() {
                   <p className="text-white/50 text-[10px]">Online now</p>
                 </div>
               </div>
-              <button onClick={handleClose} className="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
+              <button onClick={() => setIsOpen(false)} className="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
                 <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
@@ -84,7 +54,7 @@ export default function FloatingAssistant() {
             <div className="space-y-2 pt-1">
               <Link
                 href="/contact"
-                onClick={handleClose}
+                onClick={() => setIsOpen(false)}
                 className="flex items-center gap-2.5 w-full p-2.5 bg-[#052e16]/5 hover:bg-[#052e16]/10 rounded-xl transition-colors group"
               >
                 <div className="w-8 h-8 rounded-lg bg-[#052e16] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
@@ -100,7 +70,7 @@ export default function FloatingAssistant() {
 
               <Link
                 href="/services"
-                onClick={handleClose}
+                onClick={() => setIsOpen(false)}
                 className="flex items-center gap-2.5 w-full p-2.5 bg-[#d97706]/5 hover:bg-[#d97706]/10 rounded-xl transition-colors group"
               >
                 <div className="w-8 h-8 rounded-lg bg-[#d97706] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
@@ -116,7 +86,7 @@ export default function FloatingAssistant() {
 
               <Link
                 href="/about"
-                onClick={handleClose}
+                onClick={() => setIsOpen(false)}
                 className="flex items-center gap-2.5 w-full p-2.5 bg-[#14532d]/5 hover:bg-[#14532d]/10 rounded-xl transition-colors group"
               >
                 <div className="w-8 h-8 rounded-lg bg-[#14532d] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
@@ -171,7 +141,7 @@ export default function FloatingAssistant() {
             </div>
           </div>
           <div className="mt-2 flex gap-1.5">
-            <button onClick={handleOpen} className="flex-1 text-[10px] font-semibold text-white bg-[#052e16] py-1.5 px-2 rounded-lg hover:bg-[#14532d] transition-colors">
+            <button onClick={() => { setIsOpen(true); setShowBubble(false); }} className="flex-1 text-[10px] font-semibold text-white bg-[#052e16] py-1.5 px-2 rounded-lg hover:bg-[#14532d] transition-colors">
               Chat Now
             </button>
             <button onClick={() => setShowBubble(false)} className="flex-1 text-[10px] font-semibold text-gray-500 bg-gray-100 py-1.5 px-2 rounded-lg hover:bg-gray-200 transition-colors">
@@ -184,7 +154,7 @@ export default function FloatingAssistant() {
       {/* Floating Button */}
       {!isOpen && (
         <button
-          onClick={handleOpen}
+          onClick={() => { setIsOpen(true); setShowBubble(false); }}
           className={`w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-[#052e16] flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 ${showBubble ? "ring-4 ring-[#052e16]/20" : ""}`}
           aria-label="Open assistant"
         >
@@ -193,8 +163,8 @@ export default function FloatingAssistant() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
             </svg>
             {/* Notification dot */}
-            {!hasInteracted && (
-              <span className="absolute -top-1 -right-1 w-3 h-3 bg-[#fbbf24] rounded-full border-2 border-[#052e16] animate-pulse" />
+            {!isOpen && (
+              <span className="absolute -top-1 -right-1 w-3 h-3 bg-[#fbbf24] rounded-full border-2 border-[#052e16]" />
             )}
           </div>
         </button>
