@@ -322,7 +322,7 @@ export default function ServicesPage() {
         isOpen={!!selectedService}
         onClose={() => setSelectedService(null)}
         title={selectedService?.title || ""}
-        overview={selectedService?.description || ""}
+        overview={selectedService?.overview || ""}
         highlights={selectedService?.highlights || []}
         chart={selectedService?.chart}
         cta="Discuss This Service"
