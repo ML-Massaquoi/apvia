@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { companyData } from "@/data/company";
 import { servicesData } from "@/data/services";
 import HeroVideoSlideshow from "@/components/HeroVideoSlideshow";
@@ -105,45 +106,33 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }} />
 
       {/* Hero */}
       <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden">
         <HeroVideoSlideshow />
-
-        <div className="relative z-10 w-full max-w-5xl mx-auto px-8 text-center">
+        <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="animate-fadeInUp">
-            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 border border-white/20 mb-8 backdrop-blur-sm">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 mb-6 sm:mb-8 backdrop-blur-sm">
               <span className="w-2 h-2 rounded-full bg-[#fbbf24] animate-pulse" />
-              <span className="text-white/90 text-sm font-medium">West Africa&apos;s Premier Multi-Sectoral Enterprise</span>
+              <span className="text-white/90 text-xs sm:text-sm font-medium">West Africa&apos;s Premier Multi-Sectoral Enterprise</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white leading-[1.1] mb-4 sm:mb-6">
               Invest in Sierra Leone
-              <span className="block text-gradient-gold mt-3">Build Africa&apos;s Future</span>
+              <span className="block text-gradient-gold mt-2 sm:mt-3">Build Africa&apos;s Future</span>
             </h1>
-            <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto mb-10 leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-8 sm:mb-10 leading-relaxed px-2">
               APVIA Ltd - Your trusted partner for investment in Sierra Leone. We offer comprehensive investment opportunities across mining, agriculture, construction, and trade sectors in West Africa.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/contact" className="btn-primary-white text-base">Start Investing Today</Link>
-              <Link href="/services" className="btn-outline-white text-base">Explore Opportunities</Link>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+              <Link href="/contact" className="btn-primary-white text-sm sm:text-base w-full sm:w-auto">Start Investing Today</Link>
+              <Link href="/services" className="btn-outline-white text-sm sm:text-base w-full sm:w-auto">Explore Opportunities</Link>
             </div>
           </div>
         </div>
-
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+        <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2">
           <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center pt-2">
             <div className="w-1 h-3 bg-[#fbbf24] rounded-full animate-bounce" />
           </div>
@@ -151,9 +140,9 @@ export default function HomePage() {
       </section>
 
       {/* Stats */}
-      <section className="py-12 bg-[#052e16]">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <section className="py-10 sm:py-12 bg-[#052e16]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
             {[
               { number: "11+", label: "Business Divisions" },
               { number: "5+", label: "West African Markets" },
@@ -161,8 +150,8 @@ export default function HomePage() {
               { number: "24/7", label: "Operational Support" },
             ].map((stat) => (
               <div key={stat.label}>
-                <div className="text-3xl sm:text-4xl font-bold text-gradient-gold mb-1">{stat.number}</div>
-                <div className="text-white/50 text-sm">{stat.label}</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient-gold mb-1">{stat.number}</div>
+                <div className="text-white/50 text-xs sm:text-sm">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -170,39 +159,39 @@ export default function HomePage() {
       </section>
 
       {/* Vision & Mission */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="grid md:grid-cols-2 gap-10">
-            <div className="card-white p-10">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-xl bg-[#052e16] flex items-center justify-center shrink-0">
-                  <svg className="w-6 h-6 text-[#fbbf24]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <section className="py-16 sm:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-10">
+            <div className="card-white p-6 sm:p-10">
+              <div className="flex items-center gap-3 mb-4 sm:mb-6">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#052e16] flex items-center justify-center shrink-0">
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-[#fbbf24]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                   </svg>
                 </div>
-                <h2 className="text-2xl font-bold text-[#1a1a1a]">Our Vision</h2>
+                <h2 className="text-xl sm:text-2xl font-bold text-[#1a1a1a]">Our Vision</h2>
               </div>
-              <p className="text-[#14532d] font-semibold text-base mb-4 leading-relaxed">&ldquo;{companyData.vision}&rdquo;</p>
-              <p className="text-gray-600 leading-relaxed text-sm mb-6">{companyData.visionDescription}</p>
+              <p className="text-[#14532d] font-semibold text-sm sm:text-base mb-3 sm:mb-4 leading-relaxed">&ldquo;{companyData.vision}&rdquo;</p>
+              <p className="text-gray-600 leading-relaxed text-sm mb-4 sm:mb-6">{companyData.visionDescription}</p>
               <Link href="/about" className="inline-flex items-center gap-2 text-[#14532d] font-semibold text-sm hover:text-[#d97706] transition-colors">
                 Read More <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
               </Link>
             </div>
 
-            <div className="card-white p-10">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-xl bg-[#052e16] flex items-center justify-center shrink-0">
-                  <svg className="w-6 h-6 text-[#fbbf24]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="card-white p-6 sm:p-10">
+              <div className="flex items-center gap-3 mb-4 sm:mb-6">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#052e16] flex items-center justify-center shrink-0">
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-[#fbbf24]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <h2 className="text-2xl font-bold text-[#1a1a1a]">Our Mission</h2>
+                <h2 className="text-xl sm:text-2xl font-bold text-[#1a1a1a]">Our Mission</h2>
               </div>
-              <p className="text-[#14532d] font-semibold text-base mb-4 leading-relaxed">&ldquo;{companyData.mission}&rdquo;</p>
-              <ul className="space-y-3 mb-6">
+              <p className="text-[#14532d] font-semibold text-sm sm:text-base mb-3 sm:mb-4 leading-relaxed">&ldquo;{companyData.mission}&rdquo;</p>
+              <ul className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
                 {companyData.missionActions.slice(0, 3).map((action, i) => (
-                  <li key={i} className="flex items-start gap-2.5 text-gray-600 text-sm">
+                  <li key={i} className="flex items-start gap-2 sm:gap-2.5 text-gray-600 text-sm">
                     <svg className="w-4 h-4 text-[#14532d] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                     <span>{action}</span>
                   </li>
@@ -217,34 +206,30 @@ export default function HomePage() {
       </section>
 
       {/* Why Invest in Sierra Leone */}
-      <section className="py-24 bg-[#f8f9fa]">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="text-center mb-14">
-            <div className="gold-line mx-auto mb-5" />
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#1a1a1a] mb-3">Why Invest in Sierra Leone</h2>
-            <p className="text-gray-500 max-w-2xl mx-auto">Discover the natural resources and strategic advantages that make Sierra Leone a prime investment destination in West Africa</p>
+      <section className="py-16 sm:py-24 bg-[#f8f9fa]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10 sm:mb-14">
+            <div className="gold-line mx-auto mb-4 sm:mb-5" />
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-2 sm:mb-3">Why Invest in Sierra Leone</h2>
+            <p className="text-gray-500 max-w-2xl mx-auto text-sm sm:text-base">Discover the natural resources and strategic advantages that make Sierra Leone a prime investment destination in West Africa</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {[
-              { src: "/videos/energy.mp4", title: "Energy & Power", desc: "Sustainable energy solutions driving Sierra Leone's growth" },
-              { src: "/videos/homepage-x.mp4", title: "Investment Opportunities", desc: "Growing economy with favorable investment policies" },
-              { src: "/videos/flagship-1.mp4", title: "Flagship Projects", desc: "World-class developments across West Africa" },
-            ].map((video) => (
-              <div key={video.src} className="rounded-xl overflow-hidden shadow-lg group">
-                <div className="relative aspect-video bg-[#052e16]">
-                  <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  >
-                    <source src={video.src} type="video/mp4" />
-                  </video>
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#052e16]/90 via-[#052e16]/30 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-5">
-                    <p className="text-white font-bold text-base mb-1">{video.title}</p>
-                    <p className="text-white/70 text-sm">{video.desc}</p>
+              { icon: "M13 10V3L4 14h7v7l9-11h-7z", title: "Energy & Power", desc: "Sustainable energy solutions driving Sierra Leone's growth" },
+              { icon: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4", title: "Rich Mineral Ore", desc: "Abundant mineral resources including diamonds, gold, and rutile" },
+              { icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4", title: "Flagship Projects", desc: "World-class developments across West Africa" },
+            ].map((item) => (
+              <div key={item.title} className="rounded-xl overflow-hidden shadow-lg group bg-[#052e16]">
+                <div className="relative aspect-video flex items-center justify-center">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/10 flex items-center justify-center">
+                    <svg className="w-8 h-8 sm:w-10 sm:h-10 text-[#fbbf24]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={item.icon} />
+                    </svg>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#052e16]/90 via-transparent to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5">
+                    <p className="text-white font-bold text-sm sm:text-base mb-1">{item.title}</p>
+                    <p className="text-white/70 text-xs sm:text-sm">{item.desc}</p>
                   </div>
                 </div>
               </div>
@@ -254,37 +239,28 @@ export default function HomePage() {
       </section>
 
       {/* Vast Untapped Mineral Deposit */}
-      <section className="py-24 bg-[#052e16]">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="text-center mb-14">
-            <div className="gold-line mx-auto mb-5" />
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">Vast Untapped Mineral Deposit</h2>
-            <p className="text-white/60 max-w-2xl mx-auto">Sierra Leone is endowed with extraordinary natural wealth — from rich mineral ores to sustainable energy potential, creating unparalleled investment opportunities</p>
+      <section className="py-16 sm:py-24 bg-[#052e16]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10 sm:mb-14">
+            <div className="gold-line mx-auto mb-4 sm:mb-5" />
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 sm:mb-3">Vast Untapped Mineral Deposit</h2>
+            <p className="text-white/60 max-w-2xl mx-auto text-sm sm:text-base">Sierra Leone is endowed with extraordinary natural wealth — from rich mineral ores to sustainable energy potential, creating unparalleled investment opportunities</p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {[
-              { src: "/videos/video-1.mp4", title: "Rich Mineral Ore", desc: "Abundant deposits of diamonds, gold, rutile, and bauxite" },
-              { src: "/videos/energy.mp4", title: "Energy & Power", desc: "Sustainable energy solutions driving national growth" },
-              { src: "/videos/flagship-4.mp4", title: "Sustainable Mining", desc: "Responsible mineral extraction and community development" },
-              { src: "/videos/flagship-3.mp4", title: "Infrastructure Development", desc: "Building world-class infrastructure across Sierra Leone" },
-            ].map((video) => (
-              <div key={video.src} className="rounded-xl overflow-hidden shadow-lg group">
-                <div className="relative aspect-video bg-black">
-                  <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  >
-                    <source src={video.src} type="video/mp4" />
-                  </video>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-5">
-                    <p className="text-white font-bold text-base mb-1">{video.title}</p>
-                    <p className="text-white/70 text-sm">{video.desc}</p>
-                  </div>
+              { icon: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4", title: "Rich Mineral Ore", desc: "Abundant deposits of diamonds, gold, rutile, and bauxite" },
+              { icon: "M13 10V3L4 14h7v7l9-11h-7z", title: "Energy & Power", desc: "Sustainable energy solutions driving national growth" },
+              { icon: "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z", title: "Sustainable Mining", desc: "Responsible mineral extraction and community development" },
+              { icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4", title: "Infrastructure Development", desc: "Building world-class infrastructure across Sierra Leone" },
+            ].map((item) => (
+              <div key={item.title} className="rounded-xl overflow-hidden shadow-lg bg-black/30 border border-white/10 p-5 sm:p-6 text-center hover:bg-black/50 transition-colors">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-white/10 flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                  <svg className="w-6 h-6 sm:w-7 sm:h-7 text-[#fbbf24]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={item.icon} />
+                  </svg>
                 </div>
+                <h3 className="text-white font-bold text-sm sm:text-base mb-1 sm:mb-2">{item.title}</h3>
+                <p className="text-white/60 text-xs sm:text-sm">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -292,54 +268,30 @@ export default function HomePage() {
       </section>
 
       {/* Investment Highlights */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="text-center mb-14">
-            <div className="gold-line mx-auto mb-5" />
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#1a1a1a] mb-3">Investment Opportunities in Sierra Leone</h2>
-            <p className="text-gray-500 max-w-2xl mx-auto">Explore diverse investment sectors with high growth potential in Sierra Leone and West Africa</p>
+      <section className="py-16 sm:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10 sm:mb-14">
+            <div className="gold-line mx-auto mb-4 sm:mb-5" />
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-2 sm:mb-3">Investment Opportunities in Sierra Leone</h2>
+            <p className="text-gray-500 max-w-2xl mx-auto text-sm sm:text-base">Explore diverse investment sectors with high growth potential in Sierra Leone and West Africa</p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {[
-              {
-                title: "Mining & Minerals",
-                desc: "Invest in Sierra Leone's rich mineral resources including diamonds, gold, rutile, and bauxite. High-return opportunities in responsible mining.",
-                icon: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4",
-              },
-              {
-                title: "Agriculture & Farming",
-                desc: "Sustainable agriculture investments in cocoa, coffee, palm oil, and rice farming. Supporting food security and economic growth.",
-                icon: "M12 22V8m0 0c-2 0-6 2-6 6m6-6c2 0 6 2 6 6m-12 0c0 4 2 6 6 6m0 0c4 0 6-2 6-6",
-              },
-              {
-                title: "Construction & Infrastructure",
-                desc: "Infrastructure development projects including roads, buildings, and utilities. Driving Sierra Leone's modernization.",
-                icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4",
-              },
-              {
-                title: "Import & Export Trade",
-                desc: "Facilitate international trade connecting Sierra Leone with global markets. Strategic trade partnerships and logistics.",
-                icon: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
-              },
-              {
-                title: "Real Estate & Property",
-                desc: "Commercial and residential real estate development in Freetown and growing urban centers. High-demand market.",
-                icon: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6",
-              },
-              {
-                title: "Energy & Utilities",
-                desc: "Renewable energy and utility infrastructure investments. Supporting Sierra Leone's energy transformation.",
-                icon: "M13 10V3L4 14h7v7l9-11h-7z",
-              },
+              { title: "Mining & Minerals", desc: "Invest in Sierra Leone's rich mineral resources including diamonds, gold, rutile, and bauxite.", icon: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" },
+              { title: "Agriculture & Farming", desc: "Sustainable agriculture investments in cocoa, coffee, palm oil, and rice farming.", icon: "M12 22V8m0 0c-2 0-6 2-6 6m6-6c2 0 6 2 6 6m-12 0c0 4 2 6 6 6m0 0c4 0 6-2 6-6" },
+              { title: "Construction & Infrastructure", desc: "Infrastructure development projects including roads, buildings, and utilities.", icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" },
+              { title: "Import & Export Trade", desc: "Facilitate international trade connecting Sierra Leone with global markets.", icon: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" },
+              { title: "Real Estate & Property", desc: "Commercial and residential real estate development in Freetown and growing urban centers.", icon: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" },
+              { title: "Energy & Utilities", desc: "Renewable energy and utility infrastructure investments.", icon: "M13 10V3L4 14h7v7l9-11h-7z" },
             ].map((item) => (
-              <div key={item.title} className="card-white p-8 hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 rounded-xl bg-[#052e16] flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-[#fbbf24]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div key={item.title} className="card-white p-5 sm:p-6 lg:p-8 hover:shadow-xl transition-shadow">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#052e16] flex items-center justify-center mb-3 sm:mb-4">
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-[#fbbf24]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={item.icon} />
                   </svg>
                 </div>
-                <h3 className="text-lg font-bold text-[#1a1a1a] mb-2">{item.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+                <h3 className="text-base sm:text-lg font-bold text-[#1a1a1a] mb-1 sm:mb-2">{item.title}</h3>
+                <p className="text-gray-500 text-xs sm:text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -347,21 +299,21 @@ export default function HomePage() {
       </section>
 
       {/* Core Values */}
-      <section className="py-24 bg-[#f8f9fa]">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="text-center mb-14">
-            <div className="gold-line mx-auto mb-5" />
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#1a1a1a] mb-3">Our Core Values</h2>
-            <p className="text-gray-500 max-w-xl mx-auto">The principles that guide every decision and action at APVIA Ltd</p>
+      <section className="py-16 sm:py-24 bg-[#f8f9fa]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10 sm:mb-14">
+            <div className="gold-line mx-auto mb-4 sm:mb-5" />
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-2 sm:mb-3">Our Core Values</h2>
+            <p className="text-gray-500 max-w-xl mx-auto text-sm sm:text-base">The principles that guide every decision and action at APVIA Ltd</p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {companyData.coreValues.map((value) => (
-              <div key={value.title} className="card-white p-8 text-center">
-                <div className="w-14 h-14 rounded-xl bg-[#052e16] flex items-center justify-center mx-auto mb-4">
+              <div key={value.title} className="card-white p-6 sm:p-8 text-center">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-[#052e16] flex items-center justify-center mx-auto mb-3 sm:mb-4">
                   <ValueIcon name={value.icon} />
                 </div>
-                <h3 className="text-lg font-bold text-[#1a1a1a] mb-2">{value.title}</h3>
-                <p className="text-gray-500 leading-relaxed text-sm">{value.description}</p>
+                <h3 className="text-base sm:text-lg font-bold text-[#1a1a1a] mb-1 sm:mb-2">{value.title}</h3>
+                <p className="text-gray-500 leading-relaxed text-xs sm:text-sm">{value.description}</p>
               </div>
             ))}
           </div>
@@ -369,60 +321,60 @@ export default function HomePage() {
       </section>
 
       {/* Services Preview */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="text-center mb-14">
-            <div className="gold-line mx-auto mb-5" />
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#1a1a1a] mb-3">Our Services</h2>
-            <p className="text-gray-500 max-w-xl mx-auto">Comprehensive solutions across eleven core business verticals</p>
+      <section className="py-16 sm:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10 sm:mb-14">
+            <div className="gold-line mx-auto mb-4 sm:mb-5" />
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-2 sm:mb-3">Our Services</h2>
+            <p className="text-gray-500 max-w-xl mx-auto text-sm sm:text-base">Comprehensive solutions across eleven core business verticals</p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {servicesData.slice(0, 6).map((service) => (
-              <div key={service.id} className="card-white p-8">
-                <div className="w-12 h-12 rounded-xl bg-[#052e16] flex items-center justify-center mb-4">
+              <div key={service.id} className="card-white p-5 sm:p-6 lg:p-8">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#052e16] flex items-center justify-center mb-3 sm:mb-4">
                   <ServiceIcon name={service.icon} />
                 </div>
-                <h3 className="text-lg font-bold text-[#1a1a1a] mb-2">{service.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-3">{service.description}</p>
-                <Link href={`/services#${service.id}`} className="inline-flex items-center gap-2 text-[#14532d] font-semibold text-sm hover:text-[#d97706] transition-colors">
-                  Learn More <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                <h3 className="text-base sm:text-lg font-bold text-[#1a1a1a] mb-1 sm:mb-2">{service.title}</h3>
+                <p className="text-gray-500 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4 line-clamp-3">{service.description}</p>
+                <Link href={`/services#${service.id}`} className="inline-flex items-center gap-2 text-[#14532d] font-semibold text-xs sm:text-sm hover:text-[#d97706] transition-colors">
+                  Learn More <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                 </Link>
               </div>
             ))}
           </div>
-          <div className="text-center mt-14">
-            <Link href="/services" className="btn-primary">View All Services</Link>
+          <div className="text-center mt-10 sm:mt-14">
+            <Link href="/services" className="btn-primary text-sm sm:text-base">View All Services</Link>
           </div>
         </div>
       </section>
 
       {/* Leadership Preview */}
-      <section className="py-24 bg-[#f8f9fa]">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <section className="py-16 sm:py-24 bg-[#f8f9fa]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-10 sm:gap-16 items-center">
             <div className="max-w-lg">
-              <div className="gold-line mb-5" />
-              <h2 className="text-3xl sm:text-4xl font-bold text-[#1a1a1a] mb-5">
+              <div className="gold-line mb-4 sm:mb-5" />
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-4 sm:mb-5">
                 Leadership That <span className="text-gradient-gold">Drives Excellence</span>
               </h2>
-              <p className="text-gray-600 leading-relaxed mb-4">APVIA Ltd is led by a highly experienced and capable management team with diverse backgrounds in business, engineering, finance, law, diplomacy, and international development.</p>
-              <p className="text-gray-600 leading-relaxed mb-8">Our leadership combines local market intelligence with international standards of excellence, delivering end-to-end solutions that create lasting value for stakeholders.</p>
-              <Link href="/team" className="btn-primary">Meet Our Team</Link>
+              <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-sm sm:text-base">APVIA Ltd is led by a highly experienced and capable management team with diverse backgrounds in business, engineering, finance, law, diplomacy, and international development.</p>
+              <p className="text-gray-600 leading-relaxed mb-6 sm:mb-8 text-sm sm:text-base">Our leadership combines local market intelligence with international standards of excellence, delivering end-to-end solutions that create lasting value for stakeholders.</p>
+              <Link href="/team" className="btn-primary text-sm sm:text-base">Meet Our Team</Link>
             </div>
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 gap-4 sm:gap-6">
               {[
                 { role: "Managing Director", icon: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" },
                 { role: "Operations", icon: "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z" },
                 { role: "Finance", icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" },
                 { role: "Strategy", icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" },
               ].map((item) => (
-                <div key={item.role} className="bg-white border border-gray-200 rounded-xl p-6 text-center hover:shadow-md transition-shadow">
-                  <div className="w-12 h-12 rounded-xl bg-[#052e16] flex items-center justify-center mx-auto mb-3">
-                    <svg className="w-6 h-6 text-[#fbbf24]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div key={item.role} className="bg-white border border-gray-200 rounded-xl p-4 sm:p-6 text-center hover:shadow-md transition-shadow">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#052e16] flex items-center justify-center mx-auto mb-2 sm:mb-3">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-[#fbbf24]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={item.icon} />
                     </svg>
                   </div>
-                  <p className="text-gray-700 text-sm font-medium">{item.role}</p>
+                  <p className="text-gray-700 text-xs sm:text-sm font-medium">{item.role}</p>
                 </div>
               ))}
             </div>
@@ -431,14 +383,14 @@ export default function HomePage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-[#052e16]">
-        <div className="max-w-4xl mx-auto px-8 text-center">
-          <div className="gold-line-long mx-auto mb-6" />
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-5">Ready to Invest in Sierra Leone?</h2>
-          <p className="text-white/60 text-lg mb-8">Whether you&apos;re looking for mining, agriculture, construction, or trade opportunities, APVIA Ltd is your trusted partner for investment in Sierra Leone and West Africa.</p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/contact" className="btn-primary-white text-base">Start Investing Today</Link>
-            <Link href="/services" className="btn-outline-white text-base">Explore Opportunities</Link>
+      <section className="py-16 sm:py-24 bg-[#052e16]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="gold-line-long mx-auto mb-4 sm:mb-6" />
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-5">Ready to Invest in Sierra Leone?</h2>
+          <p className="text-white/60 text-sm sm:text-lg mb-6 sm:mb-8">Whether you&apos;re looking for mining, agriculture, construction, or trade opportunities, APVIA Ltd is your trusted partner for investment in Sierra Leone and West Africa.</p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+            <Link href="/contact" className="btn-primary-white text-sm sm:text-base w-full sm:w-auto">Start Investing Today</Link>
+            <Link href="/services" className="btn-outline-white text-sm sm:text-base w-full sm:w-auto">Explore Opportunities</Link>
           </div>
         </div>
       </section>
@@ -456,7 +408,7 @@ function ValueIcon({ name }: { name: string }) {
     check: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z",
   };
   return (
-    <svg className="w-7 h-7 text-[#fbbf24]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <svg className="w-6 h-6 sm:w-7 sm:h-7 text-[#fbbf24]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={icons[name] || icons.star} />
     </svg>
   );
