@@ -115,22 +115,22 @@ export default function TeamPage() {
             <p className="text-gray-500 max-w-xl mx-auto text-sm sm:text-base">Driving our vision of becoming the leading integrated multi-sectoral enterprise in West Africa</p>
           </div>
 
-          {/* Top 3 Leaders */}
-          <div className="grid md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
-            {teamData.slice(0, 3).map((member) => (
+          {/* Top 4 Leaders */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-6 sm:mb-8">
+            {teamData.slice(0, 4).map((member) => (
               <div
                 key={member.id}
                 onClick={() => setSelectedMember(member)}
                 className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 bg-white cursor-pointer"
               >
                 <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#f59e0b] via-[#d97706] to-[#f59e0b] z-10" />
-                <div className="relative h-72 sm:h-80 overflow-hidden bg-[#052e16]">
+                <div className="relative h-64 sm:h-72 overflow-hidden bg-[#052e16]">
                   <Image
                     src={member.image}
                     alt={member.name}
                     fill
                     className="object-contain transition-transform duration-700 group-hover:scale-105 p-4"
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    sizes="(max-width: 640px) 100vw, 25vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#052e16]/90 via-[#052e16]/20 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-5">
