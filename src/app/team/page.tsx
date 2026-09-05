@@ -115,9 +115,9 @@ export default function TeamPage() {
             <p className="text-gray-500 max-w-xl mx-auto text-sm sm:text-base">Driving our vision of becoming the leading integrated multi-sectoral enterprise in West Africa</p>
           </div>
 
-          {/* Top 4 Leaders */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-6 sm:mb-8">
-            {teamData.slice(0, 4).map((member) => (
+          {/* Top 3 Leaders */}
+          <div className="grid md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
+            {teamData.slice(0, 3).map((member) => (
               <div
                 key={member.id}
                 onClick={() => setSelectedMember(member)}
