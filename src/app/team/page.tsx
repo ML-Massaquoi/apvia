@@ -151,7 +151,7 @@ export default function TeamPage() {
 
           {/* Remaining Members */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            {teamData.slice(3).map((member) => (
+            {teamData.slice(4).map((member) => (
               <div
                 key={member.id}
                 onClick={() => setSelectedMember(member)}
