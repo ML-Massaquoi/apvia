@@ -5,6 +5,8 @@ import { companyData } from "@/data/company";
 import { servicesData } from "@/data/services";
 import HeroVideoSlideshow from "@/components/HeroVideoSlideshow";
 import HomepageVideoSections from "@/components/HomepageVideoSections";
+import InvestmentOpportunities from "@/components/InvestmentOpportunities";
+import InvestorCharts from "@/components/InvestorCharts";
 
 export const metadata: Metadata = {
   title: "Invest in Sierra Leone | APVIA Ltd - Leading Investment Company",
@@ -209,36 +211,11 @@ export default function HomePage() {
       {/* Video Sections - Why Invest + Mineral Deposit */}
       <HomepageVideoSections />
 
-      {/* Investment Highlights */}
-      <section className="py-16 sm:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10 sm:mb-14">
-            <div className="gold-line mx-auto mb-4 sm:mb-5" />
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-2 sm:mb-3">Investment Opportunities in Sierra Leone</h2>
-            <p className="text-gray-500 max-w-2xl mx-auto text-sm sm:text-base">Explore diverse investment sectors with high growth potential in Sierra Leone and West Africa</p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-            {[
-              { title: "Mining & Minerals", desc: "Invest in Sierra Leone's rich mineral resources including diamonds, gold, rutile, and bauxite.", icon: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" },
-              { title: "Agriculture & Farming", desc: "Sustainable agriculture investments in cocoa, coffee, palm oil, and rice farming.", icon: "M12 22V8m0 0c-2 0-6 2-6 6m6-6c2 0 6 2 6 6m-12 0c0 4 2 6 6 6m0 0c4 0 6-2 6-6" },
-              { title: "Construction & Infrastructure", desc: "Infrastructure development projects including roads, buildings, and utilities.", icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" },
-              { title: "Import & Export Trade", desc: "Facilitate international trade connecting Sierra Leone with global markets.", icon: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" },
-              { title: "Real Estate & Property", desc: "Commercial and residential real estate development in Freetown and growing urban centers.", icon: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" },
-              { title: "Energy & Utilities", desc: "Renewable energy and utility infrastructure investments.", icon: "M13 10V3L4 14h7v7l9-11h-7z" },
-            ].map((item) => (
-              <div key={item.title} className="card-white p-5 sm:p-6 lg:p-8 hover:shadow-xl transition-shadow">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#052e16] flex items-center justify-center mb-3 sm:mb-4">
-                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-[#fbbf24]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={item.icon} />
-                  </svg>
-                </div>
-                <h3 className="text-base sm:text-lg font-bold text-[#1a1a1a] mb-1 sm:mb-2">{item.title}</h3>
-                <p className="text-gray-500 text-xs sm:text-sm leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Investment Opportunities */}
+      <InvestmentOpportunities />
+
+      {/* Investor Charts */}
+      <InvestorCharts />
 
       {/* Core Values */}
       <section className="py-16 sm:py-24 bg-[#f8f9fa]">
