@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
-import { companyData } from "@/data/company";
 import HeroVideoSlideshow from "@/components/HeroVideoSlideshow";
+import HomepageVisionMission from "@/components/HomepageVisionMission";
 import HomepageVideoSections from "@/components/HomepageVideoSections";
 import InvestmentOpportunities from "@/components/InvestmentOpportunities";
 import InvestorCharts from "@/components/InvestorCharts";
@@ -164,51 +163,7 @@ export default function HomePage() {
       </section>
 
       {/* Vision & Mission */}
-      <section className="py-16 sm:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-6 sm:gap-10">
-            <div className="card-white p-6 sm:p-10">
-              <div className="flex items-center gap-3 mb-4 sm:mb-6">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#052e16] flex items-center justify-center shrink-0">
-                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-[#fbbf24]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                  </svg>
-                </div>
-                <h2 className="text-xl sm:text-2xl font-bold text-[#1a1a1a]">Our Vision</h2>
-              </div>
-              <p className="text-[#14532d] font-semibold text-sm sm:text-base mb-3 sm:mb-4 leading-relaxed">&ldquo;{companyData.vision}&rdquo;</p>
-              <p className="text-gray-600 leading-relaxed text-sm mb-4 sm:mb-6">{companyData.visionDescription}</p>
-              <Link href="/about" className="inline-flex items-center gap-2 text-[#14532d] font-semibold text-sm hover:text-[#d97706] transition-colors">
-                Read More <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-              </Link>
-            </div>
-
-            <div className="card-white p-6 sm:p-10">
-              <div className="flex items-center gap-3 mb-4 sm:mb-6">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#052e16] flex items-center justify-center shrink-0">
-                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-[#fbbf24]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                </div>
-                <h2 className="text-xl sm:text-2xl font-bold text-[#1a1a1a]">Our Mission</h2>
-              </div>
-              <p className="text-[#14532d] font-semibold text-sm sm:text-base mb-3 sm:mb-4 leading-relaxed">&ldquo;{companyData.mission}&rdquo;</p>
-              <ul className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
-                {companyData.missionActions.slice(0, 3).map((action, i) => (
-                  <li key={i} className="flex items-start gap-2 sm:gap-2.5 text-gray-600 text-sm">
-                    <svg className="w-4 h-4 text-[#14532d] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                    <span>{action}</span>
-                  </li>
-                ))}
-              </ul>
-              <Link href="/about" className="inline-flex items-center gap-2 text-[#14532d] font-semibold text-sm hover:text-[#d97706] transition-colors">
-                Read More <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HomepageVisionMission />
 
       {/* Video Sections - Why Invest + Mineral Deposit */}
       <HomepageVideoSections />
