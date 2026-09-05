@@ -48,7 +48,7 @@ export default function InsightModal({ isOpen, onClose, title, overview, highlig
         onClick={(e) => e.stopPropagation()}
       >
         {/* Gold accent bar */}
-        <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#f59e0b] via-[#d97706] to-[#f59e0b] rounded-t-2xl" />
+        <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#052e16] via-[#14532d] to-[#052e16] rounded-t-2xl" />
 
         {/* Close button */}
         <button
