@@ -4,6 +4,7 @@ import Image from "next/image";
 import { companyData } from "@/data/company";
 import { servicesData } from "@/data/services";
 import HeroVideoSlideshow from "@/components/HeroVideoSlideshow";
+import HomepageVideoSections from "@/components/HomepageVideoSections";
 
 export const metadata: Metadata = {
   title: "Invest in Sierra Leone | APVIA Ltd - Leading Investment Company",
@@ -205,67 +206,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why Invest in Sierra Leone */}
-      <section className="py-16 sm:py-24 bg-[#f8f9fa]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10 sm:mb-14">
-            <div className="gold-line mx-auto mb-4 sm:mb-5" />
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-2 sm:mb-3">Why Invest in Sierra Leone</h2>
-            <p className="text-gray-500 max-w-2xl mx-auto text-sm sm:text-base">Discover the natural resources and strategic advantages that make Sierra Leone a prime investment destination in West Africa</p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            {[
-              { icon: "M13 10V3L4 14h7v7l9-11h-7z", title: "Energy & Power", desc: "Sustainable energy solutions driving Sierra Leone's growth" },
-              { icon: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4", title: "Rich Mineral Ore", desc: "Abundant mineral resources including diamonds, gold, and rutile" },
-              { icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4", title: "Flagship Projects", desc: "World-class developments across West Africa" },
-            ].map((item) => (
-              <div key={item.title} className="rounded-xl overflow-hidden shadow-lg group bg-[#052e16]">
-                <div className="relative aspect-video flex items-center justify-center">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/10 flex items-center justify-center">
-                    <svg className="w-8 h-8 sm:w-10 sm:h-10 text-[#fbbf24]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={item.icon} />
-                    </svg>
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#052e16]/90 via-transparent to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5">
-                    <p className="text-white font-bold text-sm sm:text-base mb-1">{item.title}</p>
-                    <p className="text-white/70 text-xs sm:text-sm">{item.desc}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Vast Untapped Mineral Deposit */}
-      <section className="py-16 sm:py-24 bg-[#052e16]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10 sm:mb-14">
-            <div className="gold-line mx-auto mb-4 sm:mb-5" />
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 sm:mb-3">Vast Untapped Mineral Deposit</h2>
-            <p className="text-white/60 max-w-2xl mx-auto text-sm sm:text-base">Sierra Leone is endowed with extraordinary natural wealth — from rich mineral ores to sustainable energy potential, creating unparalleled investment opportunities</p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            {[
-              { icon: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4", title: "Rich Mineral Ore", desc: "Abundant deposits of diamonds, gold, rutile, and bauxite" },
-              { icon: "M13 10V3L4 14h7v7l9-11h-7z", title: "Energy & Power", desc: "Sustainable energy solutions driving national growth" },
-              { icon: "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z", title: "Sustainable Mining", desc: "Responsible mineral extraction and community development" },
-              { icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4", title: "Infrastructure Development", desc: "Building world-class infrastructure across Sierra Leone" },
-            ].map((item) => (
-              <div key={item.title} className="rounded-xl overflow-hidden shadow-lg bg-black/30 border border-white/10 p-5 sm:p-6 text-center hover:bg-black/50 transition-colors">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-white/10 flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                  <svg className="w-6 h-6 sm:w-7 sm:h-7 text-[#fbbf24]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={item.icon} />
-                  </svg>
-                </div>
-                <h3 className="text-white font-bold text-sm sm:text-base mb-1 sm:mb-2">{item.title}</h3>
-                <p className="text-white/60 text-xs sm:text-sm">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Video Sections - Why Invest + Mineral Deposit */}
+      <HomepageVideoSections />
 
       {/* Investment Highlights */}
       <section className="py-16 sm:py-24 bg-white">
