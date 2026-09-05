@@ -169,11 +169,6 @@ export default function Navigation() {
               Get in Touch
             </Link>
 
-            {/* Mobile CTA */}
-            <Link href="/contact" onClick={() => setIsOpen(false)} className="md:hidden btn-primary text-xs py-1.5 px-3">
-              Get in Touch
-            </Link>
-
             {/* Mobile Menu Button */}
             <button onClick={() => setIsOpen(!isOpen)} className="md:hidden relative w-8 h-8 flex items-center justify-center rounded-md hover:bg-gray-100 transition-colors" aria-label="Toggle menu">
               <div className="flex flex-col gap-1 w-4.5">
