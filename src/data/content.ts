@@ -1074,3 +1074,54 @@ export const aboutInvestmentShowcase = [
     facts: whyInvestVideos[1].facts,
   },
 ];
+
+export const agricultureVideos = [
+  {
+    src: "/videos/cattle-farming.mp4",
+    title: "Cattle & Livestock Farming",
+    desc: "Commercial cattle rearing and livestock production for meat and dairy",
+    modalTitle: "Cattle & Livestock Investment Opportunity",
+    modalDescription:
+      "Sierra Leone's livestock sector is significantly underserved with a growing population of 8 million+ demanding affordable protein. The country's cattle herd is estimated at just 350,000 head — far below demand — creating a massive gap for commercial cattle rearing operations. APVIA's livestock division focuses on beef cattle production, dairy farming, and value-added processing. With abundant grazing land, access to crossbreeding genetics, and government support for food security investments, the sector offers strong returns with a 3-5 year payback period.",
+    facts: [
+      { label: "Cattle Herd", value: "350K" },
+      { label: "Demand Gap", value: "60%+" },
+      { label: "Grazing Land", value: "2M ha" },
+      { label: "Protein Demand", value: "Growing 8% pa" },
+      { label: "Govt Support", value: "Tax Incentives" },
+      { label: "ROI Period", value: "3-5 yrs" },
+    ],
+  },
+  {
+    src: "/videos/poultry-farming.mp4",
+    title: "Poultry Farming & Processing",
+    desc: "Integrated poultry operations from hatchery to processed chicken products",
+    modalTitle: "Poultry Farming Investment Opportunity",
+    modalDescription:
+      "Sierra Leone's poultry sector presents a compelling investment opportunity driven by a growing population of 8 million+ with increasing demand for affordable protein. The country currently imports over 60% of its poultry products, creating a massive gap for local production. APVIA's poultry division operates integrated farming, hatchery, feed milling, and processing operations — positioning the company to capture value across the entire poultry value chain. With rising urbanization, a growing middle class, and government support for local food production, the sector offers strong growth potential and attractive returns for investors.",
+    facts: [
+      { label: "Population", value: "8M+" },
+      { label: "Import Gap", value: "60%+" },
+      { label: "Urbanization", value: "4.2% pa" },
+      { label: "Feed Cost", value: "Low" },
+      { label: "Govt Support", value: "Tax Holiday" },
+      { label: "ROI Period", value: "2-4 yrs" },
+    ],
+  },
+  {
+    src: "/videos/livestock-farming.mp4",
+    title: "Livestock & Feed Production",
+    desc: "Local feed milling and livestock support infrastructure for sustainable farming",
+    modalTitle: "Livestock & Feed Production Investment",
+    modalDescription:
+      "The livestock feed supply chain represents a critical bottleneck and investment opportunity in Sierra Leone. With limited commercial feed production, farmers rely on expensive imported feeds. APVIA's feed milling operations use locally sourced maize, soy, and rice bran to produce affordable, high-quality animal feed. Our vertically integrated model — combining livestock production with feed manufacturing — reduces costs, ensures supply security, and creates multiple revenue streams across the value chain.",
+    facts: [
+      { label: "Feed Market", value: "$50M+" },
+      { label: "Local Inputs", value: "85%" },
+      { label: "Cost Saving", value: "40%" },
+      { label: "Capacity", value: "5,000 t/yr" },
+      { label: "Export Ready", value: "Yes" },
+      { label: "Partnerships", value: "3 Intl" },
+    ],
+  },
+];

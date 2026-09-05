@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import VideoModal from "@/components/VideoModal";
-import { whyInvestVideos, mineralVideos } from "@/data/content";
+import { whyInvestVideos, mineralVideos, agricultureVideos } from "@/data/content";
 
 export default function HomepageVideoSections() {
   const [selectedVideo, setSelectedVideo] = useState<typeof whyInvestVideos[0] | null>(null);
@@ -60,6 +60,22 @@ export default function HomepageVideoSections() {
         videoSrc={selectedVideo?.src || ""}
         facts={selectedVideo?.facts || []}
       />
+
+      {/* Agriculture & Livestock */}
+      <section className="py-16 sm:py-24 bg-[#f8f9fa]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10 sm:mb-14">
+            <div className="gold-line mx-auto mb-4 sm:mb-5" />
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-2 sm:mb-3">Agriculture & Livestock</h2>
+            <p className="text-gray-500 max-w-2xl mx-auto text-sm sm:text-base">Integrated farming, poultry, and livestock operations leveraging Sierra Leone's abundant arable land and growing protein demand</p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            {agricultureVideos.map((video) => (
+              <MineralVideoCard key={video.src} video={video} />
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Vast Untapped Mineral Deposit */}
       <section className="py-16 sm:py-24 bg-[#052e16]">
