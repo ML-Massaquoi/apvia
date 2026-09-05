@@ -21,6 +21,15 @@ const governanceData = [
       { label: "Attendance", value: "95%", desc: "Board meeting attendance rate" },
       { label: "Governance Code", value: "Compliant", desc: "Full compliance with corporate governance code" },
     ],
+    chart: {
+      type: "pie" as const,
+      title: "Board Composition",
+      data: [
+        { name: "Independent", value: 60, color: "#052e16" },
+        { name: "Executive", value: 25, color: "#14532d" },
+        { name: "Non-Exec", value: 15, color: "#d97706" },
+      ],
+    },
   },
   {
     title: "Executive Management",
@@ -35,6 +44,17 @@ const governanceData = [
       { label: "Retention", value: "90%", desc: "Executive team retention rate" },
       { label: "Strategy", value: "5 Year", desc: "Strategic plan with annual reviews" },
     ],
+    chart: {
+      type: "bar" as const,
+      title: "Performance by Division (%)",
+      data: [
+        { name: "Mining", value: 98, color: "#052e16" },
+        { name: "Construction", value: 96, color: "#14532d" },
+        { name: "Trade", value: 95, color: "#d97706" },
+        { name: "Energy", value: 94, color: "#166534" },
+        { name: "Services", value: 97, color: "#fbbf24" },
+      ],
+    },
   },
   {
     title: "Advisory Council",
@@ -49,6 +69,16 @@ const governanceData = [
       { label: "Academic", value: "1", desc: "University professor and research advisor" },
       { label: "Meetings", value: "Bi-Annual", desc: "Regular advisory council meetings" },
     ],
+    chart: {
+      type: "pie" as const,
+      title: "Advisory Council Composition",
+      data: [
+        { name: "Government", value: 38, color: "#052e16" },
+        { name: "Diplomatic", value: 25, color: "#14532d" },
+        { name: "Industry", value: 25, color: "#d97706" },
+        { name: "Academic", value: 12, color: "#fbbf24" },
+      ],
+    },
   },
 ];
 
@@ -251,6 +281,7 @@ export default function AboutPage() {
         title={selectedValue ? `Our Value: ${selectedValue.title}` : ""}
         overview={selectedValue?.modalOverview || ""}
         highlights={selectedValue?.highlights || []}
+        chart={selectedValue?.chart}
         cta="Partner With Us"
       />
 
@@ -343,6 +374,7 @@ export default function AboutPage() {
             title={selectedGovernance?.title || ""}
             overview={selectedGovernance?.modalOverview || ""}
             highlights={selectedGovernance?.highlights || []}
+            chart={selectedGovernance?.chart}
             cta="Learn More About Governance"
           />
 

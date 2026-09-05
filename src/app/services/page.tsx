@@ -18,6 +18,16 @@ const whyChooseData = [
       { label: "Risk Reduction", value: "60%", desc: "Reduced risk through unified project management" },
       { label: "Quality", value: "Consistent", desc: "Uniform quality standards across all service lines" },
     ],
+    chart: {
+      type: "pie" as const,
+      title: "Integrated Service Delivery Savings",
+      data: [
+        { name: "Cost Reduction", value: 28, color: "#052e16" },
+        { name: "Time Savings", value: 32, color: "#14532d" },
+        { name: "Risk Reduction", value: 22, color: "#d97706" },
+        { name: "Quality Gains", value: 18, color: "#fbbf24" },
+      ],
+    },
   },
   {
     title: "Local Market Knowledge",
@@ -31,6 +41,17 @@ const whyChooseData = [
       { label: "Languages", value: "5+", desc: "Multilingual team covering English, Krio, and local languages" },
       { label: "Government", value: "Strong", desc: "Established relationships with government agencies" },
     ],
+    chart: {
+      type: "bar" as const,
+      title: "Market Presence by Sector",
+      data: [
+        { name: "Mining", value: 90, color: "#052e16" },
+        { name: "Construction", value: 85, color: "#14532d" },
+        { name: "Trade", value: 80, color: "#d97706" },
+        { name: "Energy", value: 75, color: "#166534" },
+        { name: "Agri", value: 70, color: "#fbbf24" },
+      ],
+    },
   },
   {
     title: "International Standards",
@@ -44,6 +65,17 @@ const whyChooseData = [
       { label: "Compliance", value: "100%", desc: "Full regulatory compliance across all markets" },
       { label: "Audits", value: "Annual", desc: "Independent third-party audits and certifications" },
     ],
+    chart: {
+      type: "pie" as const,
+      title: "ISO Certification Coverage",
+      data: [
+        { name: "Quality (9001)", value: 30, color: "#052e16" },
+        { name: "Environment (14001)", value: 22, color: "#14532d" },
+        { name: "Safety (45001)", value: 20, color: "#d97706" },
+        { name: "Info Security (27001)", value: 15, color: "#166534" },
+        { name: "Anti-Bribery (37001)", value: 13, color: "#fbbf24" },
+      ],
+    },
   },
   {
     title: "Strategic Location",
@@ -57,6 +89,16 @@ const whyChooseData = [
       { label: "Time Zone", value: "GMT", desc: "Compatible time zone for European and African business" },
       { label: "Air Links", value: "Direct", desc: "Direct flights to major European and African cities" },
     ],
+    chart: {
+      type: "pie" as const,
+      title: "Trade Access by Region",
+      data: [
+        { name: "ECOWAS", value: 40, color: "#052e16" },
+        { name: "Europe", value: 30, color: "#14532d" },
+        { name: "Asia", value: 18, color: "#d97706" },
+        { name: "Americas", value: 12, color: "#fbbf24" },
+      ],
+    },
   },
   {
     title: "Financial Strength",
@@ -70,6 +112,17 @@ const whyChooseData = [
       { label: "Investors", value: "15+", desc: "Active investor relationships and partnerships" },
       { label: "Credit", value: "Strong", desc: "Strong credit rating and financial standing" },
     ],
+    chart: {
+      type: "bar" as const,
+      title: "Revenue Growth by Division ($M)",
+      data: [
+        { name: "Mining", value: 14, color: "#052e16" },
+        { name: "Construction", value: 11, color: "#14532d" },
+        { name: "Trade", value: 9, color: "#d97706" },
+        { name: "Logistics", value: 7, color: "#166534" },
+        { name: "Other", value: 9, color: "#fbbf24" },
+      ],
+    },
   },
   {
     title: "Ethical Practices",
@@ -83,6 +136,17 @@ const whyChooseData = [
       { label: "Environmental", value: "Carbon Neutral", desc: "Targeting carbon neutrality by 2035" },
       { label: "Whistleblower", value: "24/7", desc: "Anonymous reporting with guaranteed investigation" },
     ],
+    chart: {
+      type: "pie" as const,
+      title: "Governance Compliance",
+      data: [
+        { name: "Board Oversight", value: 30, color: "#052e16" },
+        { name: "Ethics Training", value: 25, color: "#14532d" },
+        { name: "Transparency", value: 22, color: "#d97706" },
+        { name: "Community", value: 15, color: "#166534" },
+        { name: "Environmental", value: 8, color: "#fbbf24" },
+      ],
+    },
   },
 ];
 
@@ -244,6 +308,7 @@ export default function ServicesPage() {
         title={selectedWhy?.title || ""}
         overview={selectedWhy?.overview || ""}
         highlights={selectedWhy?.highlights || []}
+        chart={selectedWhy?.chart}
         cta="Discuss With Us"
       />
 
@@ -252,14 +317,8 @@ export default function ServicesPage() {
         onClose={() => setSelectedService(null)}
         title={selectedService?.title || ""}
         overview={selectedService?.description || ""}
-        highlights={[
-          { label: "Services", value: `${selectedService?.services.length || 0}`, desc: "Core service offerings in this division" },
-          { label: "Capabilities", value: `${selectedService?.capabilities.length || 0}`, desc: "Key capabilities and competencies" },
-          { label: "Quality", value: "ISO Certified", desc: "All services delivered to international standards" },
-          { label: "Support", value: "24/7", desc: "Round-the-clock operational support" },
-          { label: "Delivery", value: "On-Time", desc: "98% on-time delivery rate across all services" },
-          { label: "Coverage", value: "Regional", desc: "Service delivery across Sierra Leone and West Africa" },
-        ]}
+        highlights={selectedService?.highlights || []}
+        chart={selectedService?.chart}
         cta="Discuss This Service"
       />
 

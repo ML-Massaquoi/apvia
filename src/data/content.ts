@@ -48,6 +48,17 @@ export const investmentSectors = [
       { label: "Export Growth", value: "22% YoY", desc: "Year-on-year growth in agricultural exports driven by global demand" },
       { label: "Tax Holiday", value: "10 yrs", desc: "Government tax holiday for agricultural investments with duty-free machinery import" },
     ],
+    chart: {
+      type: "pie" as const,
+      title: "Agricultural Export Composition",
+      data: [
+        { name: "Cocoa", value: 32, color: "#052e16" },
+        { name: "Rice", value: 25, color: "#14532d" },
+        { name: "Palm Oil", value: 18, color: "#d97706" },
+        { name: "Cashew", value: 15, color: "#166534" },
+        { name: "Other Crops", value: 10, color: "#fbbf24" },
+      ],
+    },
   },
   {
     id: "construction",
@@ -65,6 +76,17 @@ export const investmentSectors = [
       { label: "Govt Guarantee", value: "Sovereign", desc: "Sovereign-backed guarantees ensuring secure returns on infrastructure investments" },
       { label: "Job Creation", value: "50K+", desc: "Estimated jobs to be created across all infrastructure projects by 2030" },
     ],
+    chart: {
+      type: "bar" as const,
+      title: "Infrastructure Investment Pipeline ($B)",
+      data: [
+        { name: "Roads", value: 4.2, color: "#052e16" },
+        { name: "Ports", value: 3.1, color: "#14532d" },
+        { name: "Buildings", value: 2.8, color: "#d97706" },
+        { name: "Water", value: 2.3, color: "#166534" },
+        { name: "Energy", value: 2.6, color: "#fbbf24" },
+      ],
+    },
   },
   {
     id: "trade",
@@ -82,6 +104,17 @@ export const investmentSectors = [
       { label: "Port Throughput", value: "2M tons", desc: "Annual cargo throughput at Freetown deep-water port with expansion underway" },
       { label: "Trade Partners", value: "45+", desc: "Active trade partnerships across Africa, Europe, Asia, and the Americas" },
     ],
+    chart: {
+      type: "pie" as const,
+      title: "Trade Volume by Region",
+      data: [
+        { name: "ECOWAS", value: 35, color: "#052e16" },
+        { name: "EU", value: 28, color: "#14532d" },
+        { name: "Asia", value: 22, color: "#d97706" },
+        { name: "Americas", value: 10, color: "#166534" },
+        { name: "Other", value: 5, color: "#fbbf24" },
+      ],
+    },
   },
   {
     id: "realestate",
@@ -99,6 +132,17 @@ export const investmentSectors = [
       { label: "SEZ Benefits", value: "Tax-Free", desc: "Special Economic Zone incentives including tax holidays and duty exemptions" },
       { label: "ROI Period", value: "4-6 yrs", desc: "Average payback period for real estate investments in prime locations" },
     ],
+    chart: {
+      type: "bar" as const,
+      title: "Freetown Property Price Growth (% YoY)",
+      data: [
+        { name: "2020", value: 18, color: "#14532d" },
+        { name: "2021", value: 20, color: "#14532d" },
+        { name: "2022", value: 22, color: "#052e16" },
+        { name: "2023", value: 24, color: "#052e16" },
+        { name: "2024", value: 25, color: "#d97706" },
+      ],
+    },
   },
   {
     id: "energy",
@@ -116,6 +160,17 @@ export const investmentSectors = [
       { label: "Mini-Grids", value: "200+", desc: "Identified mini-grid sites for off-grid and mini-grid power solutions" },
       { label: "IPP Licenses", value: "12 Issued", desc: "Independent Power Producer licenses issued with guaranteed off-take agreements" },
     ],
+    chart: {
+      type: "pie" as const,
+      title: "Target Energy Mix by 2030",
+      data: [
+        { name: "Solar", value: 38, color: "#d97706" },
+        { name: "Hydro", value: 28, color: "#052e16" },
+        { name: "Mini-Grids", value: 18, color: "#14532d" },
+        { name: "Thermal", value: 10, color: "#166534" },
+        { name: "Wind", value: 6, color: "#fbbf24" },
+      ],
+    },
   },
 ];
 
@@ -157,6 +212,17 @@ export const servicesContent = [
       { label: "On-Time", value: "98%", desc: "Projects delivered on or ahead of schedule" },
       { label: "Safety", value: "Zero Harm", desc: "Zero lost-time incidents on construction sites" },
     ],
+    chart: {
+      type: "pie" as const,
+      title: "Project Portfolio by Type",
+      data: [
+        { name: "Roads & Highways", value: 30, color: "#052e16" },
+        { name: "Buildings", value: 25, color: "#14532d" },
+        { name: "Water Systems", value: 20, color: "#d97706" },
+        { name: "Energy", value: 15, color: "#166534" },
+        { name: "Ports & Bridges", value: 10, color: "#fbbf24" },
+      ],
+    },
   },
   {
     id: "materials",
@@ -192,6 +258,17 @@ export const servicesContent = [
       { label: "Delivery", value: "<48 hrs", desc: "Average delivery time for standard orders" },
       { label: "Suppliers", value: "30+", desc: "Verified international and local material suppliers" },
     ],
+    chart: {
+      type: "bar" as const,
+      title: "Inventory by Category (SKUs)",
+      data: [
+        { name: "Cement", value: 120, color: "#052e16" },
+        { name: "Steel", value: 95, color: "#14532d" },
+        { name: "Aggregates", value: 85, color: "#d97706" },
+        { name: "Finishing", value: 110, color: "#166534" },
+        { name: "Roofing", value: 90, color: "#fbbf24" },
+      ],
+    },
   },
   {
     id: "trade",
@@ -230,6 +307,14 @@ export const servicesContent = [
       { label: "Growth", value: "22% YoY", desc: "Year-on-year trade volume growth rate" },
       { label: "Partners", value: "40+", desc: "Verified global trade partners and suppliers" },
     ],
+    chart: {
+      type: "pie" as const,
+      title: "Import vs Export Volume",
+      data: [
+        { name: "Imports", value: 55, color: "#052e16" },
+        { name: "Exports", value: 45, color: "#d97706" },
+      ],
+    },
   },
   {
     id: "procurement",
@@ -263,6 +348,17 @@ export const servicesContent = [
       { label: "Transparency", value: "100%", desc: "Full audit trail and transparent procurement process" },
       { label: "Tenders", value: "100+/yr", desc: "Tender processes managed annually" },
     ],
+    chart: {
+      type: "bar" as const,
+      title: "Cost Savings by Category (%)",
+      data: [
+        { name: "Materials", value: 22, color: "#052e16" },
+        { name: "Services", value: 18, color: "#14532d" },
+        { name: "Equipment", value: 25, color: "#d97706" },
+        { name: "Logistics", value: 15, color: "#166534" },
+        { name: "Labour", value: 20, color: "#fbbf24" },
+      ],
+    },
   },
   {
     id: "logistics",
@@ -298,6 +394,17 @@ export const servicesContent = [
       { label: "Cross-Border", value: "5 Countries", desc: "Cross-border logistics operations across West Africa" },
       { label: "Uptime", value: "99%", desc: "Fleet availability and operational uptime" },
     ],
+    chart: {
+      type: "pie" as const,
+      title: "Fleet Composition",
+      data: [
+        { name: "Flatbeds", value: 30, color: "#052e16" },
+        { name: "Container Carriers", value: 25, color: "#14532d" },
+        { name: "Tankers", value: 20, color: "#d97706" },
+        { name: "Heavy Haulage", value: 15, color: "#166534" },
+        { name: "Cold Chain", value: 10, color: "#fbbf24" },
+      ],
+    },
   },
   {
     id: "mining",
@@ -332,6 +439,17 @@ export const servicesContent = [
       { label: "ESG", value: "AA Rating", desc: "Environmental, Social, and Governance compliance rating" },
       { label: "Training", value: "500+/yr", desc: "Mining operators trained and certified annually" },
     ],
+    chart: {
+      type: "pie" as const,
+      title: "Mineral Revenue by Type",
+      data: [
+        { name: "Diamonds", value: 32, color: "#052e16" },
+        { name: "Rutile", value: 26, color: "#14532d" },
+        { name: "Gold", value: 20, color: "#d97706" },
+        { name: "Bauxite", value: 14, color: "#166534" },
+        { name: "Iron Ore", value: 8, color: "#fbbf24" },
+      ],
+    },
   },
   {
     id: "maritime",
@@ -367,6 +485,17 @@ export const servicesContent = [
       { label: "Response", value: "24/7", desc: "Round-the-clock port operations and vessel support" },
       { label: "Clients", value: "30+", desc: "International shipping lines and cargo owners served" },
     ],
+    chart: {
+      type: "bar" as const,
+      title: "Cargo Throughput Growth (M tons)",
+      data: [
+        { name: "2020", value: 1.2, color: "#14532d" },
+        { name: "2021", value: 1.4, color: "#14532d" },
+        { name: "2022", value: 1.6, color: "#052e16" },
+        { name: "2023", value: 1.8, color: "#052e16" },
+        { name: "2024", value: 2.0, color: "#d97706" },
+      ],
+    },
   },
   {
     id: "agriculture",
@@ -402,6 +531,17 @@ export const servicesContent = [
       { label: "Export Growth", value: "22% YoY", desc: "Year-on-year agricultural export growth" },
       { label: "Partners", value: "200+", desc: "Smallholder farmers in out-grower schemes" },
     ],
+    chart: {
+      type: "pie" as const,
+      title: "Crop Export Mix",
+      data: [
+        { name: "Cocoa", value: 35, color: "#052e16" },
+        { name: "Rice", value: 25, color: "#14532d" },
+        { name: "Fish & Seafood", value: 20, color: "#d97706" },
+        { name: "Palm Oil", value: 12, color: "#166534" },
+        { name: "Other", value: 8, color: "#fbbf24" },
+      ],
+    },
   },
   {
     id: "machinery",
@@ -436,6 +576,17 @@ export const servicesContent = [
       { label: "Maintenance", value: "Full Service", desc: "Comprehensive maintenance and repair services" },
       { label: "Training", value: "Included", desc: "Operator training included with equipment supply" },
     ],
+    chart: {
+      type: "bar" as const,
+      title: "Equipment Available by Sector",
+      data: [
+        { name: "Construction", value: 180, color: "#052e16" },
+        { name: "Agriculture", value: 120, color: "#14532d" },
+        { name: "Industrial", value: 95, color: "#d97706" },
+        { name: "Transport", value: 65, color: "#166534" },
+        { name: "Power Gen", value: 40, color: "#fbbf24" },
+      ],
+    },
   },
   {
     id: "partnerships",
@@ -469,6 +620,17 @@ export const servicesContent = [
       { label: "Success Rate", value: "90%", desc: "Partnerships meeting or exceeding performance targets" },
       { label: "New JVs", value: "5/yr", desc: "Average new partnership formations per year" },
     ],
+    chart: {
+      type: "pie" as const,
+      title: "Partnerships by Sector",
+      data: [
+        { name: "Mining", value: 28, color: "#052e16" },
+        { name: "Construction", value: 22, color: "#14532d" },
+        { name: "Trade", value: 20, color: "#d97706" },
+        { name: "Energy", value: 18, color: "#166534" },
+        { name: "Other", value: 12, color: "#fbbf24" },
+      ],
+    },
   },
   {
     id: "consultancy",
@@ -505,6 +667,17 @@ export const servicesContent = [
       { label: "Network", value: "500+", desc: "Professional contacts across government, industry, and academia" },
       { label: "Experience", value: "30+ yrs", desc: "Combined consultancy experience across the leadership team" },
     ],
+    chart: {
+      type: "bar" as const,
+      title: "Client Satisfaction Score",
+      data: [
+        { name: "2020", value: 85, color: "#14532d" },
+        { name: "2021", value: 88, color: "#14532d" },
+        { name: "2022", value: 91, color: "#052e16" },
+        { name: "2023", value: 94, color: "#052e16" },
+        { name: "2024", value: 96, color: "#d97706" },
+      ],
+    },
   },
 ];
 
@@ -605,6 +778,17 @@ export const coreValuesContent = [
       { label: "Academic", value: "8", desc: "University and research institution collaborations" },
       { label: "Industry Groups", value: "6", desc: "Active membership in industry associations and chambers" },
     ],
+    chart: {
+      type: "bar" as const,
+      title: "Partnership Growth (5-Year)",
+      data: [
+        { name: "2020", value: 12, color: "#14532d" },
+        { name: "2021", value: 16, color: "#14532d" },
+        { name: "2022", value: 20, color: "#052e16" },
+        { name: "2023", value: 23, color: "#052e16" },
+        { name: "2024", value: 28, color: "#d97706" },
+      ],
+    },
   },
   {
     title: "Safety",
@@ -621,6 +805,17 @@ export const coreValuesContent = [
       { label: "Emergency Drills", value: "Quarterly", desc: "Regular emergency response drills and scenario training" },
       { label: "Incident Reports", value: "<5/yr", desc: "Near-miss reports actively tracked and resolved within 48 hours" },
     ],
+    chart: {
+      type: "pie" as const,
+      title: "Safety Training by Type",
+      data: [
+        { name: "On-Site Drills", value: 35, color: "#052e16" },
+        { name: "Classroom", value: 25, color: "#14532d" },
+        { name: "E-Learning", value: 20, color: "#d97706" },
+        { name: "Certification", value: 15, color: "#166534" },
+        { name: "Emergency", value: 5, color: "#fbbf24" },
+      ],
+    },
   },
   {
     title: "Reliability",
@@ -637,6 +832,17 @@ export const coreValuesContent = [
       { label: "Uptime", value: "99.5%", desc: "Equipment and operational availability across all sites" },
       { label: "Response Time", value: "<4 hrs", desc: "Average emergency response time for critical issues" },
     ],
+    chart: {
+      type: "bar" as const,
+      title: "On-Time Delivery Rate (%)",
+      data: [
+        { name: "2020", value: 92, color: "#14532d" },
+        { name: "2021", value: 94, color: "#14532d" },
+        { name: "2022", value: 96, color: "#052e16" },
+        { name: "2023", value: 97, color: "#052e16" },
+        { name: "2024", value: 98, color: "#d97706" },
+      ],
+    },
   },
 ];
 
