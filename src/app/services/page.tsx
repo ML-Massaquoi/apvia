@@ -9,7 +9,8 @@ const whyChooseData = [
   {
     title: "Integrated Solutions",
     desc: "Single-source convenience across multiple complementary sectors.",
-    overview: "APVIA's integrated business model eliminates the complexity of managing multiple vendors. Our 11 business verticals work synergistically to deliver comprehensive solutions — from construction and materials supply to logistics and procurement — all under one roof.",
+    overview:
+      "Unlike specialized single-sector companies, APVIA offers integrated solutions across 11 complementary business verticals. This enables us to provide seamless, end-to-end project solutions — from construction and materials supply to logistics, procurement, and trade — all under one roof. Our divisions work synergistically to leverage cross-sector expertise, reduce project complexity, and deliver outcomes that span multiple disciplines.",
     highlights: [
       { label: "Verticals", value: "11", desc: "Integrated business divisions working synergistically" },
       { label: "Cost Savings", value: "20-30%", desc: "Average savings through integrated service delivery" },
@@ -32,7 +33,8 @@ const whyChooseData = [
   {
     title: "Local Market Knowledge",
     desc: "Deep understanding of the West African business environment.",
-    overview: "With 30+ years of experience in Sierra Leone and West Africa, APVIA possesses unparalleled local market intelligence. We understand the regulatory landscape, cultural dynamics, and business practices that are essential for successful operations in the region.",
+    overview:
+      "With headquarters in Freetown and operations spanning all provinces of Sierra Leone, APVIA possesses intimate understanding of the local business environment. We have established relationships with government ministries, communities, and stakeholders at every level — combined with knowledge of local regulations, customs, and practices that are essential for successful operations. Our expanding regional presence across the Mano River Union and ECOWAS markets further strengthens our market intelligence.",
     highlights: [
       { label: "Experience", value: "30+ yrs", desc: "Deep local market experience across multiple sectors" },
       { label: "Regulations", value: "Expert", desc: "Comprehensive understanding of local regulatory frameworks" },
@@ -56,7 +58,8 @@ const whyChooseData = [
   {
     title: "International Standards",
     desc: "Adherence to international quality, safety, and environmental standards.",
-    overview: "APVIA maintains the highest international standards across all operations. Our ISO certifications, ESG compliance, and commitment to global best practices ensure that every project meets or exceeds international benchmarks for quality, safety, and environmental responsibility.",
+    overview:
+      "APVIA combines local knowledge with international excellence — adhering to international quality, safety, and environmental standards while maintaining partnerships with leading international companies. Our ISO certifications, comprehensive QHSE management systems, and commitment to global best practices ensure that every project meets or exceeds international benchmarks. We provide clients with the confidence that comes from working with a company that bridges local capability with multinational standards.",
     highlights: [
       { label: "ISO Certs", value: "5", desc: "ISO 9001, 14001, 45001, 27001, and 37001 certified" },
       { label: "ESG Rating", value: "AA", desc: "MSCI ESG rating reflecting strong sustainability practices" },
@@ -80,7 +83,8 @@ const whyChooseData = [
   {
     title: "Strategic Location",
     desc: "Headquartered in Freetown with access to a natural deep-water harbor.",
-    overview: "Freetown's natural deep-water harbor is one of the largest in the world, providing APVIA with a strategic logistics advantage. Our location enables efficient import/export operations, maritime services, and regional distribution across West Africa's 400+ million consumer market.",
+    overview:
+      "Headquartered in Freetown, Sierra Leone, APVIA benefits from access to a natural deep-water harbor — one of the largest in the world — providing a strategic logistics advantage for maritime operations and regional trade. Our position along major shipping routes offers direct access to Europe, the Americas, and Asia, while proximity to major mineral resources and agricultural areas enables efficient sourcing. Sierra Leone's growing economic stability and strategic location as a gateway to the Mano River Union region make APVIA an ideal partner for West African market access.",
     highlights: [
       { label: "Harbor", value: "Deep-Water", desc: "World-class natural deep-water port access" },
       { label: "ECOWAS", value: "400M+", desc: "Access to 15 West African markets through ECOWAS" },
@@ -103,7 +107,8 @@ const whyChooseData = [
   {
     title: "Financial Strength",
     desc: "Diversified revenue streams and proven track record of project delivery.",
-    overview: "APVIA's diversified portfolio across 11 business verticals provides financial resilience and stability. Our proven track record of successful project delivery, combined with strong investor relationships and prudent financial management, ensures sustainable growth and reliable returns.",
+    overview:
+      "APVIA maintains a strong financial position with diversified revenue streams across 11 business verticals, conservative financial management, and strong relationships with development finance institutions, commercial banks, impact investors, and export credit agencies. Our financing capabilities include equity investment, debt arrangement, project finance, trade finance, PPP structuring, and blended finance models — enabling us to support projects of varying scale and complexity.",
     highlights: [
       { label: "Revenue", value: "$50M+", desc: "Annual revenue across all business divisions" },
       { label: "Growth", value: "35% YoY", desc: "Consistent year-on-year revenue growth" },
@@ -127,7 +132,8 @@ const whyChooseData = [
   {
     title: "Ethical Practices",
     desc: "Strong corporate governance and commitment to sustainability.",
-    overview: "Ethics and sustainability are at the core of APVIA's business philosophy. Our robust corporate governance framework, transparent reporting, and commitment to environmental and social responsibility ensure that we create value for all stakeholders while protecting the interests of future generations.",
+    overview:
+      "Ethics and sustainability are embedded in APVIA's business philosophy. Our robust corporate governance framework includes board-level QHSE oversight, a dedicated compliance department, and transparent reporting through public annual sustainability reports. We are committed to local content — prioritizing Sierra Leonean talent, sourcing from local suppliers, and investing in community development. Our CSR programs span education, healthcare, economic empowerment, and environmental sustainability.",
     highlights: [
       { label: "Governance", value: "Board", desc: "Independent board oversight with 60% independent directors" },
       { label: "Transparency", value: "Annual", desc: "Public annual sustainability and financial reports" },

@@ -203,7 +203,7 @@ export const servicesContent = [
       "Design-build and EPC contract capability",
     ],
     overview:
-      "APVIA's Construction & Civil Engineering division delivers end-to-end infrastructure solutions from concept to completion. We combine local market expertise with international engineering standards to execute projects that transform communities and drive economic growth. From roads and bridges to commercial buildings and water systems, our team manages every aspect of the construction lifecycle.",
+      "APVIA's Construction & Civil Engineering division delivers end-to-end infrastructure solutions from concept to completion. We combine local market expertise with international engineering standards to execute projects that transform communities and drive economic growth. Our project delivery models include traditional contracting, design-build, turnkey solutions, Public-Private Partnerships, and joint ventures with international partners. From roads and bridges to commercial buildings, water systems, and energy infrastructure, our team manages every aspect of the construction lifecycle — backed by a growing portfolio of completed projects across Sierra Leone and West Africa.",
     highlights: [
       { label: "Projects", value: "50+", desc: "Major infrastructure projects completed across West Africa" },
       { label: "Value", value: "$200M+", desc: "Total project portfolio value managed by the construction division" },
@@ -249,7 +249,7 @@ export const servicesContent = [
       "Technical support and material selection guidance",
     ],
     overview:
-      "Our Construction Materials division provides a complete range of quality-assured building materials, from cement and aggregates to steel and finishing products. With strategic warehousing and logistics networks across Sierra Leone, we ensure timely delivery of materials to any project site in West Africa. All materials undergo rigorous quality testing and certification.",
+      "Our Construction Materials division provides a complete range of quality-assured building materials — from cement, aggregates, and steel to roofing, finishing products, and road construction materials. With strategic warehousing across Sierra Leone and an integrated logistics network, we ensure timely delivery to any project site in West Africa. All materials undergo rigorous quality testing and certification, with bulk supply capabilities for large-scale infrastructure projects and competitive pricing through direct sourcing from international manufacturers.",
     highlights: [
       { label: "SKUs", value: "500+", desc: "Different material products available in our inventory" },
       { label: "Warehouses", value: "5", desc: "Strategic warehouse locations across Sierra Leone" },
@@ -298,7 +298,7 @@ export const servicesContent = [
       "Quality inspection and certification coordination",
     ],
     overview:
-      "APVIA's Import & Export division bridges Sierra Leone with global markets, managing end-to-end trade logistics from supplier identification to customs clearance. Our expertise in international trade regulations and our extensive network of partners ensure smooth, compliant, and cost-effective trade operations across 25+ trade routes spanning 4 continents.",
+      "APVIA's Import & Export division bridges Sierra Leone with global markets, managing end-to-end trade logistics from supplier identification to customs clearance. We handle capital equipment, consumer goods, raw materials, technology products, and medical supplies on the import side — while exporting minerals, agricultural commodities, fisheries products, and timber. Our expertise in international trade regulations, trade finance facilitation, and our extensive network of partners across 4 continents ensure smooth, compliant, and cost-effective trade operations.",
     highlights: [
       { label: "Trade Routes", value: "25+", desc: "Active international trade routes across 4 continents" },
       { label: "Volume", value: "50K tons", desc: "Annual trade volume managed across all product categories" },
@@ -339,7 +339,7 @@ export const servicesContent = [
       "Performance measurement and continuous improvement",
     ],
     overview:
-      "Our Procurement & Supply division delivers efficient, transparent, and cost-effective procurement solutions. We leverage our extensive supplier network, deep market knowledge, and advanced procurement systems to help clients source goods and services at optimal value, achieving average cost savings of 15-25% through strategic sourcing.",
+      "Our Procurement & Supply division delivers efficient, transparent, and cost-effective procurement solutions for government agencies, international organizations, mining companies, construction firms, and private enterprises. We leverage our extensive supplier network, deep market knowledge, and advanced procurement systems to source goods and services at optimal value. Services span strategic sourcing, tender management, category management, emergency procurement, and local content facilitation — achieving average cost savings of 15-25% through strategic sourcing.",
     highlights: [
       { label: "Savings", value: "15-25%", desc: "Average cost savings through strategic sourcing" },
       { label: "Suppliers", value: "200+", desc: "Vetted and approved suppliers across all categories" },
@@ -385,7 +385,7 @@ export const servicesContent = [
       "Risk management and cargo insurance services",
     ],
     overview:
-      "APVIA's Logistics division provides comprehensive supply chain solutions from warehousing to last-mile delivery. Our modern fleet of 80+ vehicles, strategic Freetown port location, and real-time GPS tracking systems ensure efficient movement of goods across Sierra Leone's 16 districts and the broader West African region.",
+      "APVIA's Logistics division provides comprehensive supply chain solutions from warehousing to last-mile delivery. Our modern fleet of 80+ vehicles — including flatbeds, tankers, container carriers, heavy haulage, and cold chain units — operates from our strategic Freetown port location with real-time GPS tracking. Services include road freight, heavy haulage for oversized mining equipment, bonded warehousing, port and terminal operations, cold chain logistics for perishable goods, and project logistics for large-scale infrastructure and mining operations across Sierra Leone's 16 districts and the broader West African region.",
     highlights: [
       { label: "Fleet", value: "80+", desc: "Modern vehicles including flatbeds, tankers, and container carriers" },
       { label: "Warehousing", value: "25K m²", desc: "Total warehousing space including bonded facilities" },
@@ -430,7 +430,7 @@ export const servicesContent = [
       "Used equipment sourcing and refurbishment",
     ],
     overview:
-      "APVIA's Mining division provides end-to-end solutions from exploration support to mineral trading. We supply mining equipment, provide technical services, and support responsible mineral resource development across Sierra Leone's rich mineral belt. Our operations employ cutting-edge extraction technology combined with rigorous ESG standards.",
+      "APVIA's Mining division provides end-to-end solutions from exploration support to mineral trading. We supply surface and underground mining equipment, processing equipment, spare parts, and consumables — while providing technical services including feasibility studies, environmental management, operator training, and equipment maintenance. Our mineral trading operations cover iron ore, bauxite, rutile, ilmenite, zircon, gold, and diamonds, with traceable supply chains and community benefit programs that exceed international ESG standards.",
     highlights: [
       { label: "Minerals", value: "6+", desc: "Key minerals traded: diamonds, gold, rutile, bauxite, iron ore, coltan" },
       { label: "Equipment", value: "100+", desc: "Mining machines and equipment available for sale or lease" },
@@ -476,7 +476,7 @@ export const servicesContent = [
       "Harbor and dredging support services",
     ],
     overview:
-      "Leveraging Freetown's natural deep-water harbor — one of the largest in the world — APVIA's Maritime Services division provides comprehensive port agency, cargo handling, and vessel services. Our strategic coastal location enables efficient regional distribution and international trade facilitation.",
+      "Leveraging Freetown's natural deep-water harbor — one of the largest in the world — APVIA's Maritime Services division provides comprehensive port agency, cargo handling, and vessel services. We represent shipping lines and cargo owners at Sierra Leonean ports, supply provisions and bunkers to vessels, handle stevedoring and terminal operations, and manage customs brokerage and freight forwarding. Additional services include offshore logistics support, marine surveying, fisheries support, and maritime security coordination — all available 24/7.",
     highlights: [
       { label: "Harbor", value: "Deep-Water", desc: "World-class natural deep-water port access" },
       { label: "Cargo Volume", value: "2M tons", desc: "Annual cargo throughput at Freetown port" },
@@ -522,7 +522,7 @@ export const servicesContent = [
       "Sustainable agriculture practices",
     ],
     overview:
-      "APVIA's Agriculture division develops Sierra Leone's vast agricultural potential — 5.4 million hectares of arable land with only 15% cultivated. We integrate modern farming techniques with traditional knowledge across commercial farming, agro-processing, and aquaculture operations, promoting food security and creating value-added opportunities for export markets.",
+      "APVIA's Agriculture division develops Sierra Leone's vast agricultural potential — 5.4 million hectares of arable land with only 15% currently cultivated. We integrate modern farming techniques with traditional knowledge across commercial farming, out-grower schemes, agro-processing, and aquaculture operations. Our commercial farming covers rice, cassava, cocoa, coffee, palm oil, and cashew, while agro-processing facilities add value through processed rice, palm oil, cocoa products, and preserved foods. We also develop sustainable fisheries and aquaculture operations including tilapia and catfish farming, with cold storage and export logistics for seafood products.",
     highlights: [
       { label: "Arable Land", value: "5.4M ha", desc: "Total arable land with only 15% currently cultivated" },
       { label: "Crops", value: "Cocoa, Rice", desc: "Primary crops including premium fine-flavor cocoa and staple rice" },
@@ -567,7 +567,7 @@ export const servicesContent = [
       "Financing facilitation",
     ],
     overview:
-      "APVIA's Machinery Supplies division provides a comprehensive range of industrial and commercial machinery across construction, agriculture, manufacturing, and power generation sectors. From new and used equipment sales to rental, maintenance, and operator training, we serve as a trusted one-stop partner for all machinery needs.",
+      "APVIA's Machinery Supplies division provides a comprehensive range of industrial and commercial machinery across construction, agriculture, manufacturing, mining, and power generation sectors. Our catalog includes excavators, bulldozers, loaders, tractors, harvesters, generators, forklifts, cranes, and specialized vehicles from 15+ international brands. From new and used equipment sales to flexible rental and leasing options, spare parts supply, operator training, and maintenance services — we serve as a trusted one-stop partner for all machinery needs in West Africa.",
     highlights: [
       { label: "Categories", value: "6", desc: "Major machinery categories covering all sectors" },
       { label: "Equipment", value: "500+", desc: "Different machinery types available in our catalog" },
@@ -611,7 +611,7 @@ export const servicesContent = [
       "Active management and oversight of JV operations",
     ],
     overview:
-      "APVIA actively develops and manages strategic partnerships that leverage complementary strengths to pursue larger opportunities. From equity joint ventures and PPPs to technology partnerships and distribution alliances, we structure and manage collaborations that create value for all stakeholders across West Africa.",
+      "APVIA actively develops and manages strategic partnerships that leverage complementary strengths to pursue larger opportunities. From equity joint ventures and Public-Private Partnerships to technology partnerships, distribution alliances, and consortium arrangements — we structure and manage collaborations that create value for all stakeholders. Our partnership portfolio spans international construction firms, global mining equipment manufacturers, international trading houses, development finance institutions, and technology providers across West Africa and beyond.",
     highlights: [
       { label: "Active JVs", value: "12", desc: "Joint venture projects currently in operation" },
       { label: "Partners", value: "25+", desc: "International and local strategic partners" },
@@ -658,7 +658,7 @@ export const servicesContent = [
       "International relations and diplomatic networks",
     ],
     overview:
-      "APVIA's Business & Diplomatic Consultancy leverages deep understanding of the West African business environment, government relations, and international networks. From market entry strategy and investment advisory to government relations and diplomatic liaison, we help clients navigate the complexities of doing business in Sierra Leone and the broader region.",
+      "APVIA's Business & Diplomatic Consultancy leverages deep understanding of the West African business environment, government relations, and international networks. From market entry strategy and investment advisory to regulatory compliance, government relations, and diplomatic liaison — we help clients navigate the complexities of doing business in Sierra Leone and the broader region. Our specialized advisory also covers local content development, CSR program design, ESG consulting, and operating in post-conflict environments.",
     highlights: [
       { label: "Markets", value: "5+", desc: "West African markets covered by our consultancy practice" },
       { label: "Clients", value: "50+", desc: "International organizations and corporations advised" },
