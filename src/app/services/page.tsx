@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { servicesData } from "@/data/services";
+import { servicesContent, investmentSectors } from "@/data/content";
 import InsightModal from "@/components/InsightModal";
 
 const whyChooseData = [
@@ -103,7 +103,7 @@ const serviceIcons: Record<string, string> = {
 export default function ServicesPage() {
   const [activeService, setActiveService] = useState<string | null>(null);
   const [selectedWhy, setSelectedWhy] = useState<typeof whyChooseData[0] | null>(null);
-  const [selectedService, setSelectedService] = useState<typeof servicesData[0] | null>(null);
+  const [selectedService, setSelectedService] = useState<typeof servicesContent[0] | null>(null);
 
   return (
     <>
@@ -130,7 +130,7 @@ export default function ServicesPage() {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-            {servicesData.map((service) => (
+            {servicesContent.map((service) => (
               <div
                 key={service.id}
                 id={service.id}
@@ -160,7 +160,7 @@ export default function ServicesPage() {
       {activeService && (
         <section className="py-16 sm:py-24 bg-[#f8f9fa]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            {servicesData.filter((s) => s.id === activeService).map((service) => (
+            {servicesContent.filter((s) => s.id === activeService).map((service) => (
               <div key={service.id}>
                 <div className="text-center mb-10 sm:mb-12">
                   <div className="w-14 h-14 rounded-2xl bg-[#052e16] flex items-center justify-center mx-auto mb-4">

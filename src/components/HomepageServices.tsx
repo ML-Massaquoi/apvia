@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import InsightModal from "@/components/InsightModal";
+import { servicesContent } from "@/data/content";
 
 const serviceIcons: Record<string, string> = {
   building: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4",
@@ -18,101 +19,8 @@ const serviceIcons: Record<string, string> = {
   briefcase: "M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z",
 };
 
-const servicesData = [
-  {
-    id: "construction",
-    title: "Construction & Civil Engineering",
-    description: "Comprehensive infrastructure development solutions across Sierra Leone and West Africa.",
-    icon: "building",
-    overview: "APVIA's Construction & Civil Engineering division delivers end-to-end infrastructure solutions from concept to completion. We combine local market expertise with international engineering standards to execute projects that transform communities and drive economic growth.",
-    highlights: [
-      { label: "Projects", value: "50+", desc: "Major infrastructure projects completed across West Africa" },
-      { label: "Value", value: "$200M+", desc: "Total project portfolio value managed by the construction division" },
-      { label: "Standards", value: "ISO 9001", desc: "Quality management certified to international standards" },
-      { label: "Workforce", value: "1,200+", desc: "Skilled workers and professionals across all project sites" },
-      { label: "On-Time", value: "98%", desc: "Projects delivered on or ahead of schedule" },
-      { label: "Safety", value: "Zero Harm", desc: "Zero lost-time incidents on construction sites" },
-    ],
-  },
-  {
-    id: "materials",
-    title: "Construction Materials",
-    description: "A comprehensive range of high-quality construction materials to support infrastructure projects.",
-    icon: "cube",
-    overview: "Our Construction Materials division provides a complete range of quality-assured building materials, from cement and aggregates to steel and finishing products. With strategic warehousing and logistics networks, we ensure timely delivery of materials to any project site in West Africa.",
-    highlights: [
-      { label: "SKUs", value: "500+", desc: "Different material products available in our inventory" },
-      { label: "Warehouses", value: "5", desc: "Strategic warehouse locations across Sierra Leone" },
-      { label: "Bulk Capacity", value: "10K tons", desc: "Monthly bulk material handling capacity" },
-      { label: "Quality", value: "100%", desc: "Material testing and certification compliance" },
-      { label: "Delivery", value: "<48 hrs", desc: "Average delivery time for standard orders" },
-      { label: "Suppliers", value: "30+", desc: "Verified international and local material suppliers" },
-    ],
-  },
-  {
-    id: "trade",
-    title: "Import & Export",
-    description: "Facilitating global commerce connecting Sierra Leone and West African markets.",
-    icon: "globe",
-    overview: "APVIA's Import & Export division bridges Sierra Leone with global markets, managing end-to-end trade logistics from supplier identification to customs clearance. Our expertise in international trade regulations and our extensive network of partners ensure smooth, compliant, and cost-effective trade operations.",
-    highlights: [
-      { label: "Trade Routes", value: "25+", desc: "Active international trade routes across 4 continents" },
-      { label: "Volume", value: "50K tons", desc: "Annual trade volume managed across all product categories" },
-      { label: "Markets", value: "15+", desc: "Active import and export market destinations" },
-      { label: "Compliance", value: "100%", desc: "Full regulatory compliance across all trade operations" },
-      { label: "Growth", value: "22% YoY", desc: "Year-on-year trade volume growth rate" },
-      { label: "Partners", value: "40+", desc: "Verified global trade partners and suppliers" },
-    ],
-  },
-  {
-    id: "procurement",
-    title: "Procurement & Supply",
-    description: "Comprehensive procurement and supply chain management services.",
-    icon: "clipboard",
-    overview: "Our Procurement & Supply division delivers efficient, transparent, and cost-effective procurement solutions. We leverage our extensive supplier network, deep market knowledge, and advanced procurement systems to help clients source goods and services at optimal value.",
-    highlights: [
-      { label: "Savings", value: "15-25%", desc: "Average cost savings through strategic sourcing" },
-      { label: "Suppliers", value: "200+", desc: "Vetted and approved suppliers across all categories" },
-      { label: "Categories", value: "50+", desc: "Procurement categories managed across all sectors" },
-      { label: "Cycle Time", value: "-40%", desc: "Reduction in average procurement cycle time" },
-      { label: "Transparency", value: "100%", desc: "Full audit trail and transparent procurement process" },
-      { label: "Tenders", value: "100+/yr", desc: "Tender processes managed annually" },
-    ],
-  },
-  {
-    id: "logistics",
-    title: "Logistics & Supply Chain",
-    description: "End-to-end supply chain and transportation solutions across West Africa.",
-    icon: "truck",
-    overview: "APVIA's Logistics division provides comprehensive supply chain solutions from warehousing to last-mile delivery. Our modern fleet, strategic Freetown port location, and advanced tracking systems ensure efficient movement of goods across Sierra Leone and the broader West African region.",
-    highlights: [
-      { label: "Fleet", value: "80+", desc: "Modern vehicles including flatbeds, tankers, and container carriers" },
-      { label: "Warehousing", value: "25K m²", desc: "Total warehousing space including bonded facilities" },
-      { label: "Coverage", value: "95%", desc: "Geographic coverage across Sierra Leone's 16 districts" },
-      { label: "Tracking", value: "Real-time", desc: "GPS-enabled fleet tracking and delivery monitoring" },
-      { label: "Cross-Border", value: "5 Countries", desc: "Cross-border logistics operations across West Africa" },
-      { label: "Uptime", value: "99%", desc: "Fleet availability and operational uptime" },
-    ],
-  },
-  {
-    id: "mining",
-    title: "Mining & Equipment",
-    description: "Comprehensive solutions for the mining sector with equipment supply and technical services.",
-    icon: "gem",
-    overview: "APVIA's Mining division provides end-to-end solutions from exploration support to mineral trading. We supply mining equipment, provide technical services, and support responsible mineral resource development across Sierra Leone's rich mineral belt.",
-    highlights: [
-      { label: "Minerals", value: "6+", desc: "Key minerals traded: diamonds, gold, rutile, bauxite, iron ore, coltan" },
-      { label: "Equipment", value: "100+", desc: "Mining machines and equipment available for sale or lease" },
-      { label: "Mines Supported", value: "15+", desc: "Active mining operations supported with equipment and services" },
-      { label: "Revenue", value: "$165M", desc: "Annual mineral export revenue facilitated" },
-      { label: "ESG", value: "AA Rating", desc: "Environmental, Social, and Governance compliance rating" },
-      { label: "Training", value: "500+/yr", desc: "Mining operators trained and certified annually" },
-    ],
-  },
-];
-
 export default function HomepageServices() {
-  const [selected, setSelected] = useState<typeof servicesData[0] | null>(null);
+  const [selected, setSelected] = useState<typeof servicesContent[0] | null>(null);
 
   return (
     <>
@@ -124,7 +32,7 @@ export default function HomepageServices() {
             <p className="text-gray-500 max-w-xl mx-auto text-sm sm:text-base">Comprehensive solutions across eleven core business verticals</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-            {servicesData.map((service) => (
+            {servicesContent.slice(0, 6).map((service) => (
               <div
                 key={service.id}
                 onClick={() => setSelected(service)}

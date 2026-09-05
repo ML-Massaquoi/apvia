@@ -3,124 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import InsightModal from "@/components/InsightModal";
-
-const coreValuesData = [
-  {
-    title: "Integrity",
-    description: "Conducting all business with honesty, transparency, and accountability. Upholding the highest ethical standards in every interaction.",
-    icon: "shield",
-    modalOverview: "Integrity is the cornerstone of everything we do at APVIA Ltd. We believe that sustainable business success is built on a foundation of trust, transparency, and unwavering ethical standards. Our commitment to integrity extends across every partnership, transaction, and stakeholder relationship.",
-    highlights: [
-      { label: "Compliance", value: "100%", desc: "Full compliance with all regulatory and legal requirements across all markets" },
-      { label: "Audit Rating", value: "A+", desc: "Independent audit rating with zero material findings in the last 3 years" },
-      { label: "Whistleblower", value: "24/7", desc: "Anonymous reporting channel with 48-hour response guarantee" },
-      { label: "Training", value: "100%", desc: "All employees complete annual ethics training and certification" },
-      { label: "Governance", value: "ISO 37001", desc: "Anti-bribery management system certified to international standards" },
-      { label: "Transparency", value: "Annual", desc: "Public annual sustainability report with full financial disclosure" },
-    ],
-    chart: {
-      type: "pie" as const,
-      title: "Ethics Compliance Breakdown",
-      data: [
-        { name: "Full Compliance", value: 92, color: "#052e16" },
-        { name: "Minor Issues", value: 6, color: "#d97706" },
-        { name: "Under Review", value: 2, color: "#dc2626" },
-      ],
-    },
-  },
-  {
-    title: "Excellence",
-    description: "Pursuing quality and continuous improvement in all endeavors. Delivering services that meet or exceed international standards.",
-    icon: "star",
-    modalOverview: "Excellence drives our pursuit of the highest quality in every project, service, and interaction. We continuously invest in technology, training, and process improvement to ensure our deliverables consistently exceed international standards and client expectations.",
-    highlights: [
-      { label: "ISO Certs", value: "5", desc: "ISO 9001, 14001, 45001, 27001, and 37001 certified operations" },
-      { label: "Project Delivery", value: "98%", desc: "On-time and within-budget project delivery rate across all divisions" },
-      { label: "Client NPS", value: "82", desc: "Net Promoter Score well above industry average of 45" },
-      { label: "Quality Score", value: "4.8/5", desc: "Average quality rating from independent project assessments" },
-      { label: "Error Rate", value: "<0.5%", desc: "Defect rate across all operational processes" },
-      { label: "Improvement", value: "15% YoY", desc: "Year-on-year improvement in operational efficiency metrics" },
-    ],
-    chart: {
-      type: "bar" as const,
-      title: "Quality Performance Trend",
-      data: [
-        { name: "2020", value: 88, color: "#14532d" },
-        { name: "2021", value: 91, color: "#14532d" },
-        { name: "2022", value: 94, color: "#14532d" },
-        { name: "2023", value: 96, color: "#052e16" },
-        { name: "2024", value: 98, color: "#052e16" },
-      ],
-    },
-  },
-  {
-    title: "Sustainability",
-    description: "Balancing economic objectives with environmental stewardship and social responsibility. Investing in projects that deliver long-term benefits.",
-    icon: "leaf",
-    modalOverview: "Sustainability is embedded in our business strategy. We balance economic growth with environmental stewardship and social responsibility, ensuring our projects create lasting value for communities, ecosystems, and future generations while delivering strong returns for investors.",
-    highlights: [
-      { label: "Carbon Target", value: "-30%", desc: "Committed to 30% carbon emission reduction by 2030 across all operations" },
-      { label: "Renewable Energy", value: "60%", desc: "Percentage of operations powered by renewable energy sources" },
-      { label: "Community Fund", value: "3% Rev", desc: "3% of annual revenue allocated to community development programs" },
-      { label: "Jobs Created", value: "5,000+", desc: "Direct and indirect employment created through sustainable projects" },
-      { label: "Land Rehab", value: "100%", desc: "Full land rehabilitation commitment for all mining and construction sites" },
-      { label: "ESG Rating", value: "AA", desc: "MSCI ESG rating reflecting strong sustainability practices" },
-    ],
-    chart: {
-      type: "pie" as const,
-      title: "Revenue Allocation to Sustainability",
-      data: [
-        { name: "Operations", value: 55, color: "#052e16" },
-        { name: "Community Fund", value: 15, color: "#d97706" },
-        { name: "Environmental", value: 12, color: "#166534" },
-        { name: "Social Programs", value: 10, color: "#14532d" },
-        { name: "Reinvestment", value: 8, color: "#fbbf24" },
-      ],
-    },
-  },
-  {
-    title: "Collaboration",
-    description: "Building strong, mutually beneficial partnerships. Respecting diversity and fostering inclusive teamwork to achieve shared goals.",
-    icon: "users",
-    modalOverview: "Our collaborative approach leverages the strengths of diverse partners, communities, and stakeholders to achieve outcomes greater than any single entity could accomplish. We actively seek partnerships that bring complementary expertise and shared values to our projects.",
-    highlights: [
-      { label: "Partners", value: "25+", desc: "Strategic partnerships with international and local organizations" },
-      { label: "Joint Ventures", value: "12", desc: "Active joint venture projects across West Africa" },
-      { label: "Communities", value: "50+", desc: "Community partnerships for local development and employment" },
-      { label: "Govt Relations", value: "3 Govts", desc: "Formal partnerships with national governments" },
-      { label: "Academic", value: "8", desc: "University and research institution collaborations" },
-      { label: "Industry Groups", value: "6", desc: "Active membership in industry associations and chambers" },
-    ],
-  },
-  {
-    title: "Safety",
-    description: "Prioritizing the health, safety, and well-being of all employees, contractors, and stakeholders. Maintaining zero-harm objectives.",
-    icon: "heart",
-    modalOverview: "Safety is non-negotiable at APVIA Ltd. We maintain a zero-harm philosophy across all operations, investing in comprehensive safety systems, training, and equipment to protect every person who works with or near our projects.",
-    highlights: [
-      { label: "Safety Record", value: "Zero Harm", desc: "Zero lost-time incidents across all operations for consecutive years" },
-      { label: "Training Hours", value: "10,000+", desc: "Annual safety training hours delivered to employees and contractors" },
-      { label: "Safety Audits", value: "Monthly", desc: "Comprehensive safety audits conducted across all project sites" },
-      { label: "PPE Coverage", value: "100%", desc: "Full personal protective equipment coverage for all personnel" },
-      { label: "Emergency Drills", value: "Quarterly", desc: "Regular emergency response drills and scenario training" },
-      { label: "Incident Reports", value: "<5/yr", desc: "Near-miss reports actively tracked and resolved within 48 hours" },
-    ],
-  },
-  {
-    title: "Reliability",
-    description: "Honoring commitments and delivering on promises. Building trust through consistent, dependable performance.",
-    icon: "check",
-    modalOverview: "Reliability is the measure of our trustworthiness. We deliver on our promises consistently, meeting deadlines, budgets, and quality expectations. Our track record of dependable performance has earned us the trust of governments, development agencies, and international partners.",
-    highlights: [
-      { label: "Contract Honor", value: "100%", desc: "Full compliance with all contractual obligations and timelines" },
-      { label: "On-Time", value: "98%", desc: "Projects delivered on or ahead of schedule" },
-      { label: "On-Budget", value: "96%", desc: "Projects completed within approved budget parameters" },
-      { label: "Repeat Clients", value: "85%", desc: "Client retention rate demonstrating trust and satisfaction" },
-      { label: "Uptime", value: "99.5%", desc: "Equipment and operational availability across all sites" },
-      { label: "Response Time", value: "<4 hrs", desc: "Average emergency response time for critical issues" },
-    ],
-  },
-];
+import { coreValuesContent } from "@/data/content";
 
 const iconPaths: Record<string, string> = {
   shield: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
@@ -132,7 +15,7 @@ const iconPaths: Record<string, string> = {
 };
 
 export default function HomepageCoreValues() {
-  const [selected, setSelected] = useState<typeof coreValuesData[0] | null>(null);
+  const [selected, setSelected] = useState<typeof coreValuesContent[0] | null>(null);
 
   return (
     <>
@@ -144,7 +27,7 @@ export default function HomepageCoreValues() {
             <p className="text-gray-500 max-w-xl mx-auto text-sm sm:text-base">The principles that guide every decision and action at APVIA Ltd</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-            {coreValuesData.map((value) => (
+            {coreValuesContent.map((value) => (
               <div
                 key={value.title}
                 onClick={() => setSelected(value)}

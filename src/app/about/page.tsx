@@ -3,137 +3,9 @@
 import { useState } from "react";
 import Link from "next/link";
 import { companyData } from "@/data/company";
+import { coreValuesContent, aboutInvestmentShowcase } from "@/data/content";
 import InsightModal from "@/components/InsightModal";
 import VideoModal from "@/components/VideoModal";
-
-const investmentShowcase = [
-  {
-    src: "/videos/flagship-3.mp4",
-    title: "Mineral Wealth & Resources",
-    desc: "Rich mineral deposits including diamonds, gold, rutile, and bauxite",
-    modalTitle: "Sierra Leone's Mineral Wealth",
-    modalDescription: "Sierra Leone sits on one of Africa's richest mineral belts with an estimated $10 billion in untapped mineral wealth. The country is the 7th largest diamond producer globally and holds the world's largest rutile deposits. Our mining operations leverage modern extraction technology while maintaining the highest ESG standards.",
-    facts: [
-      { label: "Mineral Value", value: "$10B+" },
-      { label: "Diamond Rank", value: "#7 Global" },
-      { label: "Rutile", value: "#1 World" },
-      { label: "Active Mines", value: "15+" },
-      { label: "Export Revenue", value: "$165M/yr" },
-      { label: "ESG Rating", value: "AA" },
-    ],
-  },
-  {
-    src: "/videos/flagship-4.mp4",
-    title: "Pristine Natural Landscape",
-    desc: "Abundant natural resources and beautiful landscapes",
-    modalTitle: "Natural Resources & Tourism Potential",
-    modalDescription: "Beyond minerals, Sierra Leone boasts pristine beaches, tropical forests, and rich biodiversity. The country's natural beauty presents opportunities in eco-tourism, sustainable forestry, and carbon credit programs. Our environmental initiatives protect these assets while creating economic value.",
-    facts: [
-      { label: "Forest Cover", value: "37%", desc: "Tropical forest coverage with sustainable management programs" },
-      { label: "Beaches", value: "400 km", desc: "Pristine coastline ideal for tourism development" },
-      { label: "Biodiversity", value: "High", desc: "Rich flora and fauna with conservation partnerships" },
-      { label: "Carbon Credits", value: "Active", desc: "REDD+ carbon credit programs generating revenue" },
-      { label: "Eco-Tourism", value: "Growing", desc: "Emerging eco-tourism sector with international interest" },
-      { label: "Sustainability", value: "Core", desc: "Environmental sustainability embedded in all operations" },
-    ],
-  },
-  {
-    src: "/videos/flagship-x.mp4",
-    title: "Emerging Market Potential",
-    desc: "Fast-growing economy with favorable investment climate",
-    modalTitle: "Emerging Market Opportunity",
-    modalDescription: "Sierra Leone is one of West Africa's fastest-growing economies with a GDP growth rate of 5.4%. The government has implemented significant business reforms, offering tax incentives, 100% profit repatriation, and streamlined company registration. The country's strategic location provides access to regional markets of over 400 million consumers.",
-    facts: [
-      { label: "GDP Growth", value: "5.4%" },
-      { label: "FDI Growth", value: "18% YoY" },
-      { label: "Tax Holiday", value: "10 yrs" },
-      { label: "Repatriation", value: "100%" },
-      { label: "Registration", value: "48 hrs" },
-      { label: "ECOWAS Access", value: "400M+" },
-    ],
-  },
-];
-
-const coreValuesData = [
-  {
-    title: "Integrity",
-    description: "Conducting all business with honesty, transparency, and accountability. Upholding the highest ethical standards in every interaction.",
-    modalOverview: "Integrity is the cornerstone of everything we do at APVIA Ltd. We believe that sustainable business success is built on a foundation of trust, transparency, and unwavering ethical standards. Our commitment to integrity extends across every partnership, transaction, and stakeholder relationship.",
-    highlights: [
-      { label: "Compliance", value: "100%", desc: "Full compliance with all regulatory and legal requirements" },
-      { label: "Audit Rating", value: "A+", desc: "Independent audit rating with zero material findings" },
-      { label: "Whistleblower", value: "24/7", desc: "Anonymous reporting channel with 48-hour response" },
-      { label: "Training", value: "100%", desc: "All employees complete annual ethics training" },
-      { label: "Governance", value: "ISO 37001", desc: "Anti-bribery management system certified" },
-      { label: "Transparency", value: "Annual", desc: "Public sustainability report with full disclosure" },
-    ],
-  },
-  {
-    title: "Excellence",
-    description: "Pursuing quality and continuous improvement in all endeavors. Delivering services that meet or exceed international standards.",
-    modalOverview: "Excellence drives our pursuit of the highest quality in every project, service, and interaction. We continuously invest in technology, training, and process improvement to ensure our deliverables consistently exceed international standards and client expectations.",
-    highlights: [
-      { label: "ISO Certs", value: "5", desc: "ISO 9001, 14001, 45001, 27001, and 37001 certified" },
-      { label: "Project Delivery", value: "98%", desc: "On-time and within-budget delivery rate" },
-      { label: "Client NPS", value: "82", desc: "Net Promoter Score above industry average" },
-      { label: "Quality Score", value: "4.8/5", desc: "Average quality rating from assessments" },
-      { label: "Error Rate", value: "<0.5%", desc: "Defect rate across all processes" },
-      { label: "Improvement", value: "15% YoY", desc: "Year-on-year efficiency improvement" },
-    ],
-  },
-  {
-    title: "Sustainability",
-    description: "Balancing economic objectives with environmental stewardship and social responsibility.",
-    modalOverview: "Sustainability is embedded in our business strategy. We balance economic growth with environmental stewardship and social responsibility, ensuring our projects create lasting value for communities, ecosystems, and future generations.",
-    highlights: [
-      { label: "Carbon Target", value: "-30%", desc: "30% carbon reduction by 2030" },
-      { label: "Renewable", value: "60%", desc: "Operations powered by renewable energy" },
-      { label: "Community Fund", value: "3% Rev", desc: "Revenue allocated to community programs" },
-      { label: "Jobs Created", value: "5,000+", desc: "Direct and indirect employment created" },
-      { label: "Land Rehab", value: "100%", desc: "Full land rehabilitation commitment" },
-      { label: "ESG Rating", value: "AA", desc: "MSCI ESG rating reflecting best practices" },
-    ],
-  },
-  {
-    title: "Collaboration",
-    description: "Building strong, mutually beneficial partnerships. Respecting diversity and fostering inclusive teamwork.",
-    modalOverview: "Our collaborative approach leverages the strengths of diverse partners, communities, and stakeholders to achieve outcomes greater than any single entity could accomplish.",
-    highlights: [
-      { label: "Partners", value: "25+", desc: "Strategic partnerships with international organizations" },
-      { label: "Joint Ventures", value: "12", desc: "Active JV projects across West Africa" },
-      { label: "Communities", value: "50+", desc: "Community partnerships for development" },
-      { label: "Govt Relations", value: "3 Govts", desc: "Formal government partnerships" },
-      { label: "Academic", value: "8", desc: "University collaborations" },
-      { label: "Industry Groups", value: "6", desc: "Active industry association memberships" },
-    ],
-  },
-  {
-    title: "Safety",
-    description: "Prioritizing health, safety, and well-being of all employees, contractors, and stakeholders.",
-    modalOverview: "Safety is non-negotiable at APVIA Ltd. We maintain a zero-harm philosophy across all operations, investing in comprehensive safety systems, training, and equipment.",
-    highlights: [
-      { label: "Safety Record", value: "Zero Harm", desc: "Zero lost-time incidents for consecutive years" },
-      { label: "Training Hours", value: "10,000+", desc: "Annual safety training hours delivered" },
-      { label: "Safety Audits", value: "Monthly", desc: "Comprehensive audits across all sites" },
-      { label: "PPE Coverage", value: "100%", desc: "Full PPE for all personnel" },
-      { label: "Emergency Drills", value: "Quarterly", desc: "Regular emergency response training" },
-      { label: "Incident Reports", value: "<5/yr", desc: "Near-miss reports resolved within 48 hours" },
-    ],
-  },
-  {
-    title: "Reliability",
-    description: "Honoring commitments and delivering on promises. Building trust through consistent performance.",
-    modalOverview: "Reliability is the measure of our trustworthiness. We deliver on our promises consistently, meeting deadlines, budgets, and quality expectations.",
-    highlights: [
-      { label: "Contract Honor", value: "100%", desc: "Full compliance with all obligations" },
-      { label: "On-Time", value: "98%", desc: "Projects delivered on or ahead of schedule" },
-      { label: "On-Budget", value: "96%", desc: "Projects within approved budget" },
-      { label: "Repeat Clients", value: "85%", desc: "Client retention rate" },
-      { label: "Uptime", value: "99.5%", desc: "Equipment availability" },
-      { label: "Response Time", value: "<4 hrs", desc: "Emergency response time" },
-    ],
-  },
-];
 
 const governanceData = [
   {
@@ -189,8 +61,8 @@ const governancePrinciples = [
 ];
 
 export default function AboutPage() {
-  const [selectedVideo, setSelectedVideo] = useState<typeof investmentShowcase[0] | null>(null);
-  const [selectedValue, setSelectedValue] = useState<typeof coreValuesData[0] | null>(null);
+  const [selectedVideo, setSelectedVideo] = useState<typeof aboutInvestmentShowcase[0] | null>(null);
+  const [selectedValue, setSelectedValue] = useState<typeof coreValuesContent[0] | null>(null);
   const [selectedGovernance, setSelectedGovernance] = useState<typeof governanceData[0] | null>(null);
 
   return (
@@ -255,7 +127,7 @@ export default function AboutPage() {
             <p className="text-white/60 max-w-xl mx-auto text-sm sm:text-base">Explore the natural wealth and untapped potential that position Sierra Leone as West Africa&apos;s next investment frontier</p>
           </div>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
-            {investmentShowcase.map((video) => (
+            {aboutInvestmentShowcase.map((video) => (
               <div
                 key={video.src}
                 onClick={() => setSelectedVideo(video)}
@@ -355,7 +227,7 @@ export default function AboutPage() {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-            {coreValuesData.map((value) => (
+            {coreValuesContent.map((value) => (
               <div
                 key={value.title}
                 onClick={() => setSelectedValue(value)}
