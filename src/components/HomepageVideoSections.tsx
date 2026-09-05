@@ -5,23 +5,23 @@ import VideoModal from "@/components/VideoModal";
 
 const whyInvestVideos = [
   {
-    src: "/videos/energy.mp4",
-    title: "Energy & Power",
-    desc: "Sustainable energy solutions driving Sierra Leone's growth",
-    modalTitle: "Energy & Power Investment in Sierra Leone",
-    modalDescription: "Sierra Leone's energy sector presents massive untapped potential with only 26% electrification rate. The government has committed to achieving 50% electrification by 2030, creating enormous opportunities for investors in renewable energy, mini-grids, and power infrastructure. Our energy investments focus on solar, hydro, and gas-to-power projects that deliver both returns and social impact.",
+    src: "/videos/ore.mp4",
+    title: "Rich Mineral Ore",
+    desc: "Abundant deposits of diamonds, gold, rutile, and bauxite",
+    modalTitle: "Sierra Leone Mineral Wealth",
+    modalDescription: "Sierra Leone sits on one of Africa's richest mineral belts with an estimated $10 billion in untapped mineral wealth. The country is the 7th largest diamond producer globally and holds significant rutile deposits (world's largest), bauxite, iron ore, and gold reserves. Modern mining techniques and responsible extraction practices are unlocking new potential across 15+ active mining regions.",
     facts: [
-      { label: "Electrification Rate", value: "26%" },
-      { label: "2030 Target", value: "50%" },
-      { label: "Investment Gap", value: "$4.2B" },
-      { label: "Solar Potential", value: "4-6 kWh/m²/day" },
-      { label: "Growth Rate", value: "12% YoY" },
-      { label: "Policy Support", value: "PPP Enabled" },
+      { label: "Mineral Value", value: "$10B+" },
+      { label: "Diamond Rank", value: "#7 Global" },
+      { label: "Rutile Reserves", value: "#1 World" },
+      { label: "Active Mines", value: "15+" },
+      { label: "Export Revenue", value: "$165M/yr" },
+      { label: "New Discoveries", value: "8 (2024)" },
     ],
   },
   {
-    src: "/videos/homepage-x.mp4",
-    title: "Investment Opportunities",
+    src: "/videos/flagship-x.mp4",
+    title: "Investment Landscape",
     desc: "Growing economy with favorable investment policies",
     modalTitle: "Sierra Leone Investment Landscape",
     modalDescription: "Sierra Leone offers one of West Africa's most attractive investment climates with a GDP growth of 5.4%, tax incentives for foreign investors, and a strategic location along major shipping routes. The country ranks among the top reformers in the World Bank's Ease of Doing Business index, with streamlined company registration and protected property rights.",
@@ -35,7 +35,7 @@ const whyInvestVideos = [
     ],
   },
   {
-    src: "/videos/flagship-1.mp4",
+    src: "/videos/video-flagship.mp4",
     title: "Flagship Projects",
     desc: "World-class developments across West Africa",
     modalTitle: "Flagship Development Projects",
@@ -53,18 +53,18 @@ const whyInvestVideos = [
 
 const mineralVideos = [
   {
-    src: "/videos/flagship-3.mp4",
-    title: "Rich Mineral Ore",
-    desc: "Abundant deposits of diamonds, gold, rutile, and bauxite",
-    modalTitle: "Sierra Leone Mineral Wealth",
-    modalDescription: "Sierra Leone sits on one of Africa's richest mineral belts with an estimated $10 billion in untapped mineral wealth. The country is the 7th largest diamond producer globally and holds significant rutile deposits (world's largest), bauxite, iron ore, and gold reserves. Modern mining techniques and responsible extraction practices are unlocking new potential across 15+ active mining regions.",
+    src: "/videos/flagship-1.mp4",
+    title: "Mineral Extraction",
+    desc: "Advanced mining operations and mineral processing",
+    modalTitle: "Advanced Mining Operations",
+    modalDescription: "Our mining operations employ cutting-edge extraction technology combined with rigorous environmental and social governance (ESG) standards. We implement traceable supply chains, community benefit sharing agreements, and land rehabilitation programs that exceed international safety standards while generating significant employment and revenue for host communities.",
     facts: [
-      { label: "Mineral Value", value: "$10B+" },
-      { label: "Diamond Rank", value: "#7 Global" },
-      { label: "Rutile Reserves", value: "#1 World" },
-      { label: "Active Mines", value: "15+" },
-      { label: "Export Revenue", value: "$165M/yr" },
-      { label: "New Discoveries", value: "8 (2024)" },
+      { label: "ESG Rating", value: "AA" },
+      { label: "Local Employment", value: "85%" },
+      { label: "Rehabilitation", value: "100%" },
+      { label: "Safety Record", value: "Zero Harm" },
+      { label: "Community Fund", value: "3% Revenue" },
+      { label: "Certifications", value: "5 Intl" },
     ],
   },
   {
@@ -83,7 +83,7 @@ const mineralVideos = [
     ],
   },
   {
-    src: "/videos/flagship-4.mp4",
+    src: "/videos/flagship-3.mp4",
     title: "Sustainable Mining",
     desc: "Responsible mineral extraction and community development",
     modalTitle: "Responsible Mining Operations",
@@ -98,7 +98,7 @@ const mineralVideos = [
     ],
   },
   {
-    src: "/videos/flagship-3.mp4",
+    src: "/videos/flagship-4.mp4",
     title: "Infrastructure Development",
     desc: "Building world-class infrastructure across Sierra Leone",
     modalTitle: "Infrastructure Investment Opportunities",

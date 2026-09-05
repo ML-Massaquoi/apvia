@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { companyData } from "@/data/company";
-import { servicesData } from "@/data/services";
 import HeroVideoSlideshow from "@/components/HeroVideoSlideshow";
 import HomepageVideoSections from "@/components/HomepageVideoSections";
 import InvestmentOpportunities from "@/components/InvestmentOpportunities";
 import InvestorCharts from "@/components/InvestorCharts";
+import HomepageCoreValues from "@/components/HomepageCoreValues";
+import HomepageServices from "@/components/HomepageServices";
+import HomepageLeadership from "@/components/HomepageLeadership";
 
 export const metadata: Metadata = {
   title: "Invest in Sierra Leone | APVIA Ltd - Leading Investment Company",
@@ -218,88 +220,13 @@ export default function HomePage() {
       <InvestorCharts />
 
       {/* Core Values */}
-      <section className="py-16 sm:py-24 bg-[#f8f9fa]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10 sm:mb-14">
-            <div className="gold-line mx-auto mb-4 sm:mb-5" />
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-2 sm:mb-3">Our Core Values</h2>
-            <p className="text-gray-500 max-w-xl mx-auto text-sm sm:text-base">The principles that guide every decision and action at APVIA Ltd</p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-            {companyData.coreValues.map((value) => (
-              <div key={value.title} className="card-white p-6 sm:p-8 text-center">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-[#052e16] flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                  <ValueIcon name={value.icon} />
-                </div>
-                <h3 className="text-base sm:text-lg font-bold text-[#1a1a1a] mb-1 sm:mb-2">{value.title}</h3>
-                <p className="text-gray-500 leading-relaxed text-xs sm:text-sm">{value.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <HomepageCoreValues />
 
       {/* Services Preview */}
-      <section className="py-16 sm:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10 sm:mb-14">
-            <div className="gold-line mx-auto mb-4 sm:mb-5" />
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-2 sm:mb-3">Our Services</h2>
-            <p className="text-gray-500 max-w-xl mx-auto text-sm sm:text-base">Comprehensive solutions across eleven core business verticals</p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-            {servicesData.slice(0, 6).map((service) => (
-              <div key={service.id} className="card-white p-5 sm:p-6 lg:p-8">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#052e16] flex items-center justify-center mb-3 sm:mb-4">
-                  <ServiceIcon name={service.icon} />
-                </div>
-                <h3 className="text-base sm:text-lg font-bold text-[#1a1a1a] mb-1 sm:mb-2">{service.title}</h3>
-                <p className="text-gray-500 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4 line-clamp-3">{service.description}</p>
-                <Link href={`/services#${service.id}`} className="inline-flex items-center gap-2 text-[#14532d] font-semibold text-xs sm:text-sm hover:text-[#d97706] transition-colors">
-                  Learn More <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-                </Link>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-10 sm:mt-14">
-            <Link href="/services" className="btn-primary text-sm sm:text-base">View All Services</Link>
-          </div>
-        </div>
-      </section>
+      <HomepageServices />
 
       {/* Leadership Preview */}
-      <section className="py-16 sm:py-24 bg-[#f8f9fa]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-10 sm:gap-16 items-center">
-            <div className="max-w-lg">
-              <div className="gold-line mb-4 sm:mb-5" />
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-4 sm:mb-5">
-                Leadership That <span className="text-gradient-gold">Drives Excellence</span>
-              </h2>
-              <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-sm sm:text-base">APVIA Ltd is led by a highly experienced and capable management team with diverse backgrounds in business, engineering, finance, law, diplomacy, and international development.</p>
-              <p className="text-gray-600 leading-relaxed mb-6 sm:mb-8 text-sm sm:text-base">Our leadership combines local market intelligence with international standards of excellence, delivering end-to-end solutions that create lasting value for stakeholders.</p>
-              <Link href="/team" className="btn-primary text-sm sm:text-base">Meet Our Team</Link>
-            </div>
-            <div className="grid grid-cols-2 gap-4 sm:gap-6">
-              {[
-                { role: "Managing Director", icon: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" },
-                { role: "Operations", icon: "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z" },
-                { role: "Finance", icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" },
-                { role: "Strategy", icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" },
-              ].map((item) => (
-                <div key={item.role} className="bg-white border border-gray-200 rounded-xl p-4 sm:p-6 text-center hover:shadow-md transition-shadow">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#052e16] flex items-center justify-center mx-auto mb-2 sm:mb-3">
-                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-[#fbbf24]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={item.icon} />
-                    </svg>
-                  </div>
-                  <p className="text-gray-700 text-xs sm:text-sm font-medium">{item.role}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <HomepageLeadership />
 
       {/* CTA */}
       <section className="py-16 sm:py-24 bg-[#052e16]">
@@ -314,42 +241,5 @@ export default function HomePage() {
         </div>
       </section>
     </>
-  );
-}
-
-function ValueIcon({ name }: { name: string }) {
-  const icons: Record<string, string> = {
-    shield: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
-    star: "M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z",
-    leaf: "M12 21a8 8 0 008-8c0-3.75-2.95-7.56-6.5-9.48a1.5 1.5 0 00-2 0C8.95 11.44 6 15.25 6 19a8 8 0 006 2z M12 21v-6",
-    users: "M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z",
-    heart: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z",
-    check: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z",
-  };
-  return (
-    <svg className="w-6 h-6 sm:w-7 sm:h-7 text-[#fbbf24]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={icons[name] || icons.star} />
-    </svg>
-  );
-}
-
-function ServiceIcon({ name }: { name: string }) {
-  const icons: Record<string, string> = {
-    building: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4",
-    cube: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4",
-    globe: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
-    clipboard: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2",
-    truck: "M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0",
-    gem: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4",
-    anchor: "M12 2a3 3 0 00-3 3c0 1.08.36 2.08 1 2.83V9h4v-1.17c.64-.75 1-1.75 1-2.83a3 3 0 00-3-3zm0 14a3 3 0 003-3h-6a3 3 0 003 3zm-5 3h10",
-    sprout: "M12 22V8m0 0c-2 0-6 2-6 6m6-6c2 0 6 2 6 6m-12 0c0 4 2 6 6 6m0 0c4 0 6-2 6-6",
-    cog: "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z",
-    handshake: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z",
-    briefcase: "M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z",
-  };
-  return (
-    <svg className="w-5 h-5 text-[#fbbf24]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={icons[name] || icons.building} />
-    </svg>
   );
 }

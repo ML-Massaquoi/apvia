@@ -9,15 +9,26 @@ const investmentSectors = [
     desc: "Invest in Sierra Leone's rich mineral resources including diamonds, gold, rutile, and bauxite.",
     icon: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4",
     modalTitle: "Mining & Minerals Investment Opportunity",
-    overview: "Sierra Leone sits on one of Africa's richest mineral belts with an estimated $10 billion in untapped mineral wealth. The country is the world's largest rutile producer and 7th largest diamond producer, with significant bauxite, iron ore, and gold deposits. Modern mining techniques and responsible extraction are unlocking new potential across 15+ active mining regions. Our mining operations follow strict ESG standards with traceable supply chains and community benefit programs.",
+    overview: "Sierra Leone sits on one of Africa's richest mineral belts with an estimated $10 billion in untapped mineral wealth. The country is the world's largest rutile producer and 7th largest diamond producer, with significant bauxite, iron ore, and gold deposits.",
     highlights: [
       { label: "Total Value", value: "$10B+", desc: "Estimated untapped mineral wealth across Sierra Leone's mineral belt" },
-      { label: "Diamond Rank", value: "#7 Global", desc: "7th largest diamond producer in the world with alluvial and kimberlite deposits" },
-      { label: "Rutile", value: "#1 World", desc: "World's largest rutile deposits — critical for titanium production and aerospace" },
-      { label: "Export Revenue", value: "$165M/yr", desc: "Current annual mineral export revenue with 18% year-on-year growth" },
-      { label: "Active Mines", value: "15+", desc: "Operational mining sites with international partnerships and modern equipment" },
-      { label: "New Discoveries", value: "8 (2024)", desc: "New mineral discoveries in 2024 alone, expanding the investment frontier" },
+      { label: "Diamond Rank", value: "#7 Global", desc: "7th largest diamond producer in the world" },
+      { label: "Rutile", value: "#1 World", desc: "World's largest rutile deposits" },
+      { label: "Export Revenue", value: "$165M/yr", desc: "Current annual mineral export revenue" },
+      { label: "Active Mines", value: "15+", desc: "Operational mining sites" },
+      { label: "Growth", value: "18% YoY", desc: "Year-on-year export growth" },
     ],
+    chart: {
+      type: "pie" as const,
+      title: "Mineral Export Composition",
+      data: [
+        { name: "Diamonds", value: 35, color: "#052e16" },
+        { name: "Rutile", value: 28, color: "#14532d" },
+        { name: "Gold", value: 18, color: "#d97706" },
+        { name: "Bauxite", value: 12, color: "#166534" },
+        { name: "Iron Ore", value: 7, color: "#fbbf24" },
+      ],
+    },
   },
   {
     title: "Agriculture & Farming",
@@ -145,6 +156,7 @@ export default function InvestmentOpportunities() {
         title={selectedSector?.modalTitle || ""}
         overview={selectedSector?.overview || ""}
         highlights={selectedSector?.highlights || []}
+        chart={selectedSector?.chart}
         cta="Invest in This Sector"
       />
     </>
