@@ -89,4 +89,19 @@ export const teamData = [
     ],
     department: "Executive Management",
   },
+  {
+    id: "finance-procurement",
+    name: "Fanta Fadia Kakay",
+    role: "Financial & Procurement Manager",
+    image: "/team/fanta-kakay.jpg",
+    email: "fanta@apvia-sl.com",
+    bio: "Fanta is an accomplished banking professional with 13 years of experience in the banking and financial services industry, currently serving as a Branch Manager at Zenith Bank (SL) Ltd. She holds a BSc (Hons) in Accounting, an Executive MBA, and an MSc in Economics, giving her a strong academic foundation in accounting, economics, financial management, and business leadership. Her extensive experience spans Cash and Teller Operations, Funds Transfer, Credit Risk Management, and Marketing before advancing to her current leadership position. As Branch Manager, Fanta provides leadership and direction to her team, focusing on people development, business growth, customer satisfaction, operational excellence, and the achievement of organisational objectives.",
+    responsibilities: [
+      "Financial strategy, planning, and reporting across all business divisions",
+      "Procurement management and vendor relationship oversight",
+      "Credit risk management and financial controls",
+      "Budget planning, cost optimization, and financial performance monitoring",
+    ],
+    department: "Executive Management",
+  },
 ];
