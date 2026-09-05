@@ -143,25 +143,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="py-10 sm:py-12 bg-[#052e16]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
-            {[
-              { number: "11+", label: "Business Divisions" },
-              { number: "5+", label: "West African Markets" },
-              { number: "30+", label: "Years Experience" },
-              { number: "24/7", label: "Operational Support" },
-            ].map((stat) => (
-              <div key={stat.label}>
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient-gold mb-1">{stat.number}</div>
-                <div className="text-white/50 text-xs sm:text-sm">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Vision & Mission */}
       <HomepageVisionMission />
 

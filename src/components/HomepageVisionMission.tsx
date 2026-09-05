@@ -212,8 +212,8 @@ export default function HomepageVisionMission() {
         onClose={() => setSelectedMission(false)}
         title="Our Mission"
         overview={companyData.mission}
-        highlights={companyData.missionActions.map((action) => ({
-          label: "Initiative",
+        highlights={companyData.missionActions.map((action, i) => ({
+          label: `Action ${i + 1}`,
           value: "Active",
           desc: action,
         }))}
