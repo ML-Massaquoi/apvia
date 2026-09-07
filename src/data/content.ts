@@ -939,7 +939,7 @@ export const whyInvestVideos = [
     ],
   },
   {
-    src: "/videos/flagship-x.mp4",
+    src: "/videos/video-flagship.mp4",
     title: "Investment Landscape",
     desc: "Growing economy with favorable investment policies",
     modalTitle: "Sierra Leone Investment Landscape",
@@ -955,7 +955,7 @@ export const whyInvestVideos = [
     ],
   },
   {
-    src: "/videos/video-flagship.mp4",
+    src: "/videos/flagship-x.mp4",
     title: "Flagship Projects",
     desc: "World-class developments across West Africa",
     modalTitle: "Flagship Development Projects",
