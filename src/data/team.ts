@@ -35,7 +35,7 @@ export const teamData = [
     role: "Projects & Operations Manager",
     image: "/team/ibrahim-rogers.jpg",
     email: "ibrahimrogers@apvia-sl.com",
-    bio: "Ibrahim oversees the day-to-day operations and project delivery of APVIA Ltd, ensuring seamless coordination across all divisions. His expertise in operational efficiency and project management keeps the company's multi-sector activities running at peak performance.",
+    bio: "A professional Geologist with over 15 years of experience in the Mineral Sands industry. Ibrahim has a stellar reputation in identifying potential mineral resource areas, having worked at Sierra Rutile Limited and as Director of Operations at Harmony Minerals (SL) Ltd. He holds a First-Class BSc in Geology from Fourah Bay College, is pursuing an MBA at Unicaf University, and is a member and Director of the Executive Committee of the Sierra Leone Institution of Geoscientists (SLIG).",
     responsibilities: [
       "Oversees day-to-day operations across all business divisions",
       "Ensures operational excellence, efficiency, and quality delivery",
