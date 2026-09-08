@@ -192,7 +192,7 @@ export const policiesData = [
   {
     id: "complaint",
     title: "Complaint Policy",
-    documentRef: "APVIA-POL-012",
+    documentRef: "APVIA-POL-001",
     content: {
       statement:
         "This policy establishes the framework for receiving, investigating, and resolving complaints made against APVIA Ltd, its directors, employees, agents, or operations in Sierra Leone. It ensures complaints are handled fairly, transparently, and efficiently, with accessible channels for stakeholders to raise concerns without fear of retaliation.",
