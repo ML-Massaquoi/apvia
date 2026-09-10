@@ -23,6 +23,11 @@ const policyLinks = [
   { href: "/policies/anti-bribery", label: "Anti-Bribery & Corruption" },
 ];
 
+const legalLinks = [
+  { href: "/privacy", label: "Privacy Policy" },
+  { href: "/terms", label: "Terms of Use" },
+];
+
 const socialLinks = [
   { href: "mailto:info@apvia-sl.com", label: "Email", icon: "email" },
   { href: "https://www.linkedin.com/in/apvia-sl-446918433/", label: "LinkedIn", icon: "linkedin" },
@@ -142,6 +147,12 @@ export default function Navigation() {
                       {link.label}
                     </Link>
                   ))}
+                  <div className="border-t border-gray-100 my-1" />
+                  {legalLinks.map((link) => (
+                    <Link key={link.href} href={link.href} onClick={() => setPoliciesOpen(false)} className="block px-4 py-2.5 text-sm font-semibold text-[#052e16] hover:bg-green-50 transition-colors">
+                      {link.label}
+                    </Link>
+                  ))}
                 </div>
               )}
             </div>
@@ -209,6 +220,12 @@ export default function Navigation() {
                   </Link>
                   {policyLinks.map((link) => (
                     <Link key={link.href} href={link.href} onClick={() => setIsOpen(false)} className="block px-3 py-2 text-xs text-gray-500 hover:text-[#14532d] hover:bg-green-50 rounded-md transition-colors">
+                      {link.label}
+                    </Link>
+                  ))}
+                  <div className="border-t border-gray-100 my-1" />
+                  {legalLinks.map((link) => (
+                    <Link key={link.href} href={link.href} onClick={() => setIsOpen(false)} className="block px-3 py-2 text-sm font-medium text-[#052e16] hover:bg-green-50 rounded-md transition-colors">
                       {link.label}
                     </Link>
                   ))}

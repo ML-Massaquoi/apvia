@@ -161,11 +161,11 @@ export default function Footer() {
               &copy; {new Date().getFullYear()} APVIA Ltd. All rights reserved.
             </p>
             <div className="flex gap-6">
-              <Link href="/policies" className="text-white/30 hover:text-[#fbbf24] text-sm transition-colors">
+              <Link href="/privacy" className="text-white/30 hover:text-[#fbbf24] text-sm transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="/policies" className="text-white/30 hover:text-[#fbbf24] text-sm transition-colors">
-                Terms of Service
+              <Link href="/terms" className="text-white/30 hover:text-[#fbbf24] text-sm transition-colors">
+                Terms of Use
               </Link>
             </div>
           </div>

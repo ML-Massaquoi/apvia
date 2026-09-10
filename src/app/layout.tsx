@@ -5,6 +5,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import FloatingAssistant from "@/components/FloatingAssistant";
 import BackToTop from "@/components/BackToTop";
+import CookieConsent from "@/components/CookieConsent";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -100,6 +101,7 @@ export default function RootLayout({
         <Footer />
         <FloatingAssistant />
         <BackToTop />
+        <CookieConsent />
       </body>
     </html>
   );
