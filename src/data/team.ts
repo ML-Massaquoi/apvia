@@ -95,7 +95,7 @@ export const teamData = [
     role: "Contract & Business Development Manager",
     image: "/team/shar-james.jpg",
     email: "sahrjames@apvia-sl.com",
-    bio: "Sahr leads APVIA Ltd's business development and contract management efforts, driving growth through strategic partnerships and new market opportunities across Sierra Leone and the West Africa region.",
+    bio: "A certified IT professional with a BSc (Hons) in Computer Science and a Higher National Diploma in Computer Science from Njala University. As a focused and resilient person, Sahr further engaged in industrial certifications including CCNA, A+, N+, and ITIL. He possesses over a decade of progressive experience in network engineering, IT consultancy, and IT management. Career highlights include serving as a Network Technician for the Hugo Chavez International Foundation for Peace and Solidarity (2015) and as an IT Consultant at Conservation Society of Sierra Leone (2016), where he was charged with managing IT infrastructure, providing technical support, and implementing technology solutions to support conservation initiatives. Presently serving as IT and Administrative Manager at Associate Builders Civil Contractors and Developers, overseeing all IT operations, network security, systems administration, and administrative functions to ensure organisational efficiency.",
     responsibilities: [
       "Leads business development, market expansion, and strategic planning",
       "Manages key client relationships and partnership development",

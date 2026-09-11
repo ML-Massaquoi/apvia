@@ -58,8 +58,13 @@ export default function PrivacyPolicyPage() {
               <div className="bg-[#f8f9fa] border border-gray-200 rounded-xl p-5 my-4">
                 <p className="font-semibold text-[#052e16]">African Projects Ventures Investments and Advancement Limited</p>
                 <p className="text-sm text-gray-600 mt-1">91 Fort Street, Freetown, Sierra Leone</p>
-                <p className="text-sm text-gray-600">Email: <a href="mailto:info@apvia-sl.com" className="text-[#14532d] underline">info@apvia-sl.com</a></p>
+                <p className="text-sm text-gray-600">Email: <a href="mailto:compliance@apvia-sl.com" className="text-[#14532d] underline">compliance@apvia-sl.com</a></p>
                 <p className="text-sm text-gray-600">Phone: 232 73 88 66 22</p>
+              </div>
+              <div className="bg-[#f8f9fa] border border-gray-200 rounded-xl p-5 my-4">
+                <p className="font-semibold text-[#052e16]">Data Protection Officer</p>
+                <p className="text-sm text-gray-600 mt-1">Vincent Davies — HR &amp; Administrative Manager</p>
+                <p className="text-sm text-gray-600">Email: <a href="mailto:compliance@apvia-sl.com" className="text-[#14532d] underline">compliance@apvia-sl.com</a></p>
               </div>
             </Section>
 
@@ -172,8 +177,8 @@ export default function PrivacyPolicyPage() {
                 <RightCard icon="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728L5.636 5.636m12.728 12.728A9 9 0 015.636 5.636" title="Right to Object" desc="Object to processing based on legitimate interests or direct marketing." />
               </div>
               <p>
-                To exercise any of these rights, please contact us at{" "}
-                <a href="mailto:info@apvia-sl.com" className="text-[#14532d] underline font-medium">info@apvia-sl.com</a>.
+                To exercise any of these rights, please contact our Data Protection Officer at{" "}
+                <a href="mailto:compliance@apvia-sl.com" className="text-[#14532d] underline font-medium">compliance@apvia-sl.com</a>.
                 We will respond to your request within 30 days.
               </p>
             </Section>
@@ -222,10 +227,11 @@ export default function PrivacyPolicyPage() {
               </p>
               <div className="bg-[#f8f9fa] border border-gray-200 rounded-xl p-6 my-4">
                 <p className="font-semibold text-[#052e16] mb-3">Data Protection Enquiries</p>
+                <p className="text-sm text-gray-600 mb-2">Vincent Davies — Data Protection Officer</p>
                 <div className="space-y-2 text-sm text-gray-600">
                   <p className="flex items-center gap-2">
                     <svg className="w-4 h-4 text-[#14532d] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-                    <a href="mailto:info@apvia-sl.com" className="text-[#14532d] underline">info@apvia-sl.com</a>
+                    <a href="mailto:compliance@apvia-sl.com" className="text-[#14532d] underline">compliance@apvia-sl.com</a>
                   </p>
                   <p className="flex items-center gap-2">
                     <svg className="w-4 h-4 text-[#14532d] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
