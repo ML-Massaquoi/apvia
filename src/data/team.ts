@@ -109,7 +109,7 @@ export const teamData = [
     name: "Michael Kenneth Ondaan",
     role: "Investment & Principal Manager",
     image: "/team/michael-ondaan.jpg",
-    email: "michaelkonaad@apkia-sl.com",
+    email: "michaelkonaad@apvia-sl.com",
     bio: "Michael Kenneth Ondaan serves as Investment and Principal Manager at APVIA Ltd, where he oversees investment strategy, principal capital deployment, and the firm's mandate to attract inbound investment into high-growth sectors — with a particular emphasis on telecommunications. In this capacity, he manages, analyses, and trades a diversified portfolio of financial assets, delivering capital growth outcomes for both corporate firms and high-net-worth individual clients. Michael's professional foundation is built on a Diploma in Agriculture Science, an academic background that has endowed him with a disciplined, sector-level analytical framework he now applies to financial markets. His career spans the core disciplines of investment practice, giving him a rare end-to-end perspective on capital allocation — from initial market research through final investment execution and long-term portfolio stewardship. He is particularly focused on channelling institutional capital into telecommunications infrastructure, a sector he views as foundational to economic development. By combining rigorous financial analysis with a long-term, principal-investor mindset, Michael works to align investment returns with meaningful, lasting economic impact.",
     responsibilities: [
       "Oversees investment strategy and principal capital deployment",
