@@ -150,7 +150,7 @@ export default function TeamPage() {
           </div>
 
           {/* Remaining Members */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {teamData.slice(4).map((member) => (
               <div
                 key={member.id}
@@ -164,7 +164,7 @@ export default function TeamPage() {
                     alt={member.name}
                     fill
                     className="object-contain transition-transform duration-700 group-hover:scale-105 p-4"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    sizes="(max-width: 640px) 100vw, 25vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#052e16]/90 via-[#052e16]/20 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-5">
