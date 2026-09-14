@@ -124,12 +124,12 @@ export default function TeamPage() {
                 className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 bg-white cursor-pointer"
               >
                 <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#f59e0b] via-[#d97706] to-[#f59e0b] z-10" />
-                <div className="relative h-64 sm:h-72 overflow-hidden bg-[#052e16]">
+                <div className="relative aspect-[4/5] overflow-hidden bg-[#052e16]">
                   <Image
                     src={member.image}
                     alt={member.name}
                     fill
-                    className="object-contain transition-transform duration-700 group-hover:scale-105 p-4"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
                     sizes="(max-width: 640px) 100vw, 25vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#052e16]/90 via-[#052e16]/20 to-transparent" />
@@ -158,12 +158,12 @@ export default function TeamPage() {
                 className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 bg-white cursor-pointer"
               >
                 <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#f59e0b] via-[#d97706] to-[#f59e0b] z-10" />
-                <div className="relative h-64 sm:h-72 overflow-hidden bg-[#052e16]">
+                <div className="relative aspect-[4/5] overflow-hidden bg-[#052e16]">
                   <Image
                     src={member.image}
                     alt={member.name}
                     fill
-                    className="object-contain transition-transform duration-700 group-hover:scale-105 p-4"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
                     sizes="(max-width: 640px) 100vw, 25vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#052e16]/90 via-[#052e16]/20 to-transparent" />
@@ -258,12 +258,12 @@ export default function TeamPage() {
               </svg>
             </button>
 
-            <div className="relative h-64 sm:h-[28rem] overflow-hidden bg-[#052e16]">
+            <div className="relative aspect-[4/5] sm:aspect-[3/4] overflow-hidden bg-[#052e16]">
               <Image
                 src={selectedMember.image}
                 alt={selectedMember.name}
                 fill
-                className="object-contain p-8"
+                className="object-cover"
                 sizes="(max-width: 768px) 100vw, 768px"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#052e16] via-[#052e16]/40 to-transparent" />
