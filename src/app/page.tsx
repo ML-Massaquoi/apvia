@@ -30,89 +30,34 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  const jsonLd = {
+  const servicesJsonLd = {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "APVIA Ltd",
-    alternateName: "African Projects Ventures Investments and Advancement Limited",
-    url: "https://www.apvia-sl.com",
-    logo: "https://www.apvia-sl.com/Apvia_logo.jpeg",
-    description:
-      "A diversified multi-sectoral holding company headquartered in Freetown, Sierra Leone, driving sustainable economic development across West Africa.",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "91 Fort Street",
-      addressLocality: "Freetown",
-      addressCountry: "Sierra Leone",
+    "@type": "Service",
+    serviceType: "Investment and Business Development",
+    provider: {
+      "@type": "Organization",
+      name: "APVIA Ltd",
     },
-    contactPoint: {
-      "@type": "ContactPoint",
-      telephone: "232-73-88-66-22",
-      contactType: "customer service",
-      email: "info@apvia-sl.com",
-    },
-    sameAs: [
-      "https://www.linkedin.com/company/apvia-ltd",
-      "https://www.facebook.com/apvialtd",
-      "https://www.instagram.com/apvialtd",
-    ],
     areaServed: {
       "@type": "Country",
       name: "Sierra Leone",
     },
-    knowsAbout: [
-      "Investment in Sierra Leone",
-      "Sierra Leone mining",
-      "Sierra Leone agriculture",
-      "Sierra Leone construction",
-      "West Africa trade",
-    ],
-  };
-
-  const websiteJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: "APVIA Ltd",
-    url: "https://www.apvia-sl.com",
-    potentialAction: {
-      "@type": "SearchAction",
-      target: "https://www.apvia-sl.com/search?q={search_term_string}",
-      "query-input": "required name=search_term_string",
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "APVIA Investment Services",
+      itemListElement: [
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Mining Investment" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Agriculture Investment" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Construction and Engineering" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Logistics and Supply Chain" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Import and Export Trade" } },
+      ],
     },
-  };
-
-  const localBusinessJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: "APVIA Ltd",
-    image: "https://www.apvia-sl.com/Apvia_logo.jpeg",
-    url: "https://www.apvia-sl.com",
-    telephone: "232-73-88-66-22",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "91 Fort Street",
-      addressLocality: "Freetown",
-      addressCountry: "Sierra Leone",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 8.4841,
-      longitude: -13.2317,
-    },
-    openingHoursSpecification: {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "08:00",
-      closes: "17:00",
-    },
-    priceRange: "$$",
   };
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesJsonLd) }} />
 
       {/* Hero */}
       <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden">
