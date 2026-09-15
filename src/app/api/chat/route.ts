@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { getDb } from "@/lib/db";
 
 const WEB3FORMS_KEY = process.env.WEB3FORMS_ACCESS_KEY || "YOUR_WEB3FORMS_ACCESS_KEY";
 
@@ -32,7 +33,13 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ reply: "Please type a message." });
     }
 
-    // Send the user's message to info@apvia-sl.com via Web3Forms
+    // Save to database
+    const db = getDb();
+    db.prepare(
+      "INSERT INTO messages (name, email, subject, message, source) VALUES (?, ?, ?, ?, 'chat')"
+    ).run("Visitor", "", "Chat Message", message);
+
+    // Send email via Web3Forms
     if (WEB3FORMS_KEY !== "YOUR_WEB3FORMS_ACCESS_KEY") {
       await fetch("https://api.web3forms.com/submit", {
         method: "POST",
