@@ -1,24 +1,85 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
+
+interface Message {
+  id: number;
+  text: string;
+  sender: "user" | "bot";
+  time: string;
+}
 
 export default function FloatingAssistant() {
   const [isOpen, setIsOpen] = useState(false);
   const [showBubble, setShowBubble] = useState(true);
+  const [messages, setMessages] = useState<Message[]>([
+    {
+      id: 1,
+      text: "Welcome to APVIA Ltd. We drive sustainable development across West Africa. How can we help you today?",
+      sender: "bot",
+      time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+    },
+  ]);
+  const [input, setInput] = useState("");
+  const [sending, setSending] = useState(false);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
+
+  const sendMessage = async () => {
+    if (!input.trim() || sending) return;
+
+    const userMsg: Message = {
+      id: Date.now(),
+      text: input.trim(),
+      sender: "user",
+      time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+    };
+    setMessages((prev) => [...prev, userMsg]);
+    setInput("");
+    setSending(true);
+
+    try {
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: userMsg.text }),
+      });
+      const data = await res.json();
+      const botMsg: Message = {
+        id: Date.now() + 1,
+        text: data.reply || "Thank you for your message. Our team will get back to you shortly. For urgent inquiries, email info@apvia-sl.com or call 232 73 88 66 22.",
+        sender: "bot",
+        time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+      };
+      setMessages((prev) => [...prev, botMsg]);
+    } catch {
+      const botMsg: Message = {
+        id: Date.now() + 1,
+        text: "Sorry, something went wrong. Please email info@apvia-sl.com or call 232 73 88 66 22.",
+        sender: "bot",
+        time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+      };
+      setMessages((prev) => [...prev, botMsg]);
+    } finally {
+      setSending(false);
+    }
+  };
 
   return (
     <div className="hidden sm:block fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50">
       {/* Chat Panel */}
       {isOpen && (
-        <div className="mb-3 sm:mb-4 w-[280px] sm:w-[320px] bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden animate-in slide-in-from-bottom-5 duration-300">
+        <div className="mb-3 sm:mb-4 w-[300px] sm:w-[340px] bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden">
           {/* Header */}
-          <div className="bg-[#052e16] px-4 py-3 sm:py-4">
+          <div className="bg-[#052e16] px-4 py-3">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2.5">
                 <div className="relative">
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#14532d] flex items-center justify-center border-2 border-[#fbbf24]/30">
+                  <div className="w-9 h-9 rounded-full bg-[#14532d] flex items-center justify-center border-2 border-[#fbbf24]/30">
                     <Image src="/Apvia_logo.jpeg" alt="APVIA" width={28} height={28} className="rounded-full object-cover" />
                   </div>
                   <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-green-400 rounded-full border-2 border-[#052e16]" />
@@ -37,94 +98,68 @@ export default function FloatingAssistant() {
           </div>
 
           {/* Messages */}
-          <div className="p-4 space-y-3">
-            {/* Bot Message */}
-            <div className="flex items-start gap-2">
-              <div className="w-6 h-6 rounded-full bg-[#052e16] flex items-center justify-center shrink-0 mt-0.5">
-                <Image src="/Apvia_logo.jpeg" alt="" width={16} height={16} className="rounded-full object-cover" />
+          <div className="h-[300px] overflow-y-auto p-4 space-y-3">
+            {messages.map((msg) => (
+              <div key={msg.id} className={`flex ${msg.sender === "user" ? "justify-end" : "items-start gap-2"}`}>
+                {msg.sender === "bot" && (
+                  <div className="w-6 h-6 rounded-full bg-[#052e16] flex items-center justify-center shrink-0 mt-0.5">
+                    <Image src="/Apvia_logo.jpeg" alt="" width={16} height={16} className="rounded-full object-cover" />
+                  </div>
+                )}
+                <div className={`max-w-[80%] rounded-xl px-3 py-2 ${
+                  msg.sender === "user"
+                    ? "bg-[#052e16] text-white rounded-br-sm"
+                    : "bg-[#f8f9fa] text-gray-700 rounded-tl-sm"
+                }`}>
+                  <p className="text-xs sm:text-sm leading-relaxed">{msg.text}</p>
+                  <p className={`text-[9px] mt-1 ${msg.sender === "user" ? "text-white/50" : "text-gray-400"}`}>{msg.time}</p>
+                </div>
               </div>
-              <div className="bg-[#f8f9fa] rounded-xl rounded-tl-sm px-3 py-2 max-w-[220px] sm:max-w-[250px]">
-                <p className="text-gray-700 text-xs sm:text-sm leading-relaxed">
-                  Welcome to <span className="font-semibold text-[#052e16]">APVIA Ltd</span>. We drive sustainable development across West Africa. How can we help you today?
-                </p>
+            ))}
+            {sending && (
+              <div className="flex items-start gap-2">
+                <div className="w-6 h-6 rounded-full bg-[#052e16] flex items-center justify-center shrink-0 mt-0.5">
+                  <Image src="/Apvia_logo.jpeg" alt="" width={16} height={16} className="rounded-full object-cover" />
+                </div>
+                <div className="bg-[#f8f9fa] rounded-xl rounded-tl-sm px-3 py-2">
+                  <p className="text-xs text-gray-400 animate-pulse">Typing...</p>
+                </div>
               </div>
-            </div>
+            )}
+            <div ref={messagesEndRef} />
+          </div>
 
-            {/* Quick Actions */}
-            <div className="space-y-2 pt-1">
-              <Link
-                href="/contact"
-                onClick={() => setIsOpen(false)}
-                className="flex items-center gap-2.5 w-full p-2.5 bg-[#052e16]/5 hover:bg-[#052e16]/10 rounded-xl transition-colors group"
+          {/* Input */}
+          <div className="border-t border-gray-100 p-3">
+            <form
+              onSubmit={(e) => { e.preventDefault(); sendMessage(); }}
+              className="flex items-center gap-2"
+            >
+              <input
+                type="text"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                placeholder="Type your message..."
+                className="flex-1 px-3 py-2 bg-[#f8f9fa] border border-gray-200 rounded-lg text-xs sm:text-sm text-[#1a1a1a] placeholder-gray-400 focus:outline-none focus:border-[#052e16]/30"
+              />
+              <button
+                type="submit"
+                disabled={!input.trim() || sending}
+                className="w-9 h-9 rounded-lg bg-[#052e16] flex items-center justify-center text-[#fbbf24] hover:bg-[#14532d] transition-colors disabled:opacity-40"
               >
-                <div className="w-8 h-8 rounded-lg bg-[#052e16] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
-                  <svg className="w-4 h-4 text-[#fbbf24]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                  </svg>
-                </div>
-                <div className="text-left">
-                  <p className="text-xs font-semibold text-[#1a1a1a] group-hover:text-[#052e16]">Start a Conversation</p>
-                  <p className="text-[10px] text-gray-400">Chat with our team</p>
-                </div>
-              </Link>
-
-              <Link
-                href="/services"
-                onClick={() => setIsOpen(false)}
-                className="flex items-center gap-2.5 w-full p-2.5 bg-[#d97706]/5 hover:bg-[#d97706]/10 rounded-xl transition-colors group"
-              >
-                <div className="w-8 h-8 rounded-lg bg-[#d97706] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
-                  <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                  </svg>
-                </div>
-                <div className="text-left">
-                  <p className="text-xs font-semibold text-[#1a1a1a] group-hover:text-[#d97706]">Explore Investments</p>
-                  <p className="text-[10px] text-gray-400">View opportunities</p>
-                </div>
-              </Link>
-
-              <Link
-                href="/about"
-                onClick={() => setIsOpen(false)}
-                className="flex items-center gap-2.5 w-full p-2.5 bg-[#14532d]/5 hover:bg-[#14532d]/10 rounded-xl transition-colors group"
-              >
-                <div className="w-8 h-8 rounded-lg bg-[#14532d] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
-                  <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <div className="text-left">
-                  <p className="text-xs font-semibold text-[#1a1a1a] group-hover:text-[#14532d]">About APVIA</p>
-                  <p className="text-[10px] text-gray-400">Learn about us</p>
-                </div>
-              </Link>
-            </div>
-
-            {/* Contact Info */}
-            <div className="pt-2 border-t border-gray-100">
-              <div className="flex items-center gap-3 text-[10px] text-gray-400">
-                <a href="mailto:info@apvia-sl.com" className="flex items-center gap-1 hover:text-[#14532d] transition-colors">
-                  <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                  info@apvia-sl.com
-                </a>
-                <a href="tel:+23273886622" className="flex items-center gap-1 hover:text-[#14532d] transition-colors">
-                  <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
-                  232 73 88 66 22
-                </a>
-              </div>
-            </div>
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                </svg>
+              </button>
+            </form>
+            <p className="text-[9px] text-gray-300 text-center mt-1.5">Messages go to info@apvia-sl.com</p>
           </div>
         </div>
       )}
 
       {/* Greeting Bubble */}
       {showBubble && !isOpen && (
-        <div className="mb-3 mr-1 sm:mr-0 sm:absolute sm:bottom-16 sm:right-0 w-[200px] sm:w-[220px] bg-white rounded-xl shadow-lg border border-gray-100 p-3 animate-in slide-in-from-bottom-2 fade-in duration-300">
+        <div className="mb-3 mr-1 sm:mr-0 sm:absolute sm:bottom-16 sm:right-0 w-[200px] sm:w-[220px] bg-white rounded-xl shadow-lg border border-gray-100 p-3">
           <button onClick={() => setShowBubble(false)} className="absolute top-1.5 right-1.5 w-4 h-4 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors">
             <svg className="w-2.5 h-2.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -162,7 +197,6 @@ export default function FloatingAssistant() {
             <svg className="w-6 h-6 text-[#fbbf24]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
             </svg>
-            {/* Notification dot */}
             {!isOpen && (
               <span className="absolute -top-1 -right-1 w-3 h-3 bg-[#fbbf24] rounded-full border-2 border-[#052e16]" />
             )}
