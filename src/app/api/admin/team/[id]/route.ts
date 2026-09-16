@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getDb } from "@/lib/db";
+import { getDb, ensureSchema } from "@/lib/db";
 
 export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  await ensureSchema();
   const db = getDb();
   const { id } = await params;
   const { name, role, bio, photo_path, email, sort_order } = await req.json();

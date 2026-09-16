@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getDb } from "@/lib/db";
+import { getDb, ensureSchema } from "@/lib/db";
 
 export async function GET(req: NextRequest) {
+  await ensureSchema();
   const db = getDb();
   const { searchParams } = new URL(req.url);
   const source = searchParams.get("source");
@@ -34,6 +35,7 @@ export async function GET(req: NextRequest) {
 }
 
 export async function DELETE(req: NextRequest) {
+  await ensureSchema();
   const db = getDb();
   const { id } = await req.json();
   if (!id) return NextResponse.json({ error: "Missing id" }, { status: 400 });

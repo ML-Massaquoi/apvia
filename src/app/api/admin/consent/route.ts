@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getDb } from "@/lib/db";
+import { getDb, ensureSchema } from "@/lib/db";
 
 export async function GET(req: NextRequest) {
+  await ensureSchema();
   const db = getDb();
   const { searchParams } = new URL(req.url);
   const exportCsv = searchParams.get("export");

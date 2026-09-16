@@ -4,6 +4,7 @@ const TURSO_URL = process.env.TURSO_DATABASE_URL || "libsql://apvia-andymojo21.a
 const TURSO_TOKEN = process.env.TURSO_AUTH_TOKEN || "";
 
 let _db: Client | null = null;
+let _initialized = false;
 
 export function getDb(): Client {
   if (!_db) {
@@ -12,7 +13,8 @@ export function getDb(): Client {
   return _db;
 }
 
-export async function initSchema() {
+export async function ensureSchema() {
+  if (_initialized) return;
   const db = getDb();
   await db.executeMultiple(`
     CREATE TABLE IF NOT EXISTS messages (
@@ -25,7 +27,6 @@ export async function initSchema() {
       status TEXT NOT NULL DEFAULT 'new',
       created_at TEXT NOT NULL DEFAULT (datetime('now'))
     );
-
     CREATE TABLE IF NOT EXISTS cookie_consents (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       necessary INTEGER NOT NULL DEFAULT 1,
@@ -35,7 +36,6 @@ export async function initSchema() {
       ip TEXT DEFAULT '',
       created_at TEXT NOT NULL DEFAULT (datetime('now'))
     );
-
     CREATE TABLE IF NOT EXISTS team_members (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       name TEXT NOT NULL,
@@ -46,18 +46,17 @@ export async function initSchema() {
       sort_order INTEGER NOT NULL DEFAULT 0,
       created_at TEXT NOT NULL DEFAULT (datetime('now'))
     );
-
     CREATE TABLE IF NOT EXISTS settings (
       key TEXT PRIMARY KEY,
       value TEXT NOT NULL DEFAULT ''
     );
-
     CREATE TABLE IF NOT EXISTS page_views (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       path TEXT NOT NULL,
       created_at TEXT NOT NULL DEFAULT (datetime('now'))
     );
   `);
+  _initialized = true;
 }
 
 export type Message = {

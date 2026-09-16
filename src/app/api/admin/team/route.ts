@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getDb } from "@/lib/db";
+import { getDb, ensureSchema } from "@/lib/db";
 
 export async function GET() {
+  await ensureSchema();
   const db = getDb();
   const result = await db.execute("SELECT * FROM team_members ORDER BY sort_order ASC, id ASC");
   return NextResponse.json({ members: result.rows });

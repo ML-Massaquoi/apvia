@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getDb } from "@/lib/db";
+import { getDb, ensureSchema } from "@/lib/db";
 
 const WEB3FORMS_KEY = process.env.WEB3FORMS_ACCESS_KEY || "YOUR_WEB3FORMS_ACCESS_KEY";
 
@@ -33,6 +33,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ reply: "Please type a message." });
     }
 
+    await ensureSchema();
     const db = getDb();
     await db.execute({
       sql: "INSERT INTO messages (name, email, subject, message, source) VALUES (?, ?, ?, ?, 'chat')",

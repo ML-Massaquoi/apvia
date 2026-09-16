@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
-import { getDb } from "@/lib/db";
+import { getDb, ensureSchema } from "@/lib/db";
 
 export async function GET() {
+  await ensureSchema();
   const db = getDb();
 
   const totalMessages = Number((await db.execute("SELECT COUNT(*) as count FROM messages")).rows[0]?.count ?? 0);

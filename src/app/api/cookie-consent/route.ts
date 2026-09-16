@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getDb } from "@/lib/db";
+import { getDb, ensureSchema } from "@/lib/db";
 
 const WEB3FORMS_KEY = process.env.WEB3FORMS_ACCESS_KEY || "YOUR_WEB3FORMS_ACCESS_KEY";
 
@@ -8,6 +8,7 @@ export async function POST(req: NextRequest) {
     const body = await req.json();
     const { necessary, analytics, marketing, timestamp, userAgent } = body;
 
+    await ensureSchema();
     const db = getDb();
     const ip = req.headers.get("x-forwarded-for") || req.headers.get("x-real-ip") || "";
     await db.execute({
