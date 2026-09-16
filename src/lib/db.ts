@@ -1,6 +1,6 @@
 import { createClient, type Client } from "@libsql/client";
 
-const TURSO_URL = process.env.TURSO_DATABASE_URL || "libsql://apvia-andymojo21.aws-us-west-2.turso.io";
+const TURSO_URL = process.env.TURSO_DATABASE_URL || "https://apvia-andymojo21.turso.io";
 const TURSO_TOKEN = process.env.TURSO_AUTH_TOKEN || "";
 
 let _db: Client | null = null;
