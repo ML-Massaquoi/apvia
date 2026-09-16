@@ -70,7 +70,7 @@ export default function FloatingAssistant() {
   };
 
   return (
-    <div className="hidden sm:block fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50">
+    <div className="hidden sm:block fixed bottom-4 right-4 z-50">
       {/* Chat Panel */}
       {isOpen && (
         <div className="mb-3 sm:mb-4 w-[300px] sm:w-[340px] bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden">
