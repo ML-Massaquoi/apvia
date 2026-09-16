@@ -7,6 +7,7 @@ import FloatingAssistant from "@/components/FloatingAssistant";
 import BackToTop from "@/components/BackToTop";
 import CookieConsent from "@/components/CookieConsent";
 import StructuredData from "@/components/StructuredData";
+import PageViewTracker from "@/components/PageViewTracker";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -114,6 +115,7 @@ export default function RootLayout({
         <FloatingAssistant />
         <BackToTop />
         <CookieConsent />
+        <PageViewTracker />
       </body>
     </html>
   );
