@@ -4,59 +4,52 @@ import { getDb } from "@/lib/db";
 export async function GET() {
   const db = getDb();
 
-  const totalMessages = (db.prepare("SELECT COUNT(*) as count FROM messages").get() as { count: number }).count;
-  const unreadMessages = (db.prepare("SELECT COUNT(*) as count FROM messages WHERE status = 'new'").get() as { count: number }).count;
-  const totalConsents = (db.prepare("SELECT COUNT(*) as count FROM cookie_consents").get() as { count: number }).count;
-  const totalTeam = (db.prepare("SELECT COUNT(*) as count FROM team_members").get() as { count: number }).count;
+  const totalMessages = Number((await db.execute("SELECT COUNT(*) as count FROM messages")).rows[0]?.count ?? 0);
+  const unreadMessages = Number((await db.execute("SELECT COUNT(*) as count FROM messages WHERE status = 'new'")).rows[0]?.count ?? 0);
+  const totalConsents = Number((await db.execute("SELECT COUNT(*) as count FROM cookie_consents")).rows[0]?.count ?? 0);
+  const totalTeam = Number((await db.execute("SELECT COUNT(*) as count FROM team_members")).rows[0]?.count ?? 0);
 
-  // Views per day (last 30 days)
-  const viewsPerDay = db.prepare(`
+  const viewsPerDay = (await db.execute(`
     SELECT date(created_at) as date, COUNT(*) as views
     FROM page_views
     WHERE created_at >= datetime('now', '-30 days')
     GROUP BY date(created_at)
     ORDER BY date ASC
-  `).all();
+  `)).rows;
 
-  // Top pages
-  const topPages = db.prepare(`
+  const topPages = (await db.execute(`
     SELECT path, COUNT(*) as views
     FROM page_views
     GROUP BY path
     ORDER BY views DESC
     LIMIT 10
-  `).all();
+  `)).rows;
 
-  // Messages by source
-  const messagesBySource = db.prepare(`
+  const messagesBySource = (await db.execute(`
     SELECT source, COUNT(*) as count FROM messages GROUP BY source
-  `).all();
+  `)).rows;
 
-  // Messages by status
-  const messagesByStatus = db.prepare(`
+  const messagesByStatus = (await db.execute(`
     SELECT status, COUNT(*) as count FROM messages GROUP BY status
-  `).all();
+  `)).rows;
 
-  // Consents breakdown
-  const consentAnalytics = (db.prepare("SELECT COUNT(*) as count FROM cookie_consents WHERE analytics = 1").get() as { count: number }).count;
-  const consentMarketing = (db.prepare("SELECT COUNT(*) as count FROM cookie_consents WHERE marketing = 1").get() as { count: number }).count;
+  const consentAnalytics = Number((await db.execute("SELECT COUNT(*) as count FROM cookie_consents WHERE analytics = 1")).rows[0]?.count ?? 0);
+  const consentMarketing = Number((await db.execute("SELECT COUNT(*) as count FROM cookie_consents WHERE marketing = 1")).rows[0]?.count ?? 0);
 
-  // Messages per day (last 14 days)
-  const messagesPerDay = db.prepare(`
+  const messagesPerDay = (await db.execute(`
     SELECT date(created_at) as date, COUNT(*) as count
     FROM messages
     WHERE created_at >= datetime('now', '-14 days')
     GROUP BY date(created_at)
     ORDER BY date ASC
-  `).all();
+  `)).rows;
 
-  // Recent messages
-  const recentMessages = db.prepare(`
+  const recentMessages = (await db.execute(`
     SELECT id, name, email, subject, source, status, created_at
     FROM messages
     ORDER BY created_at DESC
     LIMIT 5
-  `).all();
+  `)).rows;
 
   return NextResponse.json({
     totalMessages,

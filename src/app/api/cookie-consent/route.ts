@@ -8,14 +8,13 @@ export async function POST(req: NextRequest) {
     const body = await req.json();
     const { necessary, analytics, marketing, timestamp, userAgent } = body;
 
-    // Save to database
     const db = getDb();
     const ip = req.headers.get("x-forwarded-for") || req.headers.get("x-real-ip") || "";
-    db.prepare(
-      "INSERT INTO cookie_consents (necessary, analytics, marketing, user_agent, ip) VALUES (?, ?, ?, ?, ?)"
-    ).run(necessary ? 1 : 0, analytics ? 1 : 0, marketing ? 1 : 0, userAgent || "", ip);
+    await db.execute({
+      sql: "INSERT INTO cookie_consents (necessary, analytics, marketing, user_agent, ip) VALUES (?, ?, ?, ?, ?)",
+      args: [necessary ? 1 : 0, analytics ? 1 : 0, marketing ? 1 : 0, userAgent || "", ip],
+    });
 
-    // Send email via Web3Forms
     if (WEB3FORMS_KEY !== "YOUR_WEB3FORMS_ACCESS_KEY") {
       await fetch("https://api.web3forms.com/submit", {
         method: "POST",

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getDb, type Message } from "@/lib/db";
+import { getDb } from "@/lib/db";
 
 export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const db = getDb();
@@ -10,8 +10,9 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id
     return NextResponse.json({ error: "Invalid status" }, { status: 400 });
   }
 
-  db.prepare("UPDATE messages SET status = ? WHERE id = ?").run(status, Number(id));
-  const message = db.prepare("SELECT * FROM messages WHERE id = ?").get(Number(id)) as Message | undefined;
+  await db.execute({ sql: "UPDATE messages SET status = ? WHERE id = ?", args: [status, Number(id)] });
+  const result = await db.execute({ sql: "SELECT * FROM messages WHERE id = ?", args: [Number(id)] });
+  const message = result.rows[0];
 
   if (!message) return NextResponse.json({ error: "Not found" }, { status: 404 });
   return NextResponse.json({ message });

@@ -33,13 +33,12 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ reply: "Please type a message." });
     }
 
-    // Save to database
     const db = getDb();
-    db.prepare(
-      "INSERT INTO messages (name, email, subject, message, source) VALUES (?, ?, ?, ?, 'chat')"
-    ).run("Visitor", "", "Chat Message", message);
+    await db.execute({
+      sql: "INSERT INTO messages (name, email, subject, message, source) VALUES (?, ?, ?, ?, 'chat')",
+      args: ["Visitor", "", "Chat Message", message],
+    });
 
-    // Send email via Web3Forms
     if (WEB3FORMS_KEY !== "YOUR_WEB3FORMS_ACCESS_KEY") {
       await fetch("https://api.web3forms.com/submit", {
         method: "POST",

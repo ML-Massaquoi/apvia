@@ -1,13 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getDb, type CookieConsent } from "@/lib/db";
+import { getDb } from "@/lib/db";
 
 export async function GET(req: NextRequest) {
   const db = getDb();
   const { searchParams } = new URL(req.url);
   const exportCsv = searchParams.get("export");
 
-  const records = db.prepare("SELECT * FROM cookie_consents ORDER BY created_at DESC").all() as CookieConsent[];
-  const total = db.prepare("SELECT COUNT(*) as count FROM cookie_consents").get() as { count: number };
+  const result = await db.execute("SELECT * FROM cookie_consents ORDER BY created_at DESC");
+  const records = result.rows;
+  const total = Number((await db.execute("SELECT COUNT(*) as count FROM cookie_consents")).rows[0]?.count ?? 0);
 
   if (exportCsv === "csv") {
     const header = "ID,Necessary,Analytics,Marketing,User Agent,IP,Timestamp\n";
@@ -23,5 +24,5 @@ export async function GET(req: NextRequest) {
     });
   }
 
-  return NextResponse.json({ records, total: total.count });
+  return NextResponse.json({ records, total });
 }

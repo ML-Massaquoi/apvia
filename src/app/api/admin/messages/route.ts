@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getDb, type Message } from "@/lib/db";
+import { getDb } from "@/lib/db";
 
 export async function GET(req: NextRequest) {
   const db = getDb();
@@ -9,15 +9,15 @@ export async function GET(req: NextRequest) {
 
   let query = "SELECT * FROM messages";
   const conditions: string[] = [];
-  const params: string[] = [];
+  const args: (string | number)[] = [];
 
   if (source) {
     conditions.push("source = ?");
-    params.push(source);
+    args.push(source);
   }
   if (status) {
     conditions.push("status = ?");
-    params.push(status);
+    args.push(status);
   }
 
   if (conditions.length > 0) {
@@ -25,17 +25,18 @@ export async function GET(req: NextRequest) {
   }
   query += " ORDER BY created_at DESC";
 
-  const messages = db.prepare(query).all(...params) as Message[];
-  const total = db.prepare("SELECT COUNT(*) as count FROM messages").get() as { count: number };
-  const unread = db.prepare("SELECT COUNT(*) as count FROM messages WHERE status = 'new'").get() as { count: number };
+  const result = await db.execute({ sql: query, args });
+  const messages = result.rows;
+  const total = Number((await db.execute("SELECT COUNT(*) as count FROM messages")).rows[0]?.count ?? 0);
+  const unread = Number((await db.execute("SELECT COUNT(*) as count FROM messages WHERE status = 'new'")).rows[0]?.count ?? 0);
 
-  return NextResponse.json({ messages, total: total.count, unread: unread.count });
+  return NextResponse.json({ messages, total, unread });
 }
 
 export async function DELETE(req: NextRequest) {
   const db = getDb();
   const { id } = await req.json();
   if (!id) return NextResponse.json({ error: "Missing id" }, { status: 400 });
-  db.prepare("DELETE FROM messages WHERE id = ?").run(id);
+  await db.execute({ sql: "DELETE FROM messages WHERE id = ?", args: [id] });
   return NextResponse.json({ success: true });
 }

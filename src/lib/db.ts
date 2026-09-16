@@ -1,28 +1,20 @@
-import Database from "better-sqlite3";
-import path from "path";
-import fs from "fs";
+import { createClient, type Client } from "@libsql/client";
 
-const DB_DIR = path.join(process.cwd(), "data");
-const DB_PATH = path.join(DB_DIR, "apvia.db");
+const TURSO_URL = process.env.TURSO_DATABASE_URL || "libsql://apvia-andymojo21.aws-us-west-2.turso.io";
+const TURSO_TOKEN = process.env.TURSO_AUTH_TOKEN || "";
 
-if (!fs.existsSync(DB_DIR)) {
-  fs.mkdirSync(DB_DIR, { recursive: true });
-}
+let _db: Client | null = null;
 
-let _db: Database.Database | null = null;
-
-export function getDb(): Database.Database {
+export function getDb(): Client {
   if (!_db) {
-    _db = new Database(DB_PATH);
-    _db.pragma("journal_mode = WAL");
-    _db.pragma("foreign_keys = ON");
-    initSchema(_db);
+    _db = createClient({ url: TURSO_URL, authToken: TURSO_TOKEN });
   }
   return _db;
 }
 
-function initSchema(db: Database.Database) {
-  db.exec(`
+export async function initSchema() {
+  const db = getDb();
+  await db.executeMultiple(`
     CREATE TABLE IF NOT EXISTS messages (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       name TEXT NOT NULL,
