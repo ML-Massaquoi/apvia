@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { verifySessionToken } from "@/lib/auth";
 
-export function middleware(req: NextRequest) {
+export async function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
   // Allow login page and login API
@@ -12,7 +12,7 @@ export function middleware(req: NextRequest) {
   // Protect all /admin and /api/admin routes
   if (pathname.startsWith("/admin") || pathname.startsWith("/api/admin")) {
     const token = req.cookies.get("admin_token")?.value;
-    if (!token || !verifySessionToken(token)) {
+    if (!token || !(await verifySessionToken(token))) {
       if (pathname.startsWith("/api/admin")) {
         return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
       }

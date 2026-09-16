@@ -1,22 +1,40 @@
-import crypto from "crypto";
-
 const SECRET = process.env.ADMIN_SECRET || "apvia-admin-secret-change-me";
 
-export function createSessionToken(): string {
+function base64url(input: string): string {
+  return Buffer.from(input).toString("base64url");
+}
+
+function base64urlDecode(input: string): string {
+  return Buffer.from(input, "base64url").toString();
+}
+
+async function hmacSign(data: string): Promise<string> {
+  const encoder = new TextEncoder();
+  const key = await crypto.subtle.importKey(
+    "raw",
+    encoder.encode(SECRET),
+    { name: "HMAC", hash: "SHA-256" },
+    false,
+    ["sign"]
+  );
+  const sig = await crypto.subtle.sign("HMAC", key, encoder.encode(data));
+  return Buffer.from(sig).toString("base64url");
+}
+
+export async function createSessionToken(): Promise<string> {
   const payload = JSON.stringify({ ts: Date.now() });
-  const data = Buffer.from(payload).toString("base64url");
-  const sig = crypto.createHmac("sha256", SECRET).update(data).digest("base64url");
+  const data = base64url(payload);
+  const sig = await hmacSign(data);
   return `${data}.${sig}`;
 }
 
-export function verifySessionToken(token: string): boolean {
+export async function verifySessionToken(token: string): Promise<boolean> {
   try {
     const [data, sig] = token.split(".");
     if (!data || !sig) return false;
-    const expected = crypto.createHmac("sha256", SECRET).update(data).digest("base64url");
+    const expected = await hmacSign(data);
     if (sig !== expected) return false;
-    const payload = JSON.parse(Buffer.from(data, "base64url").toString());
-    // Token expires after 24 hours
+    const payload = JSON.parse(base64urlDecode(data));
     return Date.now() - payload.ts < 24 * 60 * 60 * 1000;
   } catch {
     return false;
