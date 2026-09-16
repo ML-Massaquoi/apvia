@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { getDb, ensureSchema } from "@/lib/db";
 
-export async function POST() {
+async function seed() {
   try {
     await ensureSchema();
     const db = getDb();
@@ -55,3 +55,6 @@ export async function POST() {
     return NextResponse.json({ success: false, error: String(error) }, { status: 500 });
   }
 }
+
+export async function GET() { return seed(); }
+export async function POST() { return seed(); }
