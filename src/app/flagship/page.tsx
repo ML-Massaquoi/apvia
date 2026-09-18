@@ -341,12 +341,12 @@ export default function FlagshipPage() {
       ))}
 
       {/* Summary */}
-      <section className="py-16 sm:py-24 bg-[#052e16]">
+      <section className="py-16 sm:py-24 bg-[#f8f9fa]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 sm:mb-14">
             <div className="gold-line mx-auto mb-5" />
-            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">Investment Landscape</h2>
-            <p className="text-white/60 max-w-xl mx-auto text-sm sm:text-base">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#1a1a1a] mb-3">Investment Landscape</h2>
+            <p className="text-gray-500 max-w-xl mx-auto text-sm sm:text-base">
               Combined flagship investment pipeline across all five Game Changer sectors
             </p>
           </div>
@@ -359,16 +359,16 @@ export default function FlagshipPage() {
               { name: "Infrastructure", value: "$1.6B+" },
               { name: "Mining & Blue Economy", value: "$540M+" },
             ].map((s) => (
-              <div key={s.name} className="text-center p-5 bg-white/5 border border-white/10 rounded-xl">
-                <p className="text-white/50 text-xs font-medium uppercase tracking-wider mb-2">{s.name}</p>
-                <p className="text-xl sm:text-2xl font-bold text-white">{s.value}</p>
+              <div key={s.name} className="card-white text-center p-5 sm:p-7">
+                <p className="text-gray-400 text-xs font-medium uppercase tracking-wider mb-2">{s.name}</p>
+                <p className="text-xl sm:text-2xl font-bold text-[#052e16]">{s.value}</p>
               </div>
             ))}
           </div>
 
           <div className="mt-10 text-center">
-            <p className="text-white/50 text-sm">
-              Combined investment pipeline exceeds <span className="text-white font-semibold">$3.2 Billion</span> across all sectors
+            <p className="text-gray-500 text-sm">
+              Combined investment pipeline exceeds <span className="text-[#1a1a1a] font-semibold">$3.2 Billion</span> across all sectors
             </p>
           </div>
         </div>
