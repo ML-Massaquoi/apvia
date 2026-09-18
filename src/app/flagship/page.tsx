@@ -40,7 +40,7 @@ const projects = [
     investments: [
       { name: "Special Agro-Processing Zone (SAPZ)", value: "$75M", location: "Kambia & Port Loko" },
       { name: "Livestock & Livelihood Development", value: "$105M", location: "11 districts, 62,000 households" },
-      { name: "World Bank SAVIG Project", value: "$40M", location: "Rice, maize, onion, cocoa value chains" },
+      { name: "World Bank SAVIG Project", value: "$40M", location: "Rice, maize, onion, cocoa" },
       { name: "European Investment Bank SME Facility", value: "€10M", location: "Agricultural SMEs" },
       { name: "UNCDF Blended Finance", value: "€7M", location: "Women & youth agribusiness" },
       { name: "Tormabum–Gbondapi Irrigation", value: "5,000 ha", location: "Northern Province" },
@@ -52,7 +52,7 @@ const projects = [
       "Deploy mobile agritech platforms connecting farmers to markets, finance, and extension services",
       "Partner with international development banks to co-fund agricultural infrastructure projects",
     ],
-    investorReturn: { range: "18–24%", horizon: "5-year", market: "$2.1B agricultural GDP", guarantee: "Policy-backed MTNDP 2024–2030", exports: "Cocoa, Rice, Cashew → EU & ECOWAS" },
+    investorReturn: { range: "18–24%", horizon: "5-year investment horizon", market: "$2.1B agricultural GDP", guarantee: "Policy-backed MTNDP 2024–2030", exports: "Cocoa, Rice, Cashew → EU & ECOWAS" },
   },
   {
     id: "energy",
@@ -83,7 +83,7 @@ const projects = [
       "Import and distribution of solar panels, inverters, battery storage systems, and grid equipment",
       "Project management and technical advisory for international energy developers entering Sierra Leone",
     ],
-    investorReturn: { range: "20–30%", horizon: "PPA guaranteed", market: "85% electrification gap (only 15% today)", guarantee: "100% universal access target by 2040", exports: "Carbon credits from clean energy" },
+    investorReturn: { range: "20–30%", horizon: "PPA guaranteed revenue", market: "85% electrification gap (only 15% today)", guarantee: "100% universal access target by 2040", exports: "Carbon credits from clean energy" },
   },
   {
     id: "youth",
@@ -114,7 +114,7 @@ const projects = [
       "Deploy digital skills bootcamps in coding, data analytics, and digital marketing",
       "Partner with UNDP and World Bank on youth employment and entrepreneurship initiatives",
     ],
-    investorReturn: { range: "15–22%", horizon: "Social + financial", market: "3.2% annual workforce growth", guarantee: "4.5x job multiplier effect", exports: "SDG 8 aligned — decent work & growth" },
+    investorReturn: { range: "15–22%", horizon: "Social + financial returns", market: "3.2% annual workforce growth", guarantee: "4.5x job multiplier effect", exports: "SDG 8 aligned — decent work & growth" },
   },
   {
     id: "infrastructure",
@@ -176,40 +176,47 @@ const projects = [
       "Operate maritime services including vessel support, fuel supply, and cargo handling",
       "Develop community benefit programmes aligned with Community Development Agreements",
     ],
-    investorReturn: { range: "25–40%", horizon: "Commodity-backed", market: "Iron, Gold, Rutile — world-class deposits", guarantee: "$60M+/yr fish export revenue", exports: "1% CDA revenue share guaranteed" },
+    investorReturn: { range: "25–40%", horizon: "Commodity-backed returns", market: "Iron, Gold, Rutile — world-class deposits", guarantee: "$60M+/yr fish export revenue", exports: "1% CDA revenue share guaranteed" },
   },
 ];
 
 export default function FlagshipPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <>
       {/* Hero */}
-      <section className="relative bg-[#0a0a0a]">
-        <div className="max-w-7xl mx-auto px-8 py-24 md:py-32">
-          <div className="max-w-3xl">
-            <p className="text-gray-500 text-sm font-medium tracking-wider uppercase mb-6">
-              National Development Plan 2024–2030
-            </p>
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-8 leading-[1.1]">
-              Big Five<br />
-              <span className="text-gray-400">Game Changers</span>
+      <section className="relative pt-28 pb-16 bg-[#052e16]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="max-w-3xl mx-auto">
+            <div className="gold-line mx-auto mb-5" />
+            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+              Flagship <span className="text-gradient-gold">Projects</span>
             </h1>
-            <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-2xl">
-              President Julius Maada Bio&apos;s flagship national projects are transforming Sierra Leone.
-              APVIA Ltd aligns its investment portfolio and service delivery with these priorities —
-              creating value for investors, communities, and the nation.
+            <p className="text-base text-white/70">Aligned with President Bio&apos;s Big Five Game Changers</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Overview */}
+      <section className="py-16 sm:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10 sm:mb-14">
+            <div className="gold-line mx-auto mb-5" />
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#1a1a1a] mb-3">National Development Plan 2024–2030</h2>
+            <p className="text-gray-500 max-w-xl mx-auto text-sm sm:text-base">
+              President Julius Maada Bio&apos;s flagship projects are transforming Sierra Leone.
+              APVIA Ltd aligns its investment portfolio and service delivery with these priorities.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 mt-16">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {[
               { value: "$1.2B+", label: "Total Flagship Investment" },
               { value: "5", label: "Game Changer Sectors" },
               { value: "7+", label: "Development Partners" },
               { value: "2030", label: "Target Completion" },
             ].map((stat) => (
-              <div key={stat.label} className="bg-[#0a0a0a] p-6 md:p-8">
-                <p className="text-3xl md:text-4xl font-bold text-white">{stat.value}</p>
+              <div key={stat.label} className="card-white p-5 sm:p-7 text-center">
+                <p className="text-2xl sm:text-3xl font-bold text-[#052e16]">{stat.value}</p>
                 <p className="text-gray-500 text-sm mt-2">{stat.label}</p>
               </div>
             ))}
@@ -219,99 +226,112 @@ export default function FlagshipPage() {
 
       {/* Projects */}
       {projects.map((project, idx) => (
-        <section key={project.id} id={project.id} className={`scroll-mt-20 ${idx % 2 === 1 ? "bg-gray-50" : "bg-white"}`}>
-          <div className="max-w-7xl mx-auto px-8 py-20 md:py-28">
-            {/* Header */}
-            <div className="flex items-start gap-6 mb-12">
-              <span className="text-6xl md:text-8xl font-black text-gray-200 select-none leading-none">{project.num}</span>
-              <div>
-                <p className="text-xs font-semibold tracking-wider uppercase text-gray-400 mb-2">{project.tagline}</p>
-                <h2 className="text-3xl md:text-4xl font-bold text-[#111]">{project.title}</h2>
-              </div>
+        <section key={project.id} id={project.id} className={`scroll-mt-20 py-16 sm:py-24 ${idx % 2 === 1 ? "bg-[#f8f9fa]" : "bg-white"}`}>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Section Header */}
+            <div className="text-center mb-10 sm:mb-14">
+              <div className="gold-line mx-auto mb-5" />
+              <p className="text-gray-400 text-xs font-semibold tracking-wider uppercase mb-2">Game Changer {project.num}</p>
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#1a1a1a] mb-3">{project.title}</h2>
+              <p className="text-gray-500 max-w-xl mx-auto text-sm sm:text-base">{project.tagline}</p>
             </div>
 
-            <p className="text-gray-500 text-lg leading-relaxed mb-14 max-w-4xl">{project.description}</p>
+            <p className="text-gray-600 text-base leading-relaxed mb-10 sm:mb-14 max-w-4xl mx-auto text-center">{project.description}</p>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-gray-200 mb-16">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-10 sm:mb-14">
               {project.stats.map((s) => (
-                <div key={s.label} className="bg-white p-6 md:p-8">
-                  <p className="text-3xl md:text-4xl font-bold text-[#111]">{s.value}</p>
-                  <p className="text-[#111] font-semibold text-sm mt-2">{s.label}</p>
+                <div key={s.label} className="card-white p-5 sm:p-7">
+                  <p className="text-2xl sm:text-3xl font-bold text-[#052e16]">{s.value}</p>
+                  <p className="text-[#1a1a1a] font-semibold text-sm mt-2">{s.label}</p>
                   <p className="text-gray-400 text-xs mt-1">{s.sub}</p>
                 </div>
               ))}
             </div>
 
-            {/* Two Columns */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-gray-200 mb-16">
+            {/* Two Column: APVIA Role + Investor Returns */}
+            <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 mb-10 sm:mb-14">
               {/* APVIA Role */}
-              <div className="bg-white p-8 md:p-10">
-                <h3 className="text-sm font-semibold tracking-wider uppercase text-gray-400 mb-8">How APVIA Delivers</h3>
-                <div className="space-y-5">
+              <div className="card-white p-6 sm:p-8">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-11 h-11 rounded-xl bg-[#052e16] flex items-center justify-center shrink-0">
+                    <svg className="w-5 h-5 text-[#fbbf24]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-lg font-bold text-[#1a1a1a]">How APVIA Delivers</h3>
+                </div>
+                <ul className="space-y-3">
                   {project.apviaRole.map((item, i) => (
-                    <div key={i} className="flex items-start gap-4">
-                      <span className="text-xs font-bold text-gray-300 mt-1 w-5 shrink-0">{String(i + 1).padStart(2, "0")}</span>
-                      <p className="text-gray-600 text-sm leading-relaxed">{item}</p>
+                    <li key={i} className="flex items-start gap-2.5 text-gray-600 text-sm">
+                      <svg className="w-4 h-4 text-[#14532d] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Investor Returns */}
+              <div className="card-white p-6 sm:p-8">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-11 h-11 rounded-xl bg-[#052e16] flex items-center justify-center shrink-0">
+                    <svg className="w-5 h-5 text-[#fbbf24]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
+                    </svg>
+                  </div>
+                  <h3 className="text-lg font-bold text-[#1a1a1a]">Investor Returns</h3>
+                </div>
+                <div className="space-y-4">
+                  {[
+                    { label: "Projected ROI", value: project.investorReturn.range, detail: project.investorReturn.horizon },
+                    { label: "Market Opportunity", value: project.investorReturn.market, detail: "" },
+                    { label: "Government Backing", value: project.investorReturn.guarantee, detail: "" },
+                    { label: "Revenue Stream", value: project.investorReturn.exports, detail: "" },
+                  ].map((item) => (
+                    <div key={item.label} className="flex items-start gap-4 p-4 bg-[#f8f9fa] border border-gray-200 rounded-xl">
+                      <div className="w-2 h-2 rounded-full bg-[#14532d] mt-2 shrink-0" />
+                      <div>
+                        <p className="text-gray-400 text-xs font-medium uppercase tracking-wider">{item.label}</p>
+                        <p className="text-[#1a1a1a] font-semibold text-sm">{item.value}</p>
+                        {item.detail && <p className="text-gray-400 text-xs mt-0.5">{item.detail}</p>}
+                      </div>
                     </div>
                   ))}
                 </div>
               </div>
-
-              {/* Investor Benefits */}
-              <div className="bg-[#111] p-8 md:p-10 text-white">
-                <h3 className="text-sm font-semibold tracking-wider uppercase text-gray-500 mb-8">Investor Returns</h3>
-                <div className="grid grid-cols-2 gap-6">
-                  <div>
-                    <p className="text-gray-500 text-xs font-medium uppercase tracking-wider">Projected ROI</p>
-                    <p className="text-3xl font-bold mt-2">{project.investorReturn.range}</p>
-                    <p className="text-gray-500 text-xs mt-1">{project.investorReturn.horizon}</p>
-                  </div>
-                  <div>
-                    <p className="text-gray-500 text-xs font-medium uppercase tracking-wider">Market</p>
-                    <p className="text-lg font-semibold mt-2 leading-snug">{project.investorReturn.market}</p>
-                  </div>
-                  <div>
-                    <p className="text-gray-500 text-xs font-medium uppercase tracking-wider">Guarantee</p>
-                    <p className="text-lg font-semibold mt-2 leading-snug">{project.investorReturn.guarantee}</p>
-                  </div>
-                  <div>
-                    <p className="text-gray-500 text-xs font-medium uppercase tracking-wider">Revenue</p>
-                    <p className="text-lg font-semibold mt-2 leading-snug">{project.investorReturn.exports}</p>
-                  </div>
-                </div>
-              </div>
             </div>
 
-            {/* Investment Table */}
-            <div className="bg-white border border-gray-200 overflow-hidden">
-              <div className="px-8 py-5 border-b border-gray-200">
-                <h3 className="text-sm font-semibold tracking-wider uppercase text-gray-400">Investment Pipeline</h3>
+            {/* Investment Pipeline */}
+            <div className="card-white overflow-hidden mb-8">
+              <div className="px-6 sm:px-8 py-5 border-b border-gray-200">
+                <h3 className="text-lg font-bold text-[#1a1a1a]">Investment Pipeline</h3>
               </div>
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="border-b border-gray-100 bg-gray-50">
-                    <th className="text-left py-3 px-8 text-gray-400 font-medium">Project</th>
-                    <th className="text-left py-3 px-4 text-gray-400 font-medium">Value</th>
-                    <th className="text-left py-3 px-8 text-gray-400 font-medium">Location / Scope</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {project.investments.map((inv, i) => (
-                    <tr key={i} className="border-b border-gray-50 last:border-0 hover:bg-gray-50/50 transition-colors">
-                      <td className="py-4 px-8 font-medium text-[#111]">{inv.name}</td>
-                      <td className="py-4 px-4 font-bold text-[#111]">{inv.value}</td>
-                      <td className="py-4 px-8 text-gray-500">{inv.location}</td>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-gray-100 bg-[#f8f9fa]">
+                      <th className="text-left py-3 px-6 sm:px-8 text-gray-400 font-medium">Project</th>
+                      <th className="text-left py-3 px-4 text-gray-400 font-medium">Value</th>
+                      <th className="text-left py-3 px-6 sm:px-8 text-gray-400 font-medium">Location / Scope</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {project.investments.map((inv, i) => (
+                      <tr key={i} className="border-b border-gray-50 last:border-0 hover:bg-[#f8f9fa]/50 transition-colors">
+                        <td className="py-4 px-6 sm:px-8 font-medium text-[#1a1a1a]">{inv.name}</td>
+                        <td className="py-4 px-4 font-bold text-[#052e16]">{inv.value}</td>
+                        <td className="py-4 px-6 sm:px-8 text-gray-500">{inv.location}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
 
             {/* Pillars */}
-            <div className="mt-8 flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2">
               {project.pillars.map((p) => (
-                <span key={p} className="px-4 py-2 border border-gray-200 text-gray-500 text-sm rounded-full">
+                <span key={p} className="px-4 py-2 bg-[#f8f9fa] border border-gray-200 text-gray-500 text-sm rounded-lg">
                   {p}
                 </span>
               ))}
@@ -321,16 +341,17 @@ export default function FlagshipPage() {
       ))}
 
       {/* Summary */}
-      <section className="bg-[#0a0a0a] py-20">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Investment Landscape</h2>
-            <p className="text-gray-500 text-lg max-w-xl mx-auto">
+      <section className="py-16 sm:py-24 bg-[#052e16]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10 sm:mb-14">
+            <div className="gold-line mx-auto mb-5" />
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">Investment Landscape</h2>
+            <p className="text-white/60 max-w-xl mx-auto text-sm sm:text-base">
               Combined flagship investment pipeline across all five Game Changer sectors
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-px bg-white/10">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6">
             {[
               { name: "Feed Salone", value: "$267M+" },
               { name: "Energy", value: "$350M+" },
@@ -338,15 +359,15 @@ export default function FlagshipPage() {
               { name: "Infrastructure", value: "$1.6B+" },
               { name: "Mining & Blue Economy", value: "$540M+" },
             ].map((s) => (
-              <div key={s.name} className="bg-[#0a0a0a] p-6 text-center">
-                <p className="text-gray-500 text-xs font-medium uppercase tracking-wider mb-3">{s.name}</p>
-                <p className="text-2xl font-bold text-white">{s.value}</p>
+              <div key={s.name} className="text-center p-5 bg-white/5 border border-white/10 rounded-xl">
+                <p className="text-white/50 text-xs font-medium uppercase tracking-wider mb-2">{s.name}</p>
+                <p className="text-xl sm:text-2xl font-bold text-white">{s.value}</p>
               </div>
             ))}
           </div>
 
-          <div className="mt-12 text-center">
-            <p className="text-gray-500 text-sm">
+          <div className="mt-10 text-center">
+            <p className="text-white/50 text-sm">
               Combined investment pipeline exceeds <span className="text-white font-semibold">$3.2 Billion</span> across all sectors
             </p>
           </div>
@@ -354,26 +375,22 @@ export default function FlagshipPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#111] mb-4">Invest in Sierra Leone&apos;s Future</h2>
-          <p className="text-gray-500 text-lg mb-10 leading-relaxed max-w-2xl mx-auto">
-            APVIA Ltd is your gateway to co-investing in President Bio&apos;s flagship national projects.
-            We provide project structuring, local expertise, and operational delivery across all five Game Changer sectors.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="bg-[#111] text-white px-8 py-3.5 rounded-xl font-semibold text-sm hover:bg-black transition-colors inline-flex items-center justify-center gap-2">
+      <section className="py-16 sm:py-24 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+          <div className="gold-line-long mx-auto mb-6" />
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#1a1a1a] mb-5">Invest in Sierra Leone&apos;s Future</h2>
+          <p className="text-gray-500 text-base sm:text-lg mb-8">APVIA Ltd is your gateway to co-investing in President Bio&apos;s flagship national projects. We provide project structuring, local expertise, and operational delivery across all five Game Changer sectors.</p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+            <Link href="/contact" className="btn-primary">
               Start a Conversation
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </Link>
-            <Link href="/services" className="px-8 py-3.5 border border-gray-200 rounded-xl text-[#111] font-semibold text-sm hover:border-gray-400 transition-colors">
-              View Our Services
-            </Link>
+            <Link href="/services" className="btn-outline">View Our Services</Link>
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 }
