@@ -185,6 +185,18 @@ export default function ContactPage() {
                   </div>
                 </div>
 
+                <div className="flex items-start gap-4 p-5 bg-[#f8f9fa] border border-gray-200 rounded-xl hover:border-[#14532d]/30 transition-colors">
+                  <div className="w-11 h-11 rounded-xl bg-[#052e16] flex items-center justify-center shrink-0">
+                    <svg className="w-5 h-5 text-[#fbbf24]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-[#1a1a1a] font-semibold text-sm mb-0.5">Company Registration</h3>
+                    <p className="text-gray-500 text-sm">SL150926APVIA31897</p>
+                  </div>
+                </div>
+
                 <div>
                   <h3 className="text-[#1a1a1a] font-semibold text-sm mb-3">Follow Us</h3>
                   <div className="flex gap-3">

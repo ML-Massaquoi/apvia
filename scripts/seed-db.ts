@@ -79,6 +79,7 @@ async function main() {
     facebook: "https://www.facebook.com/profile.php?id=61594107118933",
     instagram: "https://www.instagram.com/apviasierraleone/",
     twitter: "",
+    registration_number: "SL150926APVIA31897",
   };
 
   const settingsStmts = Object.entries(settings).map(([key, value]) => ({

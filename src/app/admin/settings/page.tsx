@@ -26,6 +26,7 @@ export default function AdminSettings() {
     { key: "email", label: "General Email" },
     { key: "compliance_email", label: "Compliance Email" },
     { key: "address", label: "Address" },
+    { key: "registration_number", label: "Company Registration No." },
     { key: "linkedin", label: "LinkedIn URL" },
     { key: "facebook", label: "Facebook URL" },
     { key: "instagram", label: "Instagram URL" },
