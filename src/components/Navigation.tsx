@@ -190,26 +190,21 @@ export default function Navigation() {
                 </svg>
               </button>
               {flagshipOpen && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-80 bg-white border border-gray-200 rounded-xl shadow-xl py-3 z-50" onMouseLeave={() => setFlagshipOpen(false)}>
-                  <div className="px-4 pb-2 mb-2 border-b border-gray-100">
-                    <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Big Five Game Changers</p>
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-72 bg-white border border-gray-200 rounded-xl shadow-xl py-2 z-50" onMouseLeave={() => setFlagshipOpen(false)}>
+                  <div className="px-4 py-2 border-b border-gray-100">
+                    <p className="text-[10px] font-semibold text-gray-400 uppercase tracking-widest">Big Five Game Changers</p>
                   </div>
                   {flagshipLinks.map((link) => (
-                    <Link key={link.href} href={link.href} onClick={() => setFlagshipOpen(false)} className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 hover:text-[#14532d] hover:bg-green-50 transition-colors group">
-                      <span className="w-8 h-8 rounded-lg bg-[#052e16]/5 group-hover:bg-[#052e16]/10 flex items-center justify-center shrink-0">
-                        <FlagshipIcon label={link.tag} />
-                      </span>
-                      <div>
-                        <p className="font-medium">{link.label}</p>
-                        <p className="text-xs text-gray-400">{link.tag}</p>
-                      </div>
+                    <Link key={link.href} href={link.href} onClick={() => setFlagshipOpen(false)} className="flex items-center justify-between px-4 py-2.5 text-sm text-gray-600 hover:text-[#111] hover:bg-gray-50 transition-colors">
+                      <span className="font-medium">{link.label}</span>
+                      <span className="text-[10px] text-gray-400 font-medium">{link.tag}</span>
                     </Link>
                   ))}
-                  <div className="border-t border-gray-100 mt-2 pt-2 px-4">
-                    <Link href="/flagship" onClick={() => setFlagshipOpen(false)} className="flex items-center gap-2 text-sm font-semibold text-[#052e16] hover:text-[#14532d] transition-colors">
-                      View All Projects
-                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  <div className="border-t border-gray-100 mt-1 pt-1 px-4 pb-1">
+                    <Link href="/flagship" onClick={() => setFlagshipOpen(false)} className="flex items-center gap-1.5 text-sm font-semibold text-[#111] hover:text-black transition-colors py-2">
+                      View All
+                      <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
                     </Link>
                   </div>
@@ -297,7 +292,7 @@ export default function Navigation() {
             <div className="border-t border-gray-100 mt-1 pt-1">
               <button
                 onClick={() => setMobileFlagshipOpen(!mobileFlagshipOpen)}
-                className="w-full flex items-center justify-between px-3 py-2.5 text-sm font-semibold text-[#052e16] hover:bg-green-50 rounded-md transition-colors"
+                className="w-full flex items-center justify-between px-3 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-md transition-colors"
               >
                 <span>Flagship Projects</span>
                 <svg className={`w-4 h-4 transition-transform duration-200 ${mobileFlagshipOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -306,13 +301,13 @@ export default function Navigation() {
               </button>
               {mobileFlagshipOpen && (
                 <div className="pl-3 pb-1">
-                  <Link href="/flagship" onClick={() => setIsOpen(false)} className="block px-3 py-2 text-sm font-medium text-[#052e16] hover:bg-green-50 rounded-md transition-colors">
+                  <Link href="/flagship" onClick={() => setIsOpen(false)} className="block px-3 py-2 text-sm font-medium text-[#111] hover:bg-gray-50 rounded-md transition-colors">
                     View All Projects
                   </Link>
                   {flagshipLinks.map((link) => (
-                    <Link key={link.href} href={link.href} onClick={() => setIsOpen(false)} className="flex items-center gap-2 px-3 py-2 text-xs text-gray-500 hover:text-[#14532d] hover:bg-green-50 rounded-md transition-colors">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#fbbf24] shrink-0" />
-                      {link.label}
+                    <Link key={link.href} href={link.href} onClick={() => setIsOpen(false)} className="flex items-center justify-between px-3 py-2 text-xs text-gray-500 hover:text-[#111] hover:bg-gray-50 rounded-md transition-colors">
+                      <span>{link.label}</span>
+                      <span className="text-[10px] text-gray-400">{link.tag}</span>
                     </Link>
                   ))}
                 </div>
