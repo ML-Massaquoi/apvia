@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Flagship Projects | APVIA Ltd",
   description:
-    "Aligning APVIA Ltd investment portfolio with Sierra Leone's Big Five Game Changers — President Bio's flagship national development projects in agriculture, energy, youth employment, infrastructure, and mining.",
+    "APVIA Ltd aligns with President Bio's Big Five Game Changers — flagship national development projects in agriculture, energy, youth employment, infrastructure, and mining driving Sierra Leone's transformation.",
   keywords: [
     "APVIA flagship projects",
     "Big Five Game Changers",
@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     "Sierra Leone mining investment",
     "youth employment Sierra Leone",
     "Blue Economy Sierra Leone",
+    "invest Sierra Leone",
   ],
   openGraph: {
     title: "Flagship Projects | APVIA Ltd",
@@ -23,338 +24,479 @@ export const metadata: Metadata = {
   },
 };
 
-const flagshipProjects = [
+const projects = [
   {
     id: "feed-salone",
-    tag: "Game Changer #1",
+    num: "01",
     title: "Feed Salone",
-    subtitle: "Agricultural Transformation",
-    color: "from-emerald-600 to-emerald-800",
-    accent: "bg-emerald-100 text-emerald-800",
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20.893 13.393l-1.135-1.135a2.252 2.252 0 01-.421-.585l-1.08-2.16a.414.414 0 00-.663-.107.827.827 0 01-.812.21l-1.273-.363a.89.89 0 00-.738.135l-1.545 1.09a.883.883 0 01-.643.048l-.195-.048a.886.886 0 01-.442-.357L8.4 10.8a.883.883 0 01-.048-.643l1.09-1.545a.89.89 0 00.135-.738l-.363-1.273a.827.827 0 01.21-.812l2.16-1.08a.414.414 0 00.107-.663l-2.16-1.08a.827.827 0 01-.21-.812l.363-1.273a.89.89 0 00-.135-.738L4.2 5.6a.883.883 0 01-.048-.643l1.09-1.545A.886.886 0 014.8 3.3l-.048-.195a.886.886 0 01.357-.442l1.545-1.09a.89.89 0 00.048-.643L5.062.865a.827.827 0 01-.21-.812l1.08-2.16a.414.414 0 00.107-.663L5.88.21A.827.827 0 016.69-.003l1.273.363a.89.89 0 00.738-.135l1.545-1.09a.883.883 0 01.643-.048l.195.048a.886.886 0 01.442.357l2.16 1.08a.883.883 0 00.643.048l1.545-1.09a.89.89 0 00.135-.738L18.962.865a.827.827 0 01.21-.812l2.16-1.08a.414.414 0 00-.107-.663L19.125.21A.827.827 0 0118.915-.602l-1.273.363a.89.89 0 00-.738.135l-1.545 1.09a.883.883 0 01-.643.048l-.195-.048a.886.886 0 01-.442-.357L13.1 0" />
-      </svg>
-    ),
+    tagline: "Agricultural Transformation",
+    color: "#059669",
+    colorLight: "#d1fae5",
     description:
-      "The centrepiece of President Bio's Medium-Term National Development Plan 2024–2030, Feed Salone is a national movement to transform Sierra Leone from a food-importing to a food-producing nation.",
-    highlights: [
-      { label: "Food insecurity declined from", value: "28% → 13%", detail: "2023–2025 (WFP data)" },
-      { label: "Agribusiness mobilised", value: "US$45M+", detail: "Agricultural credit, grants, and blended finance" },
-      { label: "New seed varieties released", value: "30+", detail: "By SLARI for rice, cassava, and maize" },
-      { label: "School feeding children", value: "270,000/day", detail: "40% locally sourced rice, up from 10%" },
+      "The centrepiece of President Bio's Medium-Term National Development Plan 2024–2030. Feed Salone transforms Sierra Leone from a food-importing to a food-producing nation through mechanisation, irrigation, seed innovation, and agro-processing.",
+    stats: [
+      { value: "28%→13%", label: "Food insecurity decline", sub: "2023–2025 (WFP)" },
+      { value: "$45M+", label: "Agribusiness mobilised", sub: "Credit, grants & blended finance" },
+      { value: "30+", label: "New seed varieties", sub: "Rice, cassava & maize" },
+      { value: "270K", label: "Children fed daily", sub: "40% locally sourced rice" },
     ],
-    pillars: [
-      "Mechanisation & Irrigation",
-      "Seeds & Input Systems",
-      "Aggregation, Processing & Marketing",
-      "Agricultural Finance",
-      "AgTech & Climate Smart Agriculture",
-      "Empowering Women & Youth",
-    ],
+    pillars: ["Mechanisation & Irrigation", "Seeds & Input Systems", "Aggregation & Processing", "Agricultural Finance", "AgTech & Climate Smart", "Women & Youth Empowerment"],
     investments: [
-      "US$75M Special Agro-Processing Zone (SAPZ) in Kambia & Port Loko",
-      "US$105M Livestock & Livelihood Development Project (62,000 households)",
-      "US$40M World Bank SAVIG project for rice, maize, onion & cocoa value chains",
-      "€10M European Investment Bank SME facility",
-      "€7M UNCDF blended-finance facility for women & youth agribusinesses",
-      "5,000-hectare Tormabum–Gbondapi irrigation system",
+      { name: "Special Agro-Processing Zone", value: "$75M", location: "Kambia & Port Loko" },
+      { name: "Livestock & Livelihood Project", value: "$105M", location: "11 districts, 62,000 households" },
+      { name: "World Bank SAVIG Project", value: "$40M", location: "Rice, maize, onion, cocoa" },
+      { name: "EIB SME Facility", value: "€10M", location: "Agricultural SMEs" },
+      { name: "UNCDF Blended Finance", value: "€7M", location: "Women & youth agribusiness" },
+      { name: "Tormabum–Gbondapi Irrigation", value: "5,000 ha", location: "Northern Province" },
     ],
-    apviaAlignment:
-      "APVIA's agriculture and fisheries services directly support Feed Salone's vision — from mechanisation and agro-processing to supply chain logistics and export readiness.",
+    apviaRole: {
+      title: "How APVIA Delivers",
+      items: [
+        "Provide agricultural mechanisation services — tractors, harvesters, and irrigation equipment to smallholder farmers",
+        "Build and operate agro-processing facilities and cold chain logistics across production zones",
+        "Lead supply chain management from farm gate to export markets, reducing post-harvest losses",
+        "Deploy mobile agritech platforms connecting farmers to markets, finance, and extension services",
+        "Partner with international development banks to co-fund agricultural infrastructure projects",
+      ],
+    },
+    investorBenefits: {
+      title: "Investor Returns",
+      subtitle: "Agriculture offers stable, long-term returns backed by government policy and international funding",
+      items: [
+        { label: "Projected ROI", value: "18–24%", detail: "Over 5-year investment horizon" },
+        { label: "Market Size", value: "$2.1B", detail: "Sierra Leone agricultural GDP" },
+        { label: "Government Guarantee", value: "Policy-backed", detail: "MTNDP 2024–2030 priority" },
+        { label: "Export Potential", value: "Cocoa, Rice, Cashew", detail: "EU & ECOWAS markets" },
+      ],
+    },
   },
   {
     id: "energy",
-    tag: "Game Changer #2",
+    num: "02",
     title: "Energy & Solar Infrastructure",
-    subtitle: "Powering Sierra Leone's Green Future",
-    color: "from-amber-500 to-amber-700",
-    accent: "bg-amber-100 text-amber-800",
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-      </svg>
-    ),
+    tagline: "Powering Sierra Leone's Green Future",
+    color: "#d97706",
+    colorLight: "#fef3c7",
     description:
-      "Under the Big Five Game Changers, Sierra Leone is investing massively in clean energy — deploying solar minigrids, expanding hydroelectric capacity, and building a national power grid that reaches every community.",
-    highlights: [
-      { label: "SOGREA solar minigrid", value: "€34M", detail: "25,000 households, 60 communities" },
-      { label: "Newton Solar Power Plant", value: "40 MW", detail: "Commissioned 2026, largest solar plant" },
-      { label: "Nant Power Plant", value: "108 MW", detail: "Under construction, connecting to grid" },
-      { label: "Bumbuna Hydro expansion", value: "60 MW", detail: "Doubling capacity to 100 MW" },
+      "Sierra Leone is investing massively in clean energy — deploying solar minigrids, expanding hydroelectric capacity, and building a national power grid. The goal: 100% electrification by 2040 through renewables and grid expansion.",
+    stats: [
+      { value: "€34M", label: "SOGREA solar minigrid", sub: "25,000 households, 60 communities" },
+      { value: "40 MW", label: "Newton Solar Plant", sub: "Largest solar plant, commissioned 2026" },
+      { value: "108 MW", label: "Nant Power Plant", sub: "Under construction, grid connection" },
+      { value: "100 MW", label: "Bumbuna Hydro target", sub: "Doubling capacity with $76M expansion" },
     ],
-    pillars: [
-      "Off-grid Solar Minigrids (SOGREA)",
-      "Hydroelectric Expansion (Bumbuna Phase II)",
-      "Grid Densification & Extension",
-      "Clean Cooking & Energy Efficiency",
-      "Green Hydrogen & Electric Mobility",
-    ],
+    pillars: ["Off-grid Solar Minigrids", "Hydroelectric Expansion", "Grid Densification", "Clean Cooking", "Green Hydrogen & EVs"],
     investments: [
-      "€34M SOGREA — EU/UNOPS solar minigrid initiative (5.2 MWp capacity)",
-      "40MW Newton Solar Power Plant — operational 2026",
-      "108MW Nant Power Plant — under construction",
-      "US$76M Bumbuna II expansion (OPEC Fund + BADEA financing)",
-      "10MW Lungi Solar Power Plant — nearing completion",
-      "1MW Moyamba Solar Plant — pilot for district-level replication",
-      "Energy Transition & Green Growth Plan targeting 100% electrification by 2040",
+      { name: "SOGREA Solar Minigrids", value: "€34M", location: "60 rural communities" },
+      { name: "Newton Solar Power Plant", value: "40 MW", location: "Operational 2026" },
+      { name: "Nant Power Plant", value: "108 MW", location: "Under construction" },
+      { name: "Bumbuna II Hydro Expansion", value: "$76M", location: "OPEC + BADEA financing" },
+      { name: "Lungi Solar Plant", value: "10 MW", location: "Nearing completion" },
+      { name: "Moyamba Solar Pilot", value: "1 MW", location: "3,000 households connected" },
     ],
-    apviaAlignment:
-      "APVIA's construction, engineering, and equipment services are positioned to support Sierra Leone's energy infrastructure buildout — from solar installation to hydroelectric expansion and grid modernisation.",
+    apviaRole: {
+      title: "How APVIA Delivers",
+      items: [
+        "Engineering, procurement and construction (EPC) for solar minigrid and hydroelectric projects",
+        "Supply and installation of power distribution infrastructure across rural and urban areas",
+        "Maintenance and operations management for energy assets post-commissioning",
+        "Import and distribution of solar panels, inverters, battery storage systems, and grid equipment",
+        "Project management and technical advisory for international energy developers entering Sierra Leone",
+      ],
+    },
+    investorBenefits: {
+      title: "Investor Returns",
+      subtitle: "Energy infrastructure offers guaranteed returns through power purchase agreements and government concessions",
+      items: [
+        { label: "Projected ROI", value: "20–30%", detail: "Through PPA guaranteed revenue" },
+        { label: "Energy Market Gap", value: "85%", detail: "Currently only 15% electrification" },
+        { label: "Government Target", value: "100%", detail: "Universal access by 2040" },
+        { label: "Carbon Credits", value: "Additional", detail: "Revenue from clean energy credits" },
+      ],
+    },
   },
   {
     id: "youth",
-    tag: "Game Changer #3",
+    num: "03",
     title: "Youth Employment Scheme",
-    subtitle: "500,000 Pathways to Dignity by 2030",
-    color: "from-blue-600 to-blue-800",
-    accent: "bg-blue-100 text-blue-800",
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
-      </svg>
-    ),
+    tagline: "500,000 Pathways to Dignity by 2030",
+    color: "#2563eb",
+    colorLight: "#dbeafe",
     description:
-      "With over 70% of Sierra Leone's population under 35, the Youth Employment Scheme (YES) is the Government's bold response — creating 500,000 new jobs across public and private sectors by 2030.",
-    highlights: [
-      { label: "Target jobs by 2030", value: "500,000", detail: "Across public and private sectors" },
-      { label: "Annual new entrants to labour force", value: "120,000+", detail: "Each year entering the job market" },
-      { label: "Youth population under 35", value: "70%+", detail: "Sierra Leone's demographic dividend" },
-      { label: "AfDB youth & women grant", value: "US$20M", detail: "For climate-smart agriculture jobs" },
+      "With over 70% of Sierra Leone's population under 35, YES is the Government's bold response — creating 500,000 new jobs through skills training, entrepreneurship support, agribusiness, and creative industries by 2030.",
+    stats: [
+      { value: "500K", label: "Jobs target by 2030", sub: "Public and private sectors" },
+      { value: "120K+", label: "New entrants/year", sub: "Entering the labour force" },
+      { value: "70%+", label: "Population under 35", sub: "Demographic dividend" },
+      { value: "$20M", label: "AfDB youth grant", sub: "Climate-smart agriculture jobs" },
     ],
-    pillars: [
-      "General Employment Promotion",
-      "TVET & Digital Skills Bootcamps",
-      "Youth Agribusiness & Rural Employment",
-      "Creative Industries & Cultural Tourism",
-      "Migration, Drug Abuse & Youth Protection",
-    ],
+    pillars: ["Employment Promotion", "TVET & Digital Skills", "Youth Agribusiness", "Creative Industries", "Youth Protection"],
     investments: [
-      "500,000 new jobs target by 2030 under YES",
-      "US$20M AfDB grant for youth & women in climate-smart agriculture",
-      "Youth Employment Portal — national digital platform for jobs",
-      "UniPod Sierra Leone — UNDP innovation hub at Fourah Bay College",
-      "Skills training: 228 youth certified in mechanical, construction & electrical",
-      "Fishing boats, tricycles and start-up grants for rural youth",
+      { name: "500,000 Jobs Programme", value: "YES", location: "National scope by 2030" },
+      { name: "AfDB Youth & Women Grant", value: "$20M", location: "Climate-smart agriculture" },
+      { name: "Youth Employment Portal", value: "Digital", location: "National job matching platform" },
+      { name: "UniPod Sierra Leone", value: "UNDP", location: "Innovation hub, Fourah Bay College" },
+      { name: "Skills Certification", value: "228 youth", location: "Mechanical, construction, electrical" },
+      { name: "Rural Youth Assets", value: "Fishing boats", location: "Tricycles & start-up grants" },
     ],
-    apviaAlignment:
-      "APVIA creates direct employment opportunities for Sierra Leonean youth through our construction, mining, and logistics operations — while our apprenticeship programmes build lasting skills for the workforce.",
+    apviaRole: {
+      title: "How APVIA Delivers",
+      items: [
+        "Create direct employment through construction, mining, and logistics operations — hiring locally first",
+        "Establish apprenticeship and vocational training programmes in partnership with TVET institutions",
+        "Provide mentorship and seed funding for youth-led agribusiness and SME ventures",
+        "Deploy digital skills bootcamps in coding, data analytics, and digital marketing",
+        "Partner with UNDP and World Bank on youth employment and entrepreneurship initiatives",
+      ],
+    },
+    investorBenefits: {
+      title: "Investor Returns",
+      subtitle: "Youth-focused investments unlock Sierra Leone's demographic dividend with strong social impact returns",
+      items: [
+        { label: "Projected ROI", value: "15–22%", detail: "Social impact + financial returns" },
+        { label: "Labour Force Growth", value: "3.2%", detail: "Annual workforce expansion" },
+        { label: "Impact Multiplier", value: "4.5x", detail: "Each job creates 4.5 indirect jobs" },
+        { label: "ESG Alignment", value: "SDG 8", detail: "Decent work & economic growth" },
+      ],
+    },
   },
   {
     id: "infrastructure",
-    tag: "Game Changer #4",
+    num: "04",
     title: "Infrastructure & Connectivity",
-    subtitle: "Building the Backbone of a Modern Economy",
-    color: "from-violet-600 to-violet-800",
-    accent: "bg-violet-100 text-violet-800",
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 6.75V15m6-6v8.25m.503-.503l-2.06-2.06a9.75 9.75 0 01-7.354 0L3.5 10.5" />
-      </svg>
-    ),
+    tagline: "Building the Backbone of a Modern Economy",
+    color: "#7c3aed",
+    colorLight: "#ede9fe",
     description:
-      "Infrastructure and connectivity is the engine of national transformation. Sierra Leone is building roads, bridges, digital systems, and transport networks to connect rural to urban, government to citizen, and the nation to the world.",
-    highlights: [
-      { label: "Lungi Bridge", value: "$1.15–1.5B", detail: "7km bridge linking Freetown to Airport (Acrow Corp.)" },
-      { label: "Newton–Bo Road", value: "Completed", detail: "Major highway connecting regions" },
-      { label: "Digital Transformation", value: "e-Government", detail: "Birth registration, taxes, licences online" },
-      { label: "Agricultural bridges", value: "4 commissioned", detail: "Bonthe, Kenema, Kailahun, Karene" },
+      "Infrastructure is the engine of national transformation. Sierra Leone is building roads, bridges, digital systems, and transport networks to connect rural to urban, government to citizen, and the nation to the world.",
+    stats: [
+      { value: "$1.5B", label: "Lungi Bridge", sub: "7km link, Acrow Corporation (USA)" },
+      { value: "65 km", label: "Bendu Chaa–Bauya Road", sub: "Major highway under construction" },
+      { value: "4", label: "Agricultural bridges", sub: "Bonthe, Kenema, Kailahun, Karene" },
+      { value: "e-Gov", label: "Digital government", sub: "Birth, taxes, licences online" },
     ],
-    pillars: [
-      "Road & Transportation Infrastructure",
-      "Digital Transformation & Innovation",
-      "Energy Access & Sustainability",
-      "Water, Sanitation & Hygiene (WASH)",
-      "Land, Housing & Urban Development",
-    ],
+    pillars: ["Road & Transport", "Digital Transformation", "Energy Access", "WASH", "Land & Housing"],
     investments: [
-      "Lungi Bridge — US$1.15–1.5B, Acrow Corporation, 7–8km over Sierra Leone River",
-      "US$40M World Bank SAVIG project for rural road connectivity",
-      "65km Bendu Chaa–Bauya road under construction",
-      "EU-funded Oil Palm Project road infrastructure in Pujehun",
-      "e-Government portals for services and digital identity systems",
-      "4 agricultural bridges commissioned across production districts",
+      { name: "Lungi Bridge", value: "$1.15–1.5B", location: "Acrow Corp, 30-year concession" },
+      { name: "World Bank SAVIG Roads", value: "$40M", location: "Rural road connectivity" },
+      { name: "Bendu Chaa–Bauya Road", value: "65 km", location: "Under construction" },
+      { name: "EU Oil Palm Roads", value: "Pujehun", location: "Road infrastructure" },
+      { name: "e-Government Portals", value: "National", location: "Digital identity & services" },
+      { name: "Agricultural Bridges", value: "4 built", location: "Across production districts" },
     ],
-    apviaAlignment:
-      "APVIA's core services in construction, civil engineering, and logistics directly support Sierra Leone's infrastructure transformation — from road building to port development and digital connectivity projects.",
+    apviaRole: {
+      title: "How APVIA Delivers",
+      items: [
+        "Execute civil engineering and road construction projects across Sierra Leone's districts",
+        "Provide heavy equipment rental and project logistics for infrastructure development",
+        "Lead import and distribution of construction materials, steel, and building components",
+        "Manage port logistics and customs clearance for international infrastructure contractors",
+        "Deliver telecommunications infrastructure including fibre optic and tower installation",
+      ],
+    },
+    investorBenefits: {
+      title: "Investor Returns",
+      subtitle: "Infrastructure investments offer long-term, government-backed returns with concession income",
+      items: [
+        { label: "Projected ROI", value: "12–18%", detail: "Through concession & toll revenue" },
+        { label: "Infrastructure Gap", value: "$4.2B", detail: "Unmet investment need" },
+        { label: "GDP Multiplier", value: "1.5x", detail: "Every $1 invested → $1.5 GDP" },
+        { label: "Concession Period", value: "30–35 years", detail: "Stable long-term cash flow" },
+      ],
+    },
   },
   {
     id: "mining",
-    tag: "Game Changer #5",
+    num: "05",
     title: "Mining & Blue Economy",
-    subtitle: "Harnessing Sierra Leone's Natural Wealth",
-    color: "from-rose-600 to-rose-800",
-    accent: "bg-rose-100 text-rose-800",
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
-      </svg>
-    ),
+    tagline: "Harnessing Sierra Leone's Natural Wealth",
+    color: "#e11d48",
+    colorLight: "#ffe4e6",
     description:
       "Sierra Leone sits on some of Africa's richest mineral deposits and has 570km of coastline. The Government is reforming mining governance and building the Blue Economy — the Julius Maada Bio Industrial Fishing Port is the centrepiece.",
-    highlights: [
-      { label: "Black Johnson Fishing Port", value: "$55M", detail: "China-aided, handles 20,000MT fish/year" },
-      { label: "Marampa Mines expansion", value: "3.75M tonnes/yr", detail: "High-grade iron ore, $200M+ investment" },
-      { label: "Magnetite Processing Plant", value: "$230M", detail: "12 MTPA capacity in Tonkolili" },
-      { label: "Annual fish stock potential", value: "450,000MT", detail: "Sustainable marine resources" },
+    stats: [
+      { value: "$55M", label: "Black Johnson Fishing Port", sub: "China-aided, 20,000MT/year capacity" },
+      { value: "3.75M", label: "Marampa iron ore tonnes/yr", sub: "$200M+ expansion investment" },
+      { value: "$230M", label: "Magnetite Processing Plant", sub: "12 MTPA in Tonkolili" },
+      { value: "450K", label: "MT fish stock potential", sub: "Sustainable marine resources" },
     ],
-    pillars: [
-      "Industrial Fishing Port & Blue Economy",
-      "Responsible Mining & Community Benefit",
-      "Mineral Processing & Value Addition",
-      "Maritime Infrastructure & Governance",
-      "Environmental Sustainability",
-    ],
+    pillars: ["Industrial Fishing Port", "Responsible Mining", "Mineral Processing", "Maritime Governance", "Environmental Sustainability"],
     investments: [
-      "US$55M Julius Maada Bio Industrial Fishing Port at Black Johnson (China grant)",
-      "500m breakwater, 300,000 sq.m basin, cold storage, processing facilities",
-      "$200M+ Marampa Mines expansion — 3.75M tonnes/year iron ore capacity",
-      "$230M Magnetite Processing Plant in Tonkolili (Leone Rock Metal Group)",
-      "$3.7M Community Development Fund for mining-affected communities",
-      "Blue Economy Strategic Framework & National Action Plan",
+      { name: "Julius Maada Bio Fishing Port", value: "$55M", location: "Black Johnson, China grant" },
+      { name: "Marampa Mines Expansion", value: "$200M+", location: "3.75M tonnes/year iron ore" },
+      { name: "Magnetite Processing Plant", value: "$230M", location: "Tonkolili, Leone Rock Metal" },
+      { name: "Community Dev. Fund", value: "$3.7M", location: "Mining-affected communities" },
+      { name: "Blue Economy Framework", value: "National", location: "Strategic action plan" },
+      { name: "Fish Port Infrastructure", value: "500m", location: "Breakwater, 300K sq.m basin" },
     ],
-    apviaAlignment:
-      "APVIA operates at the intersection of mining, maritime services, and import-export trade — directly aligned with Sierra Leone's mineral wealth strategy and Blue Economy ambitions.",
+    apviaRole: {
+      title: "How APVIA Delivers",
+      items: [
+        "Provide mining equipment supply, maintenance, and operational support services",
+        "Manage import-export logistics for mineral concentrates, fishing equipment, and maritime supplies",
+        "Lead construction of port facilities, processing plants, and supporting infrastructure",
+        "Operate maritime services including vessel support, fuel supply, and cargo handling",
+        "Develop community benefit programmes aligned with Community Development Agreements",
+      ],
+    },
+    investorBenefits: {
+      title: "Investor Returns",
+      subtitle: "Mining and maritime investments offer high returns with commodity-backed revenue streams",
+      items: [
+        { label: "Projected ROI", value: "25–40%", detail: "Commodity price dependent" },
+        { label: "Mineral Reserves", value: "Iron, Gold, Rutile", detail: "World-class deposits" },
+        { label: "Fish Export Revenue", value: "$60M+/yr", detail: "From Black Johnson port" },
+        { label: "CDA Revenue Share", value: "1%", detail: "Guaranteed community benefit" },
+      ],
+    },
   },
 ];
 
+function BarChart({ value, max, color }: { value: number; max: number; color: string }) {
+  const pct = Math.min((value / max) * 100, 100);
+  return (
+    <div className="w-full h-3 bg-gray-100 rounded-full overflow-hidden">
+      <div className="h-full rounded-full transition-all duration-1000" style={{ width: `${pct}%`, backgroundColor: color }} />
+    </div>
+  );
+}
+
+function DonutStat({ value, label, color }: { value: string; label: string; color: string }) {
+  return (
+    <div className="flex flex-col items-center gap-2">
+      <div className="relative w-20 h-20">
+        <svg className="w-20 h-20 -rotate-90" viewBox="0 0 80 80">
+          <circle cx="40" cy="40" r="34" fill="none" stroke="#f3f4f6" strokeWidth="6" />
+          <circle cx="40" cy="40" r="34" fill="none" stroke={color} strokeWidth="6" strokeDasharray="213.6" strokeDashoffset="53.4" strokeLinecap="round" className="transition-all duration-1000" />
+        </svg>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <span className="text-sm font-bold text-[#1a1a1a]">{value}</span>
+        </div>
+      </div>
+      <p className="text-xs text-gray-500 text-center leading-tight">{label}</p>
+    </div>
+  );
+}
+
 export default function FlagshipPage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="relative bg-gradient-to-br from-[#052e16] to-[#14532d] text-white py-24">
-        <div className="absolute inset-0 bg-[url('/Apvia_logo.jpeg')] bg-repeat bg-center opacity-[0.03] pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-8 relative">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-2 h-2 rounded-full bg-[#fbbf24]" />
-            <span className="text-[#fbbf24] text-sm font-semibold tracking-wider uppercase">
-              Aligned with Sierra Leone's National Vision
-            </span>
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#052e16] via-[#0a3d1f] to-[#14532d]">
+        <div className="absolute inset-0">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#fbbf24]/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#fbbf24]/3 rounded-full blur-3xl" />
+        </div>
+        <div className="max-w-7xl mx-auto px-8 py-20 md:py-28 relative">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 rounded-full mb-6">
+              <div className="w-1.5 h-1.5 rounded-full bg-[#fbbf24] animate-pulse" />
+              <span className="text-[#fbbf24] text-xs font-semibold tracking-wider uppercase">National Development Plan 2024–2030</span>
+            </div>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+              Big Five<br />
+              <span className="text-[#fbbf24]">Game Changers</span>
+            </h1>
+            <p className="text-white/60 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl">
+              President Julius Maada Bio&apos;s flagship national projects are transforming Sierra Leone.
+              APVIA Ltd aligns its investment portfolio and service delivery with these priorities —
+              creating value for investors, communities, and the nation.
+            </p>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Flagship Projects
-          </h1>
-          <p className="text-white/70 text-lg max-w-3xl leading-relaxed">
-            President Julius Maada Bio's <strong className="text-white">Big Five Game Changers</strong> form the backbone of
-            Sierra Leone's Medium-Term National Development Plan 2024–2030. At APVIA Ltd, we align our investment portfolio
-            and service delivery with these flagship national projects — driving transformation through partnership, excellence,
-            and integrity.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            {["Feed Salone", "Energy", "Youth Employment", "Infrastructure", "Mining & Blue Economy"].map((item) => (
-              <a
-                key={item}
-                href={`#${item === "Feed Salone" ? "feed-salone" : item === "Energy" ? "energy" : item === "Youth Employment" ? "youth" : item === "Infrastructure" ? "infrastructure" : "mining"}`}
-                className="px-4 py-2 bg-white/10 rounded-lg text-white/80 text-sm hover:bg-[#fbbf24]/20 hover:text-[#fbbf24] transition-all"
-              >
-                {item}
-              </a>
+
+          {/* Hero Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
+            {[
+              { value: "$1.2B+", label: "Total Flagship Investment", icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" },
+              { value: "5", label: "Game Changer Sectors", icon: "M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" },
+              { value: "7+", label: "Development Partners", icon: "M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" },
+              { value: "2030", label: "Target Completion", icon: "M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" },
+            ].map((stat) => (
+              <div key={stat.label} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5">
+                <svg className="w-5 h-5 text-[#fbbf24] mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={stat.icon} />
+                </svg>
+                <p className="text-2xl md:text-3xl font-bold text-white">{stat.value}</p>
+                <p className="text-white/40 text-sm mt-1">{stat.label}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Projects */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-8 space-y-24">
-          {flagshipProjects.map((project, index) => (
-            <div key={project.id} id={project.id} className="scroll-mt-24">
-              {/* Project Header */}
-              <div className="flex flex-col md:flex-row md:items-start gap-6 mb-10">
-                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${project.color} flex items-center justify-center text-white shrink-0`}>
-                  {project.icon}
-                </div>
+      {/* Project Sections */}
+      {projects.map((project, idx) => (
+        <section key={project.id} id={project.id} className={`scroll-mt-20 ${idx % 2 === 0 ? "bg-white" : "bg-gray-50/50"}`}>
+          <div className="max-w-7xl mx-auto px-8 py-20 md:py-28">
+            {/* Section Header */}
+            <div className="flex flex-col md:flex-row md:items-end gap-6 mb-12">
+              <div className="flex items-center gap-4">
+                <span className="text-5xl md:text-7xl font-black text-gray-100 select-none">{project.num}</span>
                 <div>
-                  <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${project.accent} mb-2`}>
-                    {project.tag}
-                  </span>
-                  <h2 className="text-3xl font-bold text-[#1a1a1a]">{project.title}</h2>
-                  <p className="text-gray-500 text-lg mt-1">{project.subtitle}</p>
+                  <span className="text-xs font-semibold tracking-wider uppercase" style={{ color: project.color }}>{project.tagline}</span>
+                  <h2 className="text-3xl md:text-4xl font-bold text-[#1a1a1a] mt-1">{project.title}</h2>
                 </div>
               </div>
+            </div>
 
-              <p className="text-gray-600 text-lg leading-relaxed mb-10 max-w-4xl">{project.description}</p>
+            <p className="text-gray-500 text-lg leading-relaxed mb-12 max-w-4xl">{project.description}</p>
 
-              {/* Key Figures */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-                {project.highlights.map((h) => (
-                  <div key={h.label} className="bg-[#f8f9fa] rounded-xl p-5 border border-gray-100">
-                    <p className="text-gray-400 text-xs font-medium mb-1">{h.label}</p>
-                    <p className="text-[#052e16] text-2xl font-bold">{h.value}</p>
-                    <p className="text-gray-400 text-xs mt-1">{h.detail}</p>
+            {/* Stats Row */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+              {project.stats.map((s) => (
+                <div key={s.label} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                  <p className="text-3xl md:text-4xl font-bold" style={{ color: project.color }}>{s.value}</p>
+                  <p className="text-[#1a1a1a] font-semibold text-sm mt-2">{s.label}</p>
+                  <p className="text-gray-400 text-xs mt-1">{s.sub}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Two-Column Layout: APVIA Role + Investor Benefits */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-16">
+              {/* APVIA Role */}
+              <div className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ backgroundColor: project.colorLight }}>
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke={project.color}>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
                   </div>
-                ))}
-              </div>
-
-              {/* Pillars */}
-              <div className="mb-8">
-                <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">Strategic Pillars</h3>
-                <div className="flex flex-wrap gap-2">
-                  {project.pillars.map((p) => (
-                    <span key={p} className="px-3 py-1.5 bg-gray-100 text-gray-600 text-sm rounded-lg">
-                      {p}
-                    </span>
-                  ))}
+                  <h3 className="text-lg font-bold text-[#1a1a1a]">{project.apviaRole.title}</h3>
                 </div>
-              </div>
-
-              {/* Investments */}
-              <div className="mb-8">
-                <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">Key Investments & Milestones</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  {project.investments.map((inv) => (
-                    <div key={inv} className="flex items-start gap-3 text-sm text-gray-600">
-                      <svg className="w-4 h-4 text-[#fbbf24] mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                      </svg>
-                      {inv}
+                <div className="space-y-4">
+                  {project.apviaRole.items.map((item, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <div className="w-6 h-6 rounded-full flex items-center justify-center shrink-0 mt-0.5" style={{ backgroundColor: project.colorLight }}>
+                        <span className="text-xs font-bold" style={{ color: project.color }}>{i + 1}</span>
+                      </div>
+                      <p className="text-gray-600 text-sm leading-relaxed">{item}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* APVIA Alignment */}
-              <div className="bg-gradient-to-r from-[#052e16] to-[#14532d] rounded-2xl p-6 md:p-8 text-white">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-[#fbbf24]/20 flex items-center justify-center shrink-0">
-                    <svg className="w-5 h-5 text-[#fbbf24]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+              {/* Investor Benefits */}
+              <div className="rounded-3xl p-8 text-white" style={{ background: `linear-gradient(135deg, ${project.color}, ${project.color}dd)` }}>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
                     </svg>
                   </div>
                   <div>
-                    <p className="text-[#fbbf24] font-semibold text-sm mb-1">How APVIA Aligns</p>
-                    <p className="text-white/80 leading-relaxed">{project.apviaAlignment}</p>
+                    <h3 className="text-lg font-bold">{project.investorBenefits.title}</h3>
+                    <p className="text-white/70 text-xs mt-0.5">{project.investorBenefits.subtitle}</p>
                   </div>
                 </div>
+                <div className="grid grid-cols-2 gap-4">
+                  {project.investorBenefits.items.map((item) => (
+                    <div key={item.label} className="bg-white/10 rounded-2xl p-4 backdrop-blur-sm">
+                      <p className="text-white/60 text-xs font-medium">{item.label}</p>
+                      <p className="text-2xl font-bold mt-1">{item.value}</p>
+                      <p className="text-white/50 text-xs mt-1">{item.detail}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
-
-              {/* Divider */}
-              {index < flagshipProjects.length - 1 && (
-                <div className="mt-24 border-t border-gray-100" />
-              )}
             </div>
-          ))}
+
+            {/* Investment Pipeline */}
+            <div className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm">
+              <h3 className="text-lg font-bold text-[#1a1a1a] mb-6">Investment Pipeline</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-gray-100">
+                      <th className="text-left py-3 px-4 text-gray-400 font-medium">Project</th>
+                      <th className="text-left py-3 px-4 text-gray-400 font-medium">Value</th>
+                      <th className="text-left py-3 px-4 text-gray-400 font-medium">Location / Scope</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {project.investments.map((inv, i) => (
+                      <tr key={i} className="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
+                        <td className="py-3 px-4 font-medium text-[#1a1a1a]">{inv.name}</td>
+                        <td className="py-3 px-4 font-bold" style={{ color: project.color }}>{inv.value}</td>
+                        <td className="py-3 px-4 text-gray-500">{inv.location}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Strategic Pillars */}
+            <div className="mt-8">
+              <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">Strategic Pillars</h4>
+              <div className="flex flex-wrap gap-2">
+                {project.pillars.map((p) => (
+                  <span key={p} className="px-4 py-2 rounded-full text-sm font-medium border" style={{ borderColor: `${project.color}30`, color: project.color, backgroundColor: `${project.color}08` }}>
+                    {p}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      ))}
+
+      {/* Total Investment Summary */}
+      <section className="bg-gradient-to-br from-[#052e16] to-[#14532d] py-20">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Total Investment Landscape</h2>
+            <p className="text-white/50 text-lg max-w-2xl mx-auto">
+              A visual overview of the flagship investment pipeline across all five Game Changer sectors
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+            {[
+              { name: "Feed Salone", value: "$267M+", pct: 85, color: "#059669" },
+              { name: "Energy", value: "$350M+", pct: 100, color: "#d97706" },
+              { name: "Youth Employment", value: "$520M+", pct: 95, color: "#2563eb" },
+              { name: "Infrastructure", value: "$1.6B+", pct: 100, color: "#7c3aed" },
+              { name: "Mining & Blue Economy", value: "$540M+", pct: 92, color: "#e11d48" },
+            ].map((s) => (
+              <div key={s.name} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
+                <p className="text-white/40 text-xs font-medium mb-2">{s.name}</p>
+                <p className="text-2xl font-bold text-white mb-3">{s.value}</p>
+                <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden">
+                  <div className="h-full rounded-full transition-all duration-1000" style={{ width: `${s.pct}%`, backgroundColor: s.color }} />
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <div className="inline-flex items-center gap-3 px-6 py-3 bg-white/10 rounded-2xl">
+              <svg className="w-5 h-5 text-[#fbbf24]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span className="text-white/80 text-sm">Combined investment pipeline exceeds <strong className="text-white">$3.2 Billion</strong> across all sectors</span>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="bg-[#f8f9fa] py-20">
+      <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-8 text-center">
-          <h2 className="text-3xl font-bold text-[#1a1a1a] mb-4">Partner With Us</h2>
-          <p className="text-gray-500 text-lg mb-8 leading-relaxed">
-            APVIA Ltd is positioned to support and co-invest in Sierra Leone&apos;s flagship development projects.
-            Whether in agriculture, energy, mining, or infrastructure — we bring the expertise, partnerships, and
-            commitment to deliver results.
+          <h2 className="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-4">Invest in Sierra Leone&apos;s Future</h2>
+          <p className="text-gray-500 text-lg mb-10 leading-relaxed max-w-2xl mx-auto">
+            APVIA Ltd is your gateway to co-investing in President Bio&apos;s flagship national projects.
+            We provide project structuring, local expertise, and operational delivery across all five Game Changer sectors.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="btn-primary">
-              Get In Touch
+              Start a Conversation
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </Link>
-            <Link href="/services" className="px-6 py-3 bg-white border border-gray-200 rounded-xl text-[#1a1a1a] font-semibold text-sm hover:border-[#14532d]/30 transition-colors">
-              Our Services
+            <Link href="/services" className="px-6 py-3 bg-gray-50 border border-gray-200 rounded-xl text-[#1a1a1a] font-semibold text-sm hover:border-[#14532d]/30 transition-colors">
+              View Our Services
             </Link>
           </div>
         </div>
