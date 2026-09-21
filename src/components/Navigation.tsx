@@ -13,11 +13,12 @@ const navLinks = [
 ];
 
 const flagshipLinks = [
-  { href: "/flagship#feed-salone", label: "Feed Salone", tag: "Agriculture" },
-  { href: "/flagship#energy", label: "Energy & Solar", tag: "Power" },
-  { href: "/flagship#youth", label: "Youth Employment", tag: "Jobs" },
-  { href: "/flagship#infrastructure", label: "Infrastructure", tag: "Connectivity" },
-  { href: "/flagship#mining", label: "Mining & Blue Economy", tag: "Resources" },
+  { href: "/flagship#transport-infrastructure", label: "Transport & Infrastructure", tag: "$2.5B+" },
+  { href: "/flagship#energy-power", label: "Energy & Power", tag: "$3B+" },
+  { href: "/flagship#agriculture-food", label: "Agriculture & Food", tag: "$500M+" },
+  { href: "/flagship#mining-blue-economy", label: "Mining & Blue Economy", tag: "$800M+" },
+  { href: "/flagship#tourism-hospitality", label: "Tourism & Hospitality", tag: "$500M+" },
+  { href: "/flagship#human-capital", label: "Youth & Human Capital", tag: "$200M+" },
 ];
 
 const policyLinks = [
@@ -83,34 +84,34 @@ function SocialIcon({ icon }: { icon: string }) {
 
 function FlagshipIcon({ label }: { label: string }) {
   switch (label) {
-    case "Agriculture":
-      return (
-        <svg className="w-4 h-4 text-[#052e16]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.893 13.393l-1.135-1.135a2.252 2.252 0 01-.421-.585l-1.08-2.16a.414.414 0 00-.663-.107.827.827 0 01-.812.21l-1.273-.363a.89.89 0 00-.738.135l-1.545 1.09a.883.883 0 01-.643.048l-.195-.048a.886.886 0 01-.442-.357L8.4 10.8" />
-        </svg>
-      );
-    case "Power":
-      return (
-        <svg className="w-4 h-4 text-[#052e16]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-        </svg>
-      );
-    case "Jobs":
-      return (
-        <svg className="w-4 h-4 text-[#052e16]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
-        </svg>
-      );
-    case "Connectivity":
+    case "$2.5B+":
       return (
         <svg className="w-4 h-4 text-[#052e16]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 6.75V15m6-6v8.25m.503-.503l-2.06-2.06a9.75 9.75 0 01-7.354 0L3.5 10.5" />
         </svg>
       );
-    case "Resources":
+    case "$3B+":
+      return (
+        <svg className="w-4 h-4 text-[#052e16]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+        </svg>
+      );
+    case "$500M+":
+      return (
+        <svg className="w-4 h-4 text-[#052e16]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.893 13.393l-1.135-1.135a2.252 2.252 0 01-.421-.585l-1.08-2.16a.414.414 0 00-.663-.107.827.827 0 01-.812.21l-1.273-.363a.89.89 0 00-.738.135l-1.545 1.09a.883.883 0 01-.643.048l-.195-.048a.886.886 0 01-.442-.357L8.4 10.8" />
+        </svg>
+      );
+    case "$800M+":
       return (
         <svg className="w-4 h-4 text-[#052e16]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375" />
+        </svg>
+      );
+    case "$200M+":
+      return (
+        <svg className="w-4 h-4 text-[#052e16]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
         </svg>
       );
     default:
@@ -190,19 +191,20 @@ export default function Navigation() {
                 </svg>
               </button>
               {flagshipOpen && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-72 bg-white border border-gray-200 rounded-xl shadow-xl py-2 z-50" onMouseLeave={() => setFlagshipOpen(false)}>
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-80 bg-white border border-gray-200 rounded-xl shadow-xl py-2 z-50" onMouseLeave={() => setFlagshipOpen(false)}>
                   <div className="px-4 py-2 border-b border-gray-100">
-                    <p className="text-[10px] font-semibold text-gray-400 uppercase tracking-widest">Big Five Game Changers</p>
+                    <p className="text-[10px] font-semibold text-gray-400 uppercase tracking-widest">Sierra Leone Development Portfolio — $10B+</p>
                   </div>
                   {flagshipLinks.map((link) => (
-                    <Link key={link.href} href={link.href} onClick={() => setFlagshipOpen(false)} className="flex items-center justify-between px-4 py-2.5 text-sm text-gray-600 hover:text-[#111] hover:bg-gray-50 transition-colors">
-                      <span className="font-medium">{link.label}</span>
+                    <Link key={link.href} href={link.href} onClick={() => setFlagshipOpen(false)} className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-600 hover:text-[#111] hover:bg-gray-50 transition-colors">
+                      <FlagshipIcon label={link.tag} />
+                      <span className="font-medium flex-1">{link.label}</span>
                       <span className="text-[10px] text-gray-400 font-medium">{link.tag}</span>
                     </Link>
                   ))}
                   <div className="border-t border-gray-100 mt-1 pt-1 px-4 pb-1">
                     <Link href="/flagship" onClick={() => setFlagshipOpen(false)} className="flex items-center gap-1.5 text-sm font-semibold text-[#111] hover:text-black transition-colors py-2">
-                      View All
+                      View All Projects
                       <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
@@ -302,11 +304,12 @@ export default function Navigation() {
               {mobileFlagshipOpen && (
                 <div className="pl-3 pb-1">
                   <Link href="/flagship" onClick={() => setIsOpen(false)} className="block px-3 py-2 text-sm font-medium text-[#111] hover:bg-gray-50 rounded-md transition-colors">
-                    View All Projects
+                    View All Projects — $10B+
                   </Link>
                   {flagshipLinks.map((link) => (
-                    <Link key={link.href} href={link.href} onClick={() => setIsOpen(false)} className="flex items-center justify-between px-3 py-2 text-xs text-gray-500 hover:text-[#111] hover:bg-gray-50 rounded-md transition-colors">
-                      <span>{link.label}</span>
+                    <Link key={link.href} href={link.href} onClick={() => setIsOpen(false)} className="flex items-center gap-2 px-3 py-2 text-xs text-gray-500 hover:text-[#111] hover:bg-gray-50 rounded-md transition-colors">
+                      <FlagshipIcon label={link.tag} />
+                      <span className="flex-1">{link.label}</span>
                       <span className="text-[10px] text-gray-400">{link.tag}</span>
                     </Link>
                   ))}
