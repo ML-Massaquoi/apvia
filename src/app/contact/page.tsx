@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { companyData } from "@/data/company";
+import { ButtonSpinner } from "@/components/Spinner";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -131,11 +132,13 @@ export default function ContactPage() {
                 </div>
 
                 <button type="submit" disabled={sending} className="btn-primary disabled:opacity-50 disabled:cursor-not-allowed">
-                  {sending ? "Sending..." : "Send Message"}
-                  {!sending && (
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                    </svg>
+                  {sending ? <ButtonSpinner text="Sending..." /> : (
+                    <>
+                      Send Message
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                      </svg>
+                    </>
                   )}
                 </button>
               </form>

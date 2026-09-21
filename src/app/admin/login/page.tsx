@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { ButtonSpinner } from "@/components/Spinner";
 
 export default function AdminLogin() {
   const [password, setPassword] = useState("");
@@ -65,7 +66,7 @@ export default function AdminLogin() {
               disabled={loading || !password}
               className="w-full py-3 bg-[#052e16] text-white rounded-lg font-semibold text-sm hover:bg-[#14532d] transition-colors disabled:opacity-50"
             >
-              {loading ? "Logging in..." : "Login"}
+              {loading ? <ButtonSpinner text="Logging in..." /> : "Login"}
             </button>
           </form>
         </div>

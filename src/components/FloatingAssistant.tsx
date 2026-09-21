@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
+import { TypingIndicator } from "./Spinner";
 
 interface Message {
   id: number;
@@ -121,8 +122,8 @@ export default function FloatingAssistant() {
                 <div className="w-6 h-6 rounded-full bg-[#052e16] flex items-center justify-center shrink-0 mt-0.5">
                   <Image src="/Apvia_logo.jpeg" alt="" width={16} height={16} className="rounded-full object-cover" />
                 </div>
-                <div className="bg-[#f8f9fa] rounded-xl rounded-tl-sm px-3 py-2">
-                  <p className="text-xs text-gray-400 animate-pulse">Typing...</p>
+                <div className="bg-[#f8f9fa] rounded-xl rounded-tl-sm px-3 py-2.5">
+                  <TypingIndicator />
                 </div>
               </div>
             )}
