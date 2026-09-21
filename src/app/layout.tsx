@@ -8,6 +8,7 @@ import BackToTop from "@/components/BackToTop";
 import CookieConsent from "@/components/CookieConsent";
 import StructuredData from "@/components/StructuredData";
 import PageViewTracker from "@/components/PageViewTracker";
+import NavigationLoader from "@/components/NavigationLoader";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -109,6 +110,7 @@ export default function RootLayout({
         <StructuredData />
       </head>
       <body className="min-h-full flex flex-col bg-[#FAFAFA] text-[#1A1A1A]">
+        <NavigationLoader />
         <Navigation />
         <main className="flex-1">{children}</main>
         <Footer />
