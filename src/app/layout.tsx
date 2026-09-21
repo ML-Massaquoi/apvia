@@ -80,6 +80,10 @@ export const metadata: Metadata = {
     images: ["https://www.apvia-sl.com/Apvia_logo.jpeg"],
     creator: "@apvialtd",
   },
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
   robots: {
     index: true,
     follow: true,
@@ -104,9 +108,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <head>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/site.webmanifest" />
         <StructuredData />
       </head>
       <body className="min-h-full flex flex-col bg-[#FAFAFA] text-[#1A1A1A]">
