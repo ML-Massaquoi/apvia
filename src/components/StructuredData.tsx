@@ -3,7 +3,14 @@ export default function StructuredData() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "APVIA Ltd",
-    alternateName: "African Projects Ventures Investments and Advancement Limited",
+    alternateName: [
+      "African Projects Ventures Investments and Advancement Limited",
+      "Apvia",
+      "apvia",
+      "APVIA",
+      "Apvia Ltd",
+      "Apvia Sierra Leone",
+    ],
     url: "https://www.apvia-sl.com",
     logo: "https://www.apvia-sl.com/Apvia_logo.jpeg",
     description:
@@ -56,7 +63,7 @@ export default function StructuredData() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "APVIA Ltd",
-    alternateName: "APVIA Sierra Leone",
+    alternateName: ["APVIA Sierra Leone", "Apvia", "apvia"],
     url: "https://www.apvia-sl.com",
     description:
       "Sierra Leone's leading investment company. Discover profitable opportunities in mining, agriculture, construction, logistics, and trade.",

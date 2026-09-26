@@ -39,6 +39,8 @@ export const metadata: Metadata = {
     "Sierra Leone infrastructure",
     "Sierra Leone minerals",
     "APVIA Sierra Leone",
+    "Apvia",
+    "apvia",
     "apvia-sl.com",
     "Sierra Leone logistics",
     "Freetown investment",
