@@ -55,9 +55,57 @@ export default function HomePage() {
     },
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "How to invest in Sierra Leone?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "To invest in Sierra Leone, partner with APVIA Ltd — a leading investment company based in Freetown. We offer opportunities in mining, agriculture, construction, logistics, and trade. Contact us at info@apvia-sl.com or +232 73 88 66 22 to discuss investment opportunities.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What are the best investment opportunities in Sierra Leone?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Top investment opportunities in Sierra Leone include iron ore and mineral mining, rice and cocoa agriculture, infrastructure construction, solar energy projects, and fisheries. Sierra Leone offers high returns with a young workforce, rich natural resources, and government incentives for foreign investors.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Is Sierra Leone safe for foreign investment?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, Sierra Leone is open for foreign investment. The government offers legal protections through the Medium-Term National Development Plan 2024-2030, tax incentives, and investor-friendly policies. Major international institutions like the World Bank, AfDB, and MCC are actively funding projects in the country.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What sectors can I invest in Sierra Leone?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Key investment sectors in Sierra Leone include mining (iron ore, gold, diamonds, rutile), agriculture (rice, cocoa, palm oil), construction and infrastructure, energy (solar, hydroelectric), logistics and port operations, fisheries and blue economy, and tourism and hospitality.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Who is APVIA Ltd?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "APVIA Ltd (African Projects Ventures Investments and Advancement Limited) is a Sierra Leone-based investment company headquartered in Freetown. We specialize in connecting international investors with high-impact projects across West Africa in mining, agriculture, construction, logistics, and trade.",
+        },
+      },
+    ],
+  };
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
       {/* Hero */}
       <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden">
@@ -108,6 +156,40 @@ export default function HomePage() {
 
       {/* Leadership Preview */}
       <HomepageLeadership />
+
+      {/* FAQ Section - SEO for "invest in sierra leone" */}
+      <section className="py-16 sm:py-24 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10 sm:mb-14">
+            <div className="gold-line mx-auto mb-5" />
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#1a1a1a] mb-3">Frequently Asked Questions</h2>
+            <p className="text-gray-500 max-w-xl mx-auto text-sm sm:text-base">
+              Common questions about investing in Sierra Leone
+            </p>
+          </div>
+          <div className="space-y-4">
+            {[
+              { q: "How to invest in Sierra Leone?", a: "Partner with APVIA Ltd — a leading investment company based in Freetown, Sierra Leone. We offer opportunities in mining, agriculture, construction, logistics, and trade. Contact us at info@apvia-sl.com or +232 73 88 66 22 to discuss investment opportunities tailored to your goals." },
+              { q: "What are the best investment opportunities in Sierra Leone?", a: "Top investment opportunities include iron ore and mineral mining, rice and cocoa agriculture, infrastructure construction, solar energy projects, and fisheries. Sierra Leone offers high returns with a young workforce, rich natural resources, and government incentives for foreign investors." },
+              { q: "Is Sierra Leone safe for foreign investment?", a: "Yes. Sierra Leone is open for foreign investment with legal protections under the Medium-Term National Development Plan 2024–2030, tax incentives, and investor-friendly policies. Major institutions like the World Bank, AfDB, and MCC are actively funding projects in the country." },
+              { q: "What sectors can I invest in Sierra Leone?", a: "Key sectors include mining (iron ore, gold, diamonds, rutile), agriculture (rice, cocoa, palm oil), construction and infrastructure, energy (solar, hydroelectric), logistics and port operations, fisheries and blue economy, and tourism and hospitality." },
+              { q: "Who is APVIA Ltd?", a: "APVIA Ltd (African Projects Ventures Investments and Advancement Limited) is a Sierra Leone-based investment company headquartered in Freetown. We specialize in connecting international investors with high-impact projects across West Africa in mining, agriculture, construction, logistics, and trade." },
+            ].map((faq) => (
+              <details key={faq.q} className="card-white group" open>
+                <summary className="cursor-pointer p-6 sm:p-8 flex items-center justify-between gap-4 list-none">
+                  <h3 className="text-base sm:text-lg font-bold text-[#1a1a1a]">{faq.q}</h3>
+                  <svg className="w-5 h-5 text-gray-400 shrink-0 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <div className="px-6 sm:px-8 pb-6 sm:pb-8 -mt-2">
+                  <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* CTA */}
       <section className="py-16 sm:py-24 bg-[#052e16]">
