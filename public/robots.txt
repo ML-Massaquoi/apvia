@@ -1,0 +1,7 @@
+# https://www.apvia-sl.com/robots.txt
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+
+Sitemap: https://www.apvia-sl.com/sitemap.xml
