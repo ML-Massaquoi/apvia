@@ -27,6 +27,9 @@ export const metadata: Metadata = {
       "Discover profitable investment opportunities in Sierra Leone's mining, agriculture, construction, and trade sectors.",
     url: "https://www.apvia-sl.com",
   },
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function HomePage() {

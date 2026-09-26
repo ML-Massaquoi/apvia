@@ -51,7 +51,6 @@ export const metadata: Metadata = {
   publisher: "APVIA Ltd",
   metadataBase: new URL("https://www.apvia-sl.com"),
   alternates: {
-    canonical: "/",
     languages: {
       "en-US": "/",
     },

@@ -4,6 +4,7 @@ export const metadata: Metadata = {
   title: "Our Team | APVIA Ltd Leadership & Talent",
   description:
     "Meet the team behind APVIA Ltd — our leadership, talent philosophy, career development programmes, and commitment to diversity and excellence.",
+  alternates: { canonical: "/team" },
   openGraph: {
     title: "Our Team | APVIA Ltd Leadership & Talent",
     description:

@@ -4,6 +4,7 @@ export const metadata: Metadata = {
   title: "Services | Mining, Agriculture, Construction & Logistics",
   description:
     "APVIA Ltd provides integrated investment solutions across Sierra Leone and West Africa — mining, agriculture, construction, logistics, and trade services.",
+  alternates: { canonical: "/services" },
   openGraph: {
     title: "Services | Mining, Agriculture, Construction & Logistics",
     description:

@@ -4,6 +4,7 @@ export const metadata: Metadata = {
   title: "Flagship Projects | Sierra Leone's $10B+ Development Portfolio",
   description:
     "Explore 30+ flagship projects in Sierra Leone — Lungi Bridge, solar power plants, fishing port, mining operations, and more. $10B+ investment portfolio across 6 sectors.",
+  alternates: { canonical: "/flagship" },
   openGraph: {
     title: "Flagship Projects | Sierra Leone's $10B+ Development Portfolio",
     description:
