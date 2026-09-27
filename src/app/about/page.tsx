@@ -98,8 +98,12 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-28 pb-16 bg-[#052e16]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative pt-28 pb-16 bg-[#052e16] overflow-hidden">
+        <div className="absolute inset-0">
+          <img src="/flagship/brochure/port-sunset.jpg" alt="" className="w-full h-full object-cover opacity-15" />
+          <div className="absolute inset-0 bg-[#052e16]/80" />
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
           <div className="max-w-3xl mx-auto">
             <div className="gold-line mx-auto mb-5" />
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
@@ -118,21 +122,30 @@ export default function AboutPage() {
               <div className="gold-line mb-5" />
               <h2 className="text-2xl sm:text-3xl font-bold text-[#1a1a1a] mb-5">Company Overview</h2>
               <p className="text-gray-600 leading-relaxed mb-4 text-sm sm:text-base">
-                {companyData.fullName} ({companyData.name}) is a diversified multi-sectoral holding company headquartered in Freetown, Sierra Leone. Established to drive sustainable economic development across West Africa, the company operates across eleven core business verticals.
+                {companyData.businessProfile.overview}
               </p>
               <p className="text-gray-600 leading-relaxed mb-4 text-sm sm:text-base">
-                {companyData.name} positions itself as a strategic partner for governments, international development agencies, multinational corporations, and local enterprises seeking reliable, integrated solutions for complex projects in emerging African markets.
+                {companyData.businessProfile.whatWeDo}
               </p>
-              <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-                With deep roots in Sierra Leone and expanding regional reach, the company combines local market intelligence with international standards of excellence, delivering end-to-end solutions that create lasting value for stakeholders, host communities, and the broader economy.
-              </p>
+              <div className="mt-6">
+                <h3 className="text-lg font-bold text-[#1a1a1a] mb-3">Why APVIA</h3>
+                <ul className="space-y-2">
+                  {companyData.businessProfile.differentiators.map((diff, i) => (
+                    <li key={i} className="flex items-start gap-2 text-gray-600 text-sm">
+                      <svg className="w-4 h-4 text-[#14532d] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                      {diff}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
 
             <div className="space-y-3 sm:space-y-4">
               {[
                 { label: "Legal Identity", value: "Private Limited Liability Company" },
+                { label: "Registration No.", value: companyData.registrationNumber || "SL150926APVIA31897" },
                 { label: "Jurisdiction", value: "Republic of Sierra Leone" },
-                { label: "Headquarters", value: "Freetown, Sierra Leone" },
+                { label: "Headquarters", value: "91 Fort Street, Freetown, Sierra Leone" },
                 { label: "Trading Name", value: companyData.name },
               ].map((item) => (
                 <div key={item.label} className="flex items-start gap-4 p-4 sm:p-5 bg-[#f8f9fa] border border-gray-200 rounded-xl">
@@ -144,6 +157,44 @@ export default function AboutPage() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Key Stats */}
+      <section className="py-12 sm:py-16 bg-[#f8f9fa]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 sm:gap-6">
+            {companyData.businessProfile.keyStats.map((stat) => (
+              <div key={stat.label} className="text-center p-4 sm:p-5 bg-white rounded-xl border border-gray-100">
+                <div className="text-2xl sm:text-3xl font-bold text-[#052e16] mb-1">{stat.value}</div>
+                <div className="text-xs sm:text-sm text-gray-500">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Business Sectors */}
+      <section className="py-16 sm:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10 sm:mb-14">
+            <div className="gold-line mx-auto mb-5" />
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#1a1a1a] mb-3">Our Business Sectors</h2>
+            <p className="text-gray-500 max-w-xl mx-auto text-sm sm:text-base">Integrated capabilities across six core sectors driving West Africa's development</p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            {companyData.businessProfile.sectors.map((sector) => (
+              <div key={sector.name} className="card-white p-5 sm:p-6 hover:shadow-lg transition-shadow">
+                <div className="w-10 h-10 rounded-xl bg-[#052e16] flex items-center justify-center mb-3">
+                  <svg className="w-5 h-5 text-[#fbbf24]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                </div>
+                <h3 className="text-base font-bold text-[#1a1a1a] mb-1">{sector.name}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{sector.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
