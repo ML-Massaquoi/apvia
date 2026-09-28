@@ -54,15 +54,20 @@ export default function CookieConsent() {
     const existing = getStoredConsent();
     if (!existing) {
       setVisible(true);
+      document.body.style.overflow = "hidden";
     }
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, []);
 
-  const acceptAll = () => {
+  const dismiss = () => {
     const all: CookiePreferences = { necessary: true, analytics: true, marketing: true };
     storeConsent(all);
     sendConsentEmail(all);
     setVisible(false);
     setShowPanel(false);
+    document.body.style.overflow = "";
   };
 
   const rejectAll = () => {
@@ -71,6 +76,7 @@ export default function CookieConsent() {
     sendConsentEmail(minimal);
     setVisible(false);
     setShowPanel(false);
+    document.body.style.overflow = "";
   };
 
   const saveCustom = () => {
@@ -78,20 +84,28 @@ export default function CookieConsent() {
     sendConsentEmail(prefs);
     setVisible(false);
     setShowPanel(false);
+    document.body.style.overflow = "";
   };
 
   if (!visible) return null;
 
   return (
     <>
+      {/* Full-Screen Dimming Overlay — blocks all site interaction */}
+      <div
+        className="fixed inset-0 bg-black/50 z-[90] backdrop-blur-[2px]"
+        onClick={(e) => e.stopPropagation()}
+        style={{ pointerEvents: "all" }}
+      />
+
       {/* Settings Modal Overlay */}
       {showPanel && (
-        <div className="fixed inset-0 bg-black/40 z-[90] backdrop-blur-sm" onClick={() => setShowPanel(false)} />
+        <div className="fixed inset-0 bg-black/30 z-[100] backdrop-blur-sm" onClick={() => setShowPanel(false)} />
       )}
 
       {/* Settings Modal */}
       {showPanel && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-[110] flex items-center justify-center p-4">
           <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md max-h-[85vh] overflow-y-auto border border-gray-200">
             <div className="sticky top-0 bg-white border-b border-gray-100 px-5 py-4 flex items-center justify-between rounded-t-2xl">
               <div className="flex items-center gap-2.5">
@@ -159,7 +173,7 @@ export default function CookieConsent() {
               <button onClick={saveCustom} className="flex-1 bg-gradient-to-r from-[#f59e0b] to-[#d97706] text-[#052e16] font-semibold text-sm py-2.5 rounded-lg hover:shadow-lg hover:-translate-y-0.5 transition-all">
                 Save
               </button>
-              <button onClick={acceptAll} className="flex-1 border-2 border-[#052e16] text-[#052e16] font-semibold text-sm py-2.5 rounded-lg hover:bg-[#052e16] hover:text-white transition-all">
+              <button onClick={dismiss} className="flex-1 border-2 border-[#052e16] text-[#052e16] font-semibold text-sm py-2.5 rounded-lg hover:bg-[#052e16] hover:text-white transition-all">
                 Accept All
               </button>
             </div>
@@ -167,39 +181,46 @@ export default function CookieConsent() {
         </div>
       )}
 
-      {/* Bottom-Left Cookie Card */}
-      <div className="fixed bottom-4 left-4 z-[80] w-[340px] animate-fadeInUp">
-        <div className="bg-white rounded-xl border border-gray-200 shadow-[0_8px_30px_rgb(0,0,0,0.12)] overflow-hidden">
-          <div className="p-4">
-            <div className="flex items-start gap-3">
-              <div className="w-8 h-8 rounded-lg bg-[#052e16] flex items-center justify-center shrink-0 mt-0.5">
-                <svg className="w-4 h-4 text-[#fbbf24]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                </svg>
-              </div>
+      {/* Bottom Cookie Banner */}
+      <div className="fixed bottom-0 left-0 right-0 z-[95] animate-fadeInUp">
+        <div className="bg-white border-t border-gray-200 shadow-[0_-4px_20px_rgb(0,0,0,0.08)]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-5">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              {/* Text */}
               <div className="flex-1 min-w-0">
-                <p className="text-[13px] font-semibold text-[#052e16] mb-1">We value your privacy</p>
-                <p className="text-[11px] text-gray-400 leading-relaxed">
-                  We use cookies to enhance your experience.{" "}
-                  <Link href="/privacy" className="text-[#14532d] underline hover:text-[#d97706] transition-colors">
-                    Learn more
+                <p className="text-[13px] text-gray-600 leading-relaxed">
+                  With cookies we can ensure you get the best experience on our website. These cookies may incorporate data transfers to third-party providers based in countries without an adequate level of data protection. By clicking &ldquo;Understood&rdquo;, you acknowledge the storage of cookies on your device to improve website navigation, analyze website usage, and assist in our marketing efforts. For further information, including the processing of data by third-party providers and the possibility of changing your preferences at any time, please see your settings under &ldquo;Select Cookies Settings&rdquo; and the following links:{" "}
+                  <Link href="/privacy" className="text-[#14532d] font-semibold underline hover:text-[#d97706] transition-colors">
+                    Cookie Notice
                   </Link>
                 </p>
               </div>
+
+              {/* Actions */}
+              <div className="flex items-center gap-3 shrink-0">
+                <button
+                  onClick={() => setShowPanel(true)}
+                  className="px-5 py-2.5 border-2 border-[#052e16] text-[#052e16] font-semibold text-sm rounded-lg hover:bg-[#052e16] hover:text-white transition-all whitespace-nowrap"
+                >
+                  Select Cookies Settings
+                </button>
+                <button
+                  onClick={dismiss}
+                  className="px-5 py-2.5 bg-[#052e16] text-white font-semibold text-sm rounded-lg hover:bg-[#14532d] transition-all whitespace-nowrap"
+                >
+                  Understood
+                </button>
+                <button
+                  onClick={dismiss}
+                  className="text-gray-400 hover:text-gray-600 p-1 ml-1"
+                  aria-label="Close"
+                >
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
             </div>
-          </div>
-          <div className="flex border-t border-gray-100">
-            <button onClick={rejectAll} className="flex-1 text-[11px] font-semibold text-gray-400 hover:text-[#052e16] hover:bg-gray-50 py-2.5 transition-colors">
-              Reject
-            </button>
-            <div className="w-px bg-gray-100" />
-            <button onClick={() => setShowPanel(true)} className="flex-1 text-[11px] font-semibold text-[#14532d] hover:text-[#d97706] hover:bg-green-50 py-2.5 transition-colors">
-              Customize
-            </button>
-            <div className="w-px bg-gray-100" />
-            <button onClick={acceptAll} className="flex-1 text-[11px] font-semibold text-white bg-[#052e16] hover:bg-[#14532d] py-2.5 transition-colors">
-              Accept
-            </button>
           </div>
         </div>
       </div>
