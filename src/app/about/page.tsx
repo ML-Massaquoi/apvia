@@ -168,10 +168,117 @@ const coreSectors = [
   },
 ];
 
+const approachSteps = [
+  {
+    step: "01",
+    title: "Discover & Assess",
+    desc: "We begin by understanding your investment objectives, risk appetite, and strategic goals. Our team conducts thorough market analysis and due diligence to identify opportunities that align with your criteria.",
+    details: ["Market intelligence & analysis", "Risk assessment frameworks", "Regulatory landscape review", "Opportunity screening"],
+  },
+  {
+    step: "02",
+    title: "Structure & Design",
+    desc: "Our team structures investment vehicles and project frameworks that optimize returns while managing risk. We design clear governance, reporting, and exit mechanisms from day one.",
+    details: ["Investment structuring", "Financial modelling", "Legal & regulatory compliance", "Risk mitigation design"],
+  },
+  {
+    step: "03",
+    title: "Execute & Deliver",
+    desc: "With plans in place, we mobilize resources, manage construction, and oversee operations. Our end-to-end capability means a single point of accountability from feasibility through to delivery.",
+    details: ["Project management", "Construction oversight", "Supply chain coordination", "Quality assurance"],
+  },
+  {
+    step: "04",
+    title: "Monitor & Grow",
+    desc: "Post-delivery, we provide ongoing operational support, performance monitoring, and growth strategies. Investors receive regular reporting and transparent communication at every stage.",
+    details: ["Performance reporting", "Operational optimization", "Stakeholder management", "Growth strategy"],
+  },
+];
+
+const sierraLeoneFacts = [
+  { label: "GDP Growth", value: "5.4%", desc: "Among the fastest-growing economies in West Africa" },
+  { label: "Population", value: "8.6M", desc: "Young, dynamic workforce with a median age of 19" },
+  { label: "Arable Land", value: "5.4M ha", desc: "Only 15% cultivated — massive agricultural potential" },
+  { label: "Mineral Wealth", value: "$10B+", desc: "Estimated untapped mineral resources" },
+  { label: "FDI Reforms", value: "Since 2018", desc: "Major investment climate reforms and policy modernization" },
+  { label: "Strategic Location", value: "West Africa", desc: "Gateway to ECOWAS market of 400M+ consumers" },
+];
+
+const esgPillars = [
+  {
+    title: "Environmental",
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+    ),
+    items: [
+      "Environmental impact assessments for all projects",
+      "Carbon footprint monitoring and reduction targets",
+      "Sustainable resource management practices",
+      "Biodiversity protection and land rehabilitation",
+    ],
+  },
+  {
+    title: "Social",
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+    ),
+    items: [
+      "Local job creation and skills development",
+      "Community investment and benefit-sharing programmes",
+      "Health and safety standards exceeding local requirements",
+      "Support for education, healthcare, and social infrastructure",
+    ],
+  },
+  {
+    title: "Governance",
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+    ),
+    items: [
+      "Transparent financial reporting and audit processes",
+      "Anti-corruption and anti-bribery policies",
+      "Independent board oversight and committee structure",
+      "Regular stakeholder engagement and consultation",
+    ],
+  },
+];
+
+const investorFaqs = [
+  {
+    q: "What types of investment opportunities does APVIA offer?",
+    a: "APVIA structures and facilitates investments across six core sectors: mining & minerals, agriculture & food, construction & engineering, energy & power, logistics & maritime, and trade & commerce. Opportunities range from direct equity investments and joint ventures to project finance and concession arrangements.",
+  },
+  {
+    q: "What is the minimum investment threshold?",
+    a: "Investment thresholds vary by project and sector. Our flagship projects typically range from $5M to $500M+, but we also facilitate smaller entry points through structured investment vehicles. Contact our team to discuss opportunities that match your capital allocation.",
+  },
+  {
+    q: "How does APVIA manage risk for investors?",
+    a: "We employ multi-layered risk management: thorough due diligence and feasibility studies, political risk insurance through MIGA and ATI, structured exit mechanisms, local partnerships with government and communities, and continuous monitoring with transparent reporting.",
+  },
+  {
+    q: "What regulatory framework governs investments in Sierra Leone?",
+    a: "Sierra Leone has modernized its investment framework since 2018, including the Sierra Leone Investment and Export Promotion Act, revised mining regulations, and bilateral investment treaties with multiple countries. APVIA provides full regulatory compliance support throughout the investment lifecycle.",
+  },
+  {
+    q: "How does APVIA ensure ESG compliance?",
+    a: "Every project undergoes rigorous environmental and social impact assessments. We follow IFC Performance Standards, Equator Principles, and local regulations. Our ESG framework includes carbon monitoring, community benefit-sharing, biodiversity protection, and independent third-party audits.",
+  },
+  {
+    q: "What reporting and transparency can investors expect?",
+    a: "Investors receive quarterly performance reports, annual audited financial statements, real-time project dashboards for major developments, and direct access to senior management. Our governance structure includes independent board oversight and external audits.",
+  },
+  {
+    q: "Does APVIA facilitate exit strategies?",
+    a: "Yes. We design clear exit mechanisms during the structuring phase, including trade sales, IPO readiness, buyback arrangements, and secondary market transactions. Our team advises on optimal timing and execution to maximize returns.",
+  },
+];
+
 export default function AboutPage() {
   const [selectedVideo, setSelectedVideo] = useState<typeof aboutInvestmentShowcase[0] | null>(null);
   const [selectedValue, setSelectedValue] = useState<typeof coreValuesContent[0] | null>(null);
   const [selectedGovernance, setSelectedGovernance] = useState<typeof governanceData[0] | null>(null);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
     <>
@@ -205,7 +312,7 @@ export default function AboutPage() {
       {/* Who We Are */}
       <section className="py-16 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-10 sm:gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-10 sm:gap-16 items-start">
             <div>
               <div className="gold-line mb-5" />
               <h2 className="text-2xl sm:text-3xl font-bold text-[#1a1a1a] mb-5">Who We Are</h2>
@@ -254,6 +361,62 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Our Story */}
+      <section className="py-16 sm:py-24 bg-[#f8f9fa]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-10 sm:gap-16 items-center">
+            <div className="relative">
+              <div className="relative rounded-2xl overflow-hidden shadow-xl">
+                <img src="/flagship/brochure/port-sunset.jpg" alt="APVIA operations" className="w-full h-80 sm:h-96 object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#052e16]/60 to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6">
+                  <p className="text-white/80 text-sm font-medium">Our Journey</p>
+                  <p className="text-white text-lg font-bold">From Vision to Impact</p>
+                </div>
+              </div>
+              <div className="absolute -bottom-4 -right-4 bg-[#052e16] text-white rounded-xl p-4 shadow-lg hidden sm:block">
+                <p className="text-[#fbbf24] text-2xl font-bold">30+</p>
+                <p className="text-white/60 text-xs">Years Combined Experience</p>
+              </div>
+            </div>
+
+            <div>
+              <div className="gold-line mb-5" />
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#1a1a1a] mb-5">Our Story</h2>
+              <p className="text-gray-600 leading-relaxed mb-4 text-sm sm:text-base">
+                APVIA Ltd was born from a simple observation: West Africa holds extraordinary natural wealth and human potential, yet lacked the integrated investment and project delivery capability to unlock it at scale. Our founders — seasoned professionals with decades of experience across international finance, engineering, and African market development — set out to bridge that gap.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-4 text-sm sm:text-base">
+                From our headquarters in Freetown, Sierra Leone, we have built a diversified multi-sectoral holding company that combines deep local market knowledge with international standards of excellence. Today, APVIA operates across 11 business verticals in 5+ West African countries, with a portfolio of 50+ projects delivered and over 5,000 jobs created.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-6 text-sm sm:text-base">
+                Our approach is different. We don&apos;t just identify opportunities — we structure, finance, build, and operate. From feasibility studies and investment structuring to construction management and trade execution, APVIA provides the full spectrum of services that international investors and development partners need to succeed in West Africa.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <div className="flex items-center gap-2">
+                  <div className="w-10 h-10 rounded-lg bg-[#052e16] flex items-center justify-center">
+                    <svg className="w-5 h-5 text-[#fbbf24]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                  </div>
+                  <div>
+                    <p className="text-[#1a1a1a] font-semibold text-sm">Proven Track Record</p>
+                    <p className="text-gray-400 text-xs">50+ projects delivered</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-10 h-10 rounded-lg bg-[#052e16] flex items-center justify-center">
+                    <svg className="w-5 h-5 text-[#fbbf24]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                  </div>
+                  <div>
+                    <p className="text-[#1a1a1a] font-semibold text-sm">Regional Presence</p>
+                    <p className="text-gray-400 text-xs">5+ West African countries</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Key Stats */}
       <section className="py-12 sm:py-16 bg-[#052e16]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -268,8 +431,36 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Why Invest With APVIA */}
+      {/* Sierra Leone Opportunity */}
       <section className="py-16 sm:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10 sm:mb-14">
+            <div className="gold-line mx-auto mb-5" />
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#1a1a1a] mb-3">Why Sierra Leone</h2>
+            <p className="text-gray-500 max-w-2xl mx-auto text-sm sm:text-base">A nation rich in resources, strategic location, and reforming business environment — positioned for transformative growth</p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            {sierraLeoneFacts.map((fact) => (
+              <div key={fact.label} className="card-white p-5 sm:p-6 hover:shadow-lg transition-shadow">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="text-2xl sm:text-3xl font-bold text-[#052e16]">{fact.value}</div>
+                </div>
+                <h3 className="text-base font-bold text-[#1a1a1a] mb-1">{fact.label}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{fact.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 text-center">
+            <Link href="/flagship" className="inline-flex items-center gap-2 text-[#052e16] font-semibold text-sm hover:text-[#d97706] transition-colors">
+              View Investment Opportunities
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Invest With APVIA */}
+      <section className="py-16 sm:py-24 bg-[#f8f9fa]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 sm:mb-14">
             <div className="gold-line mx-auto mb-5" />
@@ -278,12 +469,42 @@ export default function AboutPage() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {investmentReasons.map((reason) => (
-              <div key={reason.title} className="card-white p-5 sm:p-7 hover:shadow-xl transition-all duration-300 group">
+              <div key={reason.title} className="bg-white card-white p-5 sm:p-7 hover:shadow-xl transition-all duration-300 group">
                 <div className="w-12 h-12 rounded-xl bg-[#052e16] flex items-center justify-center mb-4 group-hover:bg-[#14532d] transition-colors">
                   <div className="text-[#fbbf24]">{reason.icon}</div>
                 </div>
                 <h3 className="text-lg font-bold text-[#1a1a1a] mb-2">{reason.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{reason.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Our Approach */}
+      <section className="py-16 sm:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10 sm:mb-14">
+            <div className="gold-line mx-auto mb-5" />
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#1a1a1a] mb-3">How We Work</h2>
+            <p className="text-gray-500 max-w-2xl mx-auto text-sm sm:text-base">A structured, transparent process designed to protect investor interests while maximizing returns</p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            {approachSteps.map((step) => (
+              <div key={step.step} className="relative">
+                <div className="text-6xl font-bold text-[#052e16]/5 absolute -top-4 -left-2">{step.step}</div>
+                <div className="relative pt-8">
+                  <h3 className="text-lg font-bold text-[#1a1a1a] mb-3">{step.title}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed mb-4">{step.desc}</p>
+                  <ul className="space-y-1.5">
+                    {step.details.map((d) => (
+                      <li key={d} className="flex items-center gap-2 text-gray-400 text-xs">
+                        <div className="w-1 h-1 rounded-full bg-[#14532d]" />
+                        {d}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             ))}
           </div>
@@ -452,6 +673,74 @@ export default function AboutPage() {
         cta="Partner With Us"
       />
 
+      {/* Sustainability & ESG */}
+      <section className="py-16 sm:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10 sm:mb-14">
+            <div className="gold-line mx-auto mb-5" />
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#1a1a1a] mb-3">Sustainability & ESG Commitment</h2>
+            <p className="text-gray-500 max-w-2xl mx-auto text-sm sm:text-base">We believe that responsible investment delivers superior long-term returns. Every project is evaluated against rigorous environmental, social, and governance criteria.</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
+            {esgPillars.map((pillar) => (
+              <div key={pillar.title} className="card-white p-6 sm:p-8">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-11 h-11 rounded-xl bg-[#052e16] flex items-center justify-center shrink-0">
+                    <div className="text-[#fbbf24]">{pillar.icon}</div>
+                  </div>
+                  <h3 className="text-lg font-bold text-[#1a1a1a]">{pillar.title}</h3>
+                </div>
+                <ul className="space-y-3">
+                  {pillar.items.map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-gray-600 text-sm">
+                      <svg className="w-4 h-4 text-[#14532d] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership Preview */}
+      <section className="py-16 sm:py-24 bg-[#f8f9fa]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-10 sm:gap-16 items-center">
+            <div>
+              <div className="gold-line mb-5" />
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#1a1a1a] mb-5">Our Leadership</h2>
+              <p className="text-gray-600 leading-relaxed mb-4 text-sm sm:text-base">
+                APVIA is led by a team of seasoned professionals with deep expertise across international finance, project management, engineering, and African market development. Our leadership combines 30+ years of combined experience with an unwavering commitment to excellence and integrity.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-6 text-sm sm:text-base">
+                From the Board of Directors through Executive Management to our Advisory Council, every level of our governance structure is designed to protect investor interests, ensure accountability, and drive sustainable growth.
+              </p>
+              <Link href="/team" className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#052e16] text-white rounded-lg text-sm font-medium hover:bg-[#14532d] transition-colors">
+                Meet the Team
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { role: "Board of Directors", count: "7 Members", desc: "Strategic oversight" },
+                { role: "Executive Team", count: "12 Leaders", desc: "Operational excellence" },
+                { role: "Advisory Council", count: "8 Advisors", desc: "Strategic guidance" },
+                { role: "Specialists", count: "50+ Experts", desc: "Sector expertise" },
+              ].map((item) => (
+                <div key={item.role} className="card-white p-4 sm:p-5 text-center">
+                  <p className="text-2xl font-bold text-[#052e16] mb-1">{item.count}</p>
+                  <p className="text-[#1a1a1a] font-semibold text-sm mb-0.5">{item.role}</p>
+                  <p className="text-gray-400 text-xs">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Strategic Growth Phases */}
       <section className="py-16 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -555,6 +844,40 @@ export default function AboutPage() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Investor FAQ */}
+      <section className="py-16 sm:py-24 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10 sm:mb-14">
+            <div className="gold-line mx-auto mb-5" />
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#1a1a1a] mb-3">Investor FAQ</h2>
+            <p className="text-gray-500 max-w-xl mx-auto text-sm sm:text-base">Common questions from investors and development partners</p>
+          </div>
+          <div className="space-y-3">
+            {investorFaqs.map((faq, i) => (
+              <div key={i} className="card-white overflow-hidden">
+                <button
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  className="w-full flex items-center justify-between p-5 text-left"
+                >
+                  <span className="text-[#1a1a1a] font-semibold text-sm sm:text-base pr-4">{faq.q}</span>
+                  <svg
+                    className={`w-5 h-5 text-gray-400 shrink-0 transition-transform ${openFaq === i ? "rotate-180" : ""}`}
+                    fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                {openFaq === i && (
+                  <div className="px-5 pb-5 border-t border-gray-100 pt-4">
+                    <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
