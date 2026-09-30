@@ -8,7 +8,6 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
-  { href: "/flagship", label: "Projects" },
   { href: "/team", label: "Team" },
   { href: "/brochure", label: "Brochure" },
   { href: "/contact", label: "Contact" },
@@ -173,9 +172,9 @@ export default function Navigation() {
           </Link>
 
           {/* Desktop Nav Links */}
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden md:flex items-center gap-0.5">
             {navLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="px-3 py-2 text-sm font-medium text-gray-600 hover:text-[#14532d] transition-colors duration-200 rounded-md hover:bg-green-50">
+              <Link key={link.href} href={link.href} className="px-2.5 py-2 text-[13px] font-medium text-gray-600 hover:text-[#14532d] transition-colors duration-200 rounded-md hover:bg-green-50">
                 {link.label}
               </Link>
             ))}
@@ -185,7 +184,7 @@ export default function Navigation() {
               <button
                 onClick={() => setFlagshipOpen(!flagshipOpen)}
                 onMouseEnter={() => setFlagshipOpen(true)}
-                className="px-3 py-2 text-sm font-medium text-gray-600 hover:text-[#14532d] transition-colors duration-200 rounded-md hover:bg-green-50 inline-flex items-center gap-1"
+                className="px-2.5 py-2 text-[13px] font-medium text-gray-600 hover:text-[#14532d] transition-colors duration-200 rounded-md hover:bg-green-50 inline-flex items-center gap-1"
               >
                 Flagship
                 <svg className={`w-3.5 h-3.5 transition-transform duration-200 ${flagshipOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -221,7 +220,7 @@ export default function Navigation() {
               <button
                 onClick={() => setPoliciesOpen(!policiesOpen)}
                 onMouseEnter={() => setPoliciesOpen(true)}
-                className="px-3 py-2 text-sm font-medium text-gray-600 hover:text-[#14532d] transition-colors duration-200 rounded-md hover:bg-green-50 inline-flex items-center gap-1"
+                className="px-2.5 py-2 text-[13px] font-medium text-gray-600 hover:text-[#14532d] transition-colors duration-200 rounded-md hover:bg-green-50 inline-flex items-center gap-1"
               >
                 Policies
                 <svg className={`w-3.5 h-3.5 transition-transform duration-200 ${policiesOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -251,7 +250,7 @@ export default function Navigation() {
           {/* Right Side */}
           <div className="flex items-center gap-2 sm:gap-3">
             {/* Social Icons (desktop) */}
-            <div className="hidden md:flex items-center gap-2.5 text-gray-400">
+            <div className="hidden lg:flex items-center gap-2 text-gray-400">
               {socialLinks.map((social) => (
                 <a key={social.icon} href={social.href} target={social.icon !== "email" ? "_blank" : undefined} rel={social.icon !== "email" ? "noopener noreferrer" : undefined} className="hover:text-[#14532d] transition-colors" aria-label={social.label}>
                   <SocialIcon icon={social.icon} />
@@ -259,14 +258,14 @@ export default function Navigation() {
               ))}
             </div>
 
-            <a href="mailto:info@apvia-sl.com" className="hidden md:inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-[#14532d] transition-colors">
+            <a href="mailto:info@apvia-sl.com" className="hidden xl:inline-flex items-center gap-1.5 text-[13px] text-gray-500 hover:text-[#14532d] transition-colors">
               info@apvia-sl.com
             </a>
 
-            <div className="hidden md:block w-px h-5 bg-gray-200" />
+            <div className="hidden xl:block w-px h-5 bg-gray-200" />
 
             {/* CTA Button (desktop) */}
-            <Link href="/contact" className="hidden md:inline-flex btn-primary text-sm py-2 px-5">
+            <Link href="/contact" className="hidden md:inline-flex btn-primary text-[13px] py-1.5 px-4 whitespace-nowrap">
               Get in Touch
             </Link>
 
