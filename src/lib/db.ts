@@ -1,4 +1,4 @@
-import { createClient, type Client } from "@libsql/client";
+import type { Client } from "@libsql/client";
 
 const TURSO_URL = process.env.TURSO_DATABASE_URL || "https://apvia-andymojo21.turso.io";
 const TURSO_TOKEN = process.env.TURSO_AUTH_TOKEN || "";
@@ -8,9 +8,11 @@ let _initialized = false;
 
 export function getDb(): Client {
   if (!_db) {
-    _db = createClient({ url: TURSO_URL, authToken: TURSO_TOKEN });
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const { createClient } = require("@libsql/client") as typeof import("@libsql/client");
+    _db = createClient({ url: TURSO_URL, authToken: TURSO_TOKEN }) as Client;
   }
-  return _db;
+  return _db!;
 }
 
 export async function ensureSchema() {

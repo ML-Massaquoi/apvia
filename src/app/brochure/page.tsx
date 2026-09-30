@@ -57,7 +57,7 @@ export default function BrochurePage() {
             <p className="text-sm text-gray-500 font-medium text-center sm:text-left">
               Scroll to view the full brochure below
             </p>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-5 sm:gap-6">
               <a
                 href="/APVIA-Executive-Brochure-2026-2030.pdf"
                 download
@@ -68,6 +68,7 @@ export default function BrochurePage() {
                 </svg>
                 Download PDF
               </a>
+              <div className="w-px h-6 bg-gray-300" />
               <a
                 href={companyData.contact.whatsappLink}
                 target="_blank"
