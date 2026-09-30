@@ -47,7 +47,7 @@ export default function HomepageVisionMission() {
               Building Africa&apos;s <span className="text-[#14532d]">Future</span>
             </h2>
             <p className="text-gray-500 max-w-2xl mx-auto text-sm sm:text-base">
-              Driving sustainable economic development across West Africa through integrated, multi-sectoral excellence
+              Serving as the strategic bridge connecting global investors with the vast, untapped opportunities of Sierra Leone and West Africa
             </p>
           </div>
 
@@ -191,12 +191,12 @@ export default function HomepageVisionMission() {
         title="Our Vision"
         overview={companyData.visionDescription}
         highlights={[
-          { label: "Sectors", value: "11", desc: "Core business verticals across West Africa" },
-          { label: "Markets", value: "5+", desc: "West African countries with active operations" },
-          { label: "Projects", value: "50+", desc: "Major projects delivered across all sectors" },
-          { label: "Partners", value: "25+", desc: "International strategic partnerships" },
-          { label: "Experience", value: "30+ yrs", desc: "Combined leadership experience in African markets" },
-          { label: "Aspiration", value: "$1B", desc: "Target enterprise value within the next decade" },
+          { label: "Investment Facilitated", value: "$750M+", desc: "Mobilised into Sierra Leone & West Africa" },
+          { label: "Jobs Created", value: "25,000+", desc: "Direct and indirect employment across sectors" },
+          { label: "Global Partners", value: "50+", desc: "International investors & corporations" },
+          { label: "Flagship Sectors", value: "5", desc: "Transforming national development" },
+          { label: "Leadership Experience", value: "150+ yrs", desc: "Across investment, government, diplomacy & finance" },
+          { label: "Government Initiative", value: "$5B", desc: "Sierra Leone Rising flagship programme" },
         ]}
         chart={{
           type: "pie",

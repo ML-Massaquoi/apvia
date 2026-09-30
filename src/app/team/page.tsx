@@ -112,7 +112,7 @@ export default function TeamPage() {
           <div className="text-center mb-10 sm:mb-14">
             <div className="gold-line mx-auto mb-5" />
             <h2 className="text-2xl sm:text-3xl font-bold text-[#1a1a1a] mb-3">Executive Leadership</h2>
-            <p className="text-gray-500 max-w-xl mx-auto text-sm sm:text-base">Driving our vision of becoming the leading integrated multi-sectoral enterprise in West Africa</p>
+            <p className="text-gray-500 max-w-xl mx-auto text-sm sm:text-base">Driving our purpose of building Sierra Leone and West Africa as a whole through transformative investment</p>
           </div>
 
           {/* Top 4 Leaders */}

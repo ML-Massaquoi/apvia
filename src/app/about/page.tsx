@@ -588,12 +588,13 @@ export default function AboutPage() {
         facts={selectedVideo?.facts || []}
       />
 
-      {/* Vision & Mission */}
+      {/* Our Purpose */}
       <section className="py-16 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 sm:mb-14">
             <div className="gold-line mx-auto mb-5" />
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#1a1a1a]">Vision & Mission</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#1a1a1a]">Our Purpose</h2>
+            <p className="text-gray-500 max-w-xl mx-auto text-sm sm:text-base mt-3">&ldquo;Investing Today · Building Africa&rsquo;s Future&rdquo;</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 sm:gap-8">

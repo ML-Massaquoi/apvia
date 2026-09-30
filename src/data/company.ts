@@ -1,7 +1,7 @@
 export const companyData = {
   name: "APVIA Ltd",
   fullName: "African Projects Ventures Investments and Advancement Limited",
-  tagline: "Building Africa's Future Through Partnership, Excellence, and Integrity",
+  tagline: "Investing Today · Building Africa's Future",
   registrationNumber: "SL150926APVIA31897",
   description:
     "A diversified multi-sectoral holding company headquartered in Freetown, Sierra Leone, driving sustainable economic development across West Africa. APVIA connects international investors with high-impact projects across 11 business verticals, delivering end-to-end solutions from feasibility through execution.",
@@ -41,17 +41,17 @@ export const companyData = {
     },
   },
   vision:
-    "To be the leading integrated multi-sectoral enterprise in West Africa, recognized for excellence, innovation, and transformative impact on the communities and economies we serve.",
+    "To work with global investors and investment firms to build Sierra Leone and West Africa as a whole — facilitating transformative investments that create lasting economic impact, jobs, and shared prosperity across the region.",
   visionDescription:
-    "APVIA Ltd envisions a West Africa where world-class infrastructure, efficient supply chains, sustainable agriculture, responsible mining, and thriving trade networks form the foundation of shared prosperity. The company aspires to be the partner of choice for all stakeholders seeking to build a better future for the region.",
+    "APVIA Ltd envisions a West Africa where global capital and local opportunity converge to unlock the region's vast, untapped potential. As Sierra Leone's premier investment facilitation and business development company, we serve as the strategic bridge connecting international investors with transformative projects across Sierra Leone and the ECOWAS region.",
   mission:
-    "To deliver integrated, innovative, and sustainable solutions across our core sectors, driving economic development, creating lasting value for our stakeholders, and advancing the prosperity of African nations through ethical business practices and strategic partnerships.",
+    "To serve as the strategic bridge connecting global investors with the vast, untapped opportunities of Sierra Leone and West Africa — facilitating transformative investments that create lasting economic impact, jobs, and shared prosperity across the region.",
   missionActions: [
-    "Delivering high-quality projects and services on time and within budget",
-    "Fostering strategic partnerships that leverage complementary strengths",
-    "Investing in local talent, technology, and infrastructure",
-    "Maintaining the highest standards of safety, ethics, and environmental stewardship",
-    "Adapting global best practices to local contexts",
+    "Connecting global investors with vetted, investment-ready opportunities across Sierra Leone and West Africa",
+    "Facilitating transformative investments that create lasting economic impact and jobs",
+    "Providing end-to-end support from project identification through structuring, negotiation, financial close, and implementation",
+    "Building Sierra Leone and West Africa as a whole through strategic partnerships and shared prosperity",
+    "Upholding the highest ethical standards, transparency, and ESG integration in every engagement",
   ],
   coreValues: [
     {

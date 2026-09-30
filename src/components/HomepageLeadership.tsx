@@ -8,7 +8,7 @@ const leadershipData = [
   {
     role: "Managing Director",
     icon: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z",
-    overview: "Our Managing Director provides strategic leadership and vision for APVIA Ltd, steering the company towards its goal of becoming the leading integrated multi-sectoral enterprise in West Africa. With deep expertise in business development and international relations, the MD ensures alignment between operational execution and long-term strategic objectives.",
+    overview: "Our Managing Director provides strategic leadership and purpose for APVIA Ltd, steering the company towards its goal of building Sierra Leone and West Africa as a whole. With deep expertise in business development and international relations, the MD ensures alignment between operational execution and long-term strategic objectives.",
     highlights: [
       { label: "Experience", value: "20+ yrs", desc: "Senior leadership experience across multiple sectors and countries" },
       { label: "Strategy", value: "11 Divisions", desc: "Oversight of all 11 business verticals and their strategic direction" },

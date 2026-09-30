@@ -7,6 +7,7 @@ const footerLinks = {
     { label: "Services", href: "/services" },
     { label: "Flagship Projects", href: "/flagship" },
     { label: "Team", href: "/team" },
+    { label: "Brochure", href: "/brochure" },
     { label: "Policies", href: "/policies" },
     { label: "Contact", href: "/contact" },
   ],
@@ -50,8 +51,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-white/50 text-sm leading-relaxed mb-6 max-w-xs">
-              Building Africa&apos;s Future Through Partnership, Excellence, and
-              Integrity.
+              Investing Today · Building Africa&apos;s Future.
             </p>
             <div className="flex gap-3">
               {[
