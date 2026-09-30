@@ -103,6 +103,8 @@ export const companyData = {
     address: "91 Fort Street, Freetown, Sierra Leone",
     email: "info@apvia-sl.com",
     phone: "232 73 88 66 22",
+    whatsapp: "+44 7495 491457",
+    whatsappLink: "https://wa.me/447495491457",
     complianceEmail: "compliance@apvia-sl.com",
     website: "www.apvia-sl.com",
     social: {
